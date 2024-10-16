@@ -18,7 +18,7 @@ export const NavHeader = () => {
   return (
     <div className={styles['nav']}>
       <div className={styles['nav-icon']}>
-        <Link href={'/home'}>Home</Link>
+        <Link href={'/'}>Home</Link>
       </div>
       <div className={styles['nav-menu']}>{options}</div>
       <div className={styles['nav-extra']}></div>
