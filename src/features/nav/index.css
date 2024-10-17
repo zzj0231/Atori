@@ -1,0 +1,51 @@
+.atori-nav {
+  display: flex;
+  align-items: center;
+  height: var(--atori-nav-height);
+  padding: 2rem;
+  gap: 0.8rem;
+}
+
+.atori-nav-favicon {
+  flex: 1;
+}
+
+.atori-nav-menu {
+  display: flex;
+  gap: 12px;
+}
+
+.atori-nav-extra {
+  display: flex;
+  align-items: center;
+}
+
+.atroi-nav-icon-light {
+  background-image: url(../../icon/light.svg);
+  width: 1em;
+  height: 1em;
+  background-repeat: no-repeat;
+  color: inherit;
+  display: inline-block;
+  text-align: text-bottom;
+}
+
+.atroi-nav-icon-moon {
+  background-image: url(../../icon/moon.svg);
+  width: 1em;
+  height: 1em;
+  background-repeat: no-repeat;
+  color: inherit;
+  display: inline-block;
+  text-align: text-bottom;
+  display: none;
+}
+
+html.dark .atroi-nav-icon-moon {
+  opacity: 1;
+  display: inline-block;
+}
+
+html.dark .atroi-nav-icon-light {
+  display: none;
+}
