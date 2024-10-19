@@ -1,10 +1,15 @@
 'use client'
 
 import { useCallback, useEffect, useMemo } from 'react'
-import './index.css'
 import { NAV_MENU } from '@/const/nav'
 import Link from 'next/link'
 import { setTheme, updateAppearance } from '@/utils/theme'
+// import Image from 'next/image'
+
+import './index.css'
+import { LightIcon } from '@/icon/light'
+import { MoonIcon } from '@/icon/moon'
+import { autoUpdateRootFontSize } from '@/utils/window'
 
 export const NavHeader = () => {
   const options = useMemo(() => {
@@ -41,6 +46,10 @@ export const NavHeader = () => {
     }
   }, [])
 
+  useEffect(() => {
+    autoUpdateRootFontSize()
+  }, [])
+
   return (
     <div className={'atori-nav'}>
       <div className={'atori-nav-favicon'}>
@@ -48,8 +57,12 @@ export const NavHeader = () => {
       </div>
       <div className={'atori-nav-menu'}>{options}</div>
       <div className={'atori-nav-extra'}>
-        <div className="atroi-nav-icon-light" onClick={handleDarkTheme}></div>
-        <div className="atroi-nav-icon-moon" onClick={handleMoonTheme}></div>
+        <div className="atroi-nav-icon-light" onClick={handleDarkTheme}>
+          <LightIcon />
+        </div>
+        <div className="atroi-nav-icon-moon" onClick={handleMoonTheme}>
+          <MoonIcon />
+        </div>
       </div>
     </div>
   )

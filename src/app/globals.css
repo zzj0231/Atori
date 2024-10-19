@@ -21,6 +21,10 @@
   }
 } */
 
+:root {
+  /* font-size: calc(0.5em + 1vw); */
+}
+
 p {
   margin: 0;
 }

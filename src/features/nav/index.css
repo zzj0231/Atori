@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   height: var(--atori-nav-height);
-  padding: 2rem;
-  gap: 0.8rem;
+  padding: 0.24rem;
+  gap: 0.08rem;
+  font-size: 0.16rem;
 }
 
 .atori-nav-favicon {
@@ -21,29 +22,29 @@
 }
 
 .atroi-nav-icon-light {
-  background-image: url(../../icon/light.svg);
-  width: 1em;
-  height: 1em;
-  background-repeat: no-repeat;
-  color: inherit;
   display: inline-block;
-  text-align: text-bottom;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .atroi-nav-icon-moon {
-  background-image: url(../../icon/moon.svg);
-  width: 1em;
-  height: 1em;
-  background-repeat: no-repeat;
   color: inherit;
   display: inline-block;
-  text-align: text-bottom;
   display: none;
 }
 
 html.dark .atroi-nav-icon-moon {
-  opacity: 1;
   display: inline-block;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 html.dark .atroi-nav-icon-light {
