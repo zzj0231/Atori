@@ -1,0 +1,124 @@
+:root {
+  --atori-c-white: #fff;
+  --atori-c-white-soft: #f9f9f9;
+  ---atori-c-white-mute: #f1f1f1;
+
+  --atori-c-black: #1a1a1a;
+  --atori-c-black-pure: #000000;
+  --atori-c-black-soft: #242424;
+  --atori-c-black-mute: #2f2f2f;
+
+  --atori-c-gray: #8e8e8e;
+  --atori-c-gray-light-1: #aeaeae;
+  --atori-c-gray-light-2: #c7c7c7;
+  --atori-c-gray-light-3: #d1d1d1;
+  --atori-c-gray-light-4: #e5e5e5;
+  --atori-c-gray-light-5: #f2f2f2;
+  --atori-c-gray-dark-1: #636363;
+  --atori-c-gray-dark-2: #484848;
+  --atori-c-gray-dark-3: #3a3a3a;
+  --atori-c-gray-dark-4: #282828;
+  --atori-c-gray-dark-5: #202020;
+
+  --atori-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --atori-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --atori-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --atori-c-divider-dark-2: rgba(84, 84, 84, 0.47);
+
+  --atori-c-indigo: #213547;
+  --atori-c-indigo-soft: #476582;
+  --atori-c-indigo-light: #aac8e4;
+  --atori-c-indigo-lighter: #c9def1;
+  --atori-c-indigo-dark: #1d2f3f;
+  --atori-c-indigo-darker: #14212e;
+
+  --atori-c-text-light-1: var(--island-c-indigo);
+  --atori-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --atori-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --atori-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --atori-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --atori-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --atori-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --atori-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --atori-c-blue-light: #747bff;
+  --atori-c-blue-lighter: #9499ff;
+  --atori-c-blue-lightest: #bcc0ff;
+  --atori-c-blue-dark: #535bf2;
+  --atori-c-blue-darker: #454ce1;
+  --atori-c-blue-dimm: rgba(100, 108, 255, 0.08);
+
+  --atori-c-yellow: #ffc517;
+  --atori-c-yellow-light: #fcd253;
+  --atori-c-yellow-lighter: #fcfc7c;
+  --atori-c-yellow-darker: #ad850e;
+  --atori-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --atori-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --atori-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --atori-c-red: #ed3c50;
+  --atori-c-red-light: #f54e82;
+  --atori-c-red-lighter: #fd1d7c;
+  --atori-c-red-darker: #ab2131;
+  --atori-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --atori-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --atori-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+:root {
+  --atori-c-bg: var(--atori-c-white);
+  --atori-c-bg-soft: var(--atori-c-white-soft);
+  --atori-c-bg-mute: var(--atori-c-white-mute);
+  --atori-c-bg-alt: var(--atori-c-white-soft);
+
+  --atori-c-divider: var(--atori-c-divider-light-1);
+  --atori-c-divider-light: var(--atori-c-divider-light-2);
+
+  --atori-c-text-1: var(--atori-c-text-light-1);
+  --atori-c-text-2: var(--atori-c-text-light-2);
+  --atori-c-text-3: var(--atori-c-text-light-3);
+  --atori-c-text-4: var(--atori-c-text-light-4);
+}
+
+.dark {
+  --atori-c-bg: var(--atori-c-black-soft);
+  --atori-c-bg-soft: var(--atori-c-black-mute);
+  --atori-c-bg-mute: var(--atori-c-gray-dark-3);
+  --atori-c-bg-alt: var(--atori-c-black);
+
+  --atori-c-divider: var(--atori-c-divider-dark-1);
+  --atori-c-divider-light: var(--atori-c-divider-dark-2);
+
+  --atori-c-text-1: var(--atori-c-text-dark-1);
+  --atori-c-text-2: var(--atori-c-text-dark-2);
+  --atori-c-text-3: var(--atori-c-text-dark-3);
+  --atori-c-text-4: var(--atori-c-text-dark-4);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --atori-font-family-base: 'Inter var experimental', 'Inter var', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --atori-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --atori-layout-max-width: 1440px;
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --atori-nav-height: 56px;
+}
