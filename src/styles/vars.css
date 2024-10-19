@@ -64,6 +64,8 @@
   --atori-c-red-dimm-1: rgba(237, 60, 80, 0.5);
   --atori-c-red-dimm-2: rgba(237, 60, 80, 0.25);
   --atori-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+
+  --atori-normal-font-size: 1.6rem;
 }
 
 :root {

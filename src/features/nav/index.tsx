@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo } from 'react'
 import { NAV_MENU } from '@/const/nav'
 import Link from 'next/link'
 import { setTheme, updateAppearance } from '@/utils/theme'
@@ -46,7 +46,7 @@ export const NavHeader = () => {
     }
   }, [])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     autoUpdateRootFontSize()
   }, [])
 
