@@ -15,37 +15,43 @@
   gap: 2.4rem;
 }
 
-.atori-nav-extra {
-  display: flex;
-  align-items: center;
-}
-
-.atroi-nav-icon-light {
-  display: inline-block;
-  opacity: 0.6;
-  cursor: pointer;
+.atori-nav-menu .menu-item {
+  opacity: var(--atori-c-text-opac-1ight);
   transition: opacity 0.2s ease;
   &:hover {
-    opacity: 1;
+    opacity: var(--atori-c-text-opac-full);
   }
 }
 
-.atroi-nav-icon-moon {
+.atori-nav-extra {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.atroi-nav-icon {
+  display: inline-block;
+  opacity: var(--atori-c-text-opac-1ight);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: var(--atori-c-text-opac-full);
+  }
+}
+
+.atroi-nav-icon.moon {
   color: inherit;
   display: inline-block;
   display: none;
 }
 
-html.dark .atroi-nav-icon-moon {
-  display: inline-block;
-  opacity: 0.6;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-  &:hover {
-    opacity: 1;
-  }
+html.dark .atroi-nav-icon.light {
+  display: none;
 }
 
-html.dark .atroi-nav-icon-light {
-  display: none;
+html.dark .atroi-nav-icon.moon {
+  display: inline-block;
+  &:hover {
+    opacity: var(--atori-c-text-opac-full);
+  }
 }

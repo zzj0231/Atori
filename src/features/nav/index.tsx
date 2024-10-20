@@ -10,6 +10,7 @@ import './index.css'
 import { LightIcon } from '@/icon/light'
 import { MoonIcon } from '@/icon/moon'
 import { autoUpdateRootFontSize } from '@/utils/window'
+import { GithubIcon } from '@/icon/github'
 
 export const NavHeader = () => {
   const options = useMemo(() => {
@@ -17,7 +18,7 @@ export const NavHeader = () => {
     return menus.map(item => {
       return (
         <Link key={item?.key} href={item?.url}>
-          {item.label}
+          <span className="menu-item">{item.label}</span>
         </Link>
       )
     })
@@ -57,10 +58,17 @@ export const NavHeader = () => {
       </div>
       <div className={'atori-nav-menu'}>{options}</div>
       <div className={'atori-nav-extra'}>
-        <div className="atroi-nav-icon-light" onClick={handleDarkTheme}>
+        <a
+          className="atroi-nav-icon"
+          href={'https://github.com/zzj0231'}
+          target="_blank"
+        >
+          <GithubIcon />
+        </a>
+        <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
           <LightIcon />
         </div>
-        <div className="atroi-nav-icon-moon" onClick={handleMoonTheme}>
+        <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
           <MoonIcon />
         </div>
       </div>
