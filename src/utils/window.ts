@@ -10,9 +10,9 @@ export const autoUpdateRootFontSize = () => {
     const clientWidth = docEl.clientWidth
     if (!clientWidth) return
     if (clientWidth >= 640) {
-      docEl.style.fontSize = '100px'
+      docEl.style.fontSize = '10px'
     } else {
-      docEl.style.fontSize = 100 * (clientWidth / 640) + 'px'
+      docEl.style.fontSize = 10 * (clientWidth / 640) + 'px'
     }
   }
   window.addEventListener(resizeEvt, recalc, false)
