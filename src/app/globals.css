@@ -132,3 +132,10 @@ textarea::placeholder {
     text-wrap: balance;
   }
 }
+
+@media (prefers-reduced-motion) {
+  path {
+    animation: none !important;
+    stroke-dasharray: unset !important;
+  }
+}

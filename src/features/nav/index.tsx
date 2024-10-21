@@ -1,9 +1,11 @@
 'use client'
 
 import { useCallback, useEffect, useLayoutEffect, useMemo } from 'react'
+import Image from 'next/image'
 import { NAV_MENU } from '@/const/nav'
 import Link from 'next/link'
 import { setTheme, updateAppearance } from '@/utils/theme'
+import AtoriSvg from '../../../public/atori.svg'
 // import Image from 'next/image'
 
 import './index.css'
@@ -11,6 +13,7 @@ import { LightIcon } from '@/icon/light'
 import { MoonIcon } from '@/icon/moon'
 import { autoUpdateRootFontSize } from '@/utils/window'
 import { GithubIcon } from '@/icon/github'
+import { HomeIcon } from '@/icon/home'
 
 export const NavHeader = () => {
   const options = useMemo(() => {
@@ -54,7 +57,10 @@ export const NavHeader = () => {
   return (
     <div className={'atori-nav'}>
       <div className={'atori-nav-favicon'}>
-        <Link href={'/'}>Home</Link>
+        <Link href={'/'}>
+          {/* <Image alt="home" src={AtoriSvg} width={16} /> */}
+          <HomeIcon />
+        </Link>
       </div>
       <div className={'atori-nav-menu'}>{options}</div>
       <div className={'atori-nav-extra'}>
