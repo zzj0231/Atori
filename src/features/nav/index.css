@@ -2,12 +2,44 @@
   display: flex;
   align-items: center;
   height: var(--atori-nav-height);
-  padding: 4.8rem;
+  padding: 3.2rem;
   gap: 2.4rem;
 }
 
 .atori-nav-favicon {
   flex: 1;
+  font-size: 1.6rem;
+}
+
+.atori-nav-favicon path {
+  stroke-dashoffset: 1px;
+  stroke-dasharray: 350px 0;
+  animation: grow 10s ease forwards infinite;
+  transform-origin: center;
+  stroke: #a26769;
+  animation-delay: 0s;
+}
+
+@keyframes grow {
+  0% {
+    stroke-dashoffset: 1px;
+    stroke-dasharray: 0 350px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    stroke-dasharray: 350px 0;
+  }
+  /* Moving back */
+  85% {
+    stroke-dasharray: 350px 0;
+  }
+  95%,
+  to {
+    stroke-dasharray: 0 350px;
+  }
 }
 
 .atori-nav-menu {

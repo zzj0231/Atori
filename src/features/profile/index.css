@@ -2,8 +2,9 @@
 }
 
 .atori-home-content {
-  max-width: 65rem;
-  margin: auto;
+  /* width: 1000px; */
+  max-width: 60rem;
+  margin: 0 auto;
 }
 
 .atori-home-content > h1 {
