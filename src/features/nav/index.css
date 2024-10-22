@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: var(--atori-nav-height);
-  padding: 4.8rem;
+  padding: 3.2rem;
   gap: 2.4rem;
 }
 

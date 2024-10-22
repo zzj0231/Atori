@@ -9,11 +9,11 @@ export const HomeIcon = () => {
       >
         <g
           id="svgGroup"
-          stroke-linecap="round"
-          fill-rule="evenodd"
-          font-size="9pt"
+          strokeLinecap="round"
+          fillRule="evenodd"
+          fontSize="9pt"
           stroke="#a26769"
-          stroke-width="0.25mm"
+          strokeWidth="0.25mm"
           fill="#a26769"
         >
           <path

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import './globals.css'
 import { NavHeader } from '@/features/nav'
+
+import './globals.css'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -31,7 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavHeader />
-        {children}
+        <main className="p-xl overflow-x-hidden">{children}</main>
       </body>
     </html>
   )

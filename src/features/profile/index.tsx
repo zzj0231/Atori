@@ -7,7 +7,7 @@ export const PersonProfile = () => {
       <div className={`${homeClPre}-content`}>
         <h1>Tomos Zhao</h1>
 
-        <article>
+        <article className="px-sm">
           <div className="side-item">
             <p>Hey, I am Tomos Zhao.</p>
           </div>
