@@ -139,3 +139,15 @@ textarea::placeholder {
     stroke-dasharray: unset !important;
   }
 }
+
+@layer components {
+  .pg-h1 {
+    margin-block: 2rem;
+    font-weight: bold;
+    font-size: 3.5rem;
+  }
+  .prose {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+}

@@ -89,6 +89,8 @@
   --atori-c-text-3: var(--atori-c-text-light-3);
   --atori-c-text-4: var(--atori-c-text-light-4);
 
+  --atori-c-border-1: var(--atori-c-rubyred-soft);
+
   --atori-c-text-opac-1ight: 0.6;
   --atori-c-text-opac-full: 1;
 }
@@ -106,6 +108,8 @@
   --atori-c-text-2: var(--atori-c-text-dark-2);
   --atori-c-text-3: var(--atori-c-text-dark-3);
   --atori-c-text-4: var(--atori-c-text-dark-4);
+
+  --atori-c-border-1: var(--atori-c-rubyred-dark);
 }
 
 /**

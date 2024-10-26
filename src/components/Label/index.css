@@ -1,0 +1,22 @@
+.atori-review-label {
+  cursor: pointer;
+  opacity: var(--atori-c-text-opac-1ight);
+  border: 1px solid var(--atori-c-border-1);
+  border-radius: 20px;
+  padding-inline: 0.4rem;
+  font-size: 1.4rem;
+}
+
+.atori-review-label {
+  align-items: center;
+  user-select: none;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: var(--atori-c-text-opac-full);
+  }
+}
+
+.atori-review-icon {
+  text-align: center;
+  display: inline;
+}
