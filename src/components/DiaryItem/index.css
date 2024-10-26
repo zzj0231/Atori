@@ -1,0 +1,26 @@
+.atori-review-diary {
+  margin-top: 1.2rem;
+  padding-block: 0.8rem;
+  border-top: 1px solid var(--atori-c-border-2);
+  gap: 1.2rem;
+}
+
+.atori-review-cover {
+  width: 16rem;
+  height: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+html.dark .atori-review-cover {
+  opacity: var(--atori-c-text-opac-1ight);
+}
+
+.atori-review-content {
+  flex: 1;
+}
+
+.atori-review-name {
+  font-size: 1.7rem;
+  font-weight: 600;
+}

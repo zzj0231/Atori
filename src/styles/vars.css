@@ -37,6 +37,7 @@
   --atori-c-rubyred-dark: #96616b;
   --atori-c-rubyred-soft: #ca9796;
   --atori-c-rubyred-lighter: #efe5dc;
+  --atori-c-rubyred-gray: #d6ccc2;
 
   --atori-c-text-light-1: var(--atori-c-rubyred);
   --atori-c-text-light-2: rgba(60, 60, 60, 0.7);
@@ -90,6 +91,7 @@
   --atori-c-text-4: var(--atori-c-text-light-4);
 
   --atori-c-border-1: var(--atori-c-rubyred-soft);
+  --atori-c-border-2: var(--atori-c-rubyred-gray);
 
   --atori-c-text-opac-1ight: 0.6;
   --atori-c-text-opac-full: 1;
@@ -110,6 +112,7 @@
   --atori-c-text-4: var(--atori-c-text-dark-4);
 
   --atori-c-border-1: var(--atori-c-rubyred-dark);
+  --atori-c-border-2: var(--atori-c-rubyred-dark);
 }
 
 /**

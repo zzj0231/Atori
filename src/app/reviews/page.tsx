@@ -1,4 +1,5 @@
 import { reviewClPre } from '@/const/style'
+import { DiaryWall } from '@/features/diary-wall'
 import { LabelWall } from '@/features/label-wall'
 
 export default function Reviews() {
@@ -7,6 +8,7 @@ export default function Reviews() {
       <h1 className="pg-h1">Reviews</h1>
       <article className="px-sm">
         <LabelWall />
+        <DiaryWall />
       </article>
     </div>
   )

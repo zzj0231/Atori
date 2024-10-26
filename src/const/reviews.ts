@@ -1,12 +1,25 @@
+import frierenUrl from '../../public/diary/frieren.png'
+
+export enum RE_LABEL {
+  'notion' = '小说',
+  'biography' = '传记',
+  'history' = '历史',
+  'economy' = '经济',
+  'human' = '人文',
+  'science' = '科学',
+  'movie' = '电影',
+  'animate' = '动漫',
+}
+
 export const RE_THEME_TYPE = [
-  { key: 'notion', label: '小说' },
-  { key: 'biography', label: '传记' },
-  { key: 'history', label: '历史' },
-  { key: 'economy', label: '经济' },
-  { key: 'human', label: '人文' },
-  { key: 'science', label: '科学' },
-  { key: 'movie', label: '电影' },
-  { key: 'animate', label: '动漫' },
+  { key: 'notion', label: RE_LABEL.notion },
+  { key: 'biography', label: RE_LABEL.biography },
+  { key: 'history', label: RE_LABEL.history },
+  { key: 'economy', label: RE_LABEL.economy },
+  { key: 'human', label: RE_LABEL.human },
+  { key: 'science', label: RE_LABEL.science },
+  { key: 'movie', label: RE_LABEL.movie },
+  { key: 'animate', label: RE_LABEL.animate },
 ]
 
 export const RE_CUSTOME_TYPE = [
@@ -17,4 +30,16 @@ export const RE_CUSTOME_TYPE = [
   { key: 'fiction', label: '科幻' },
   { key: 'fantasy', label: '奇幻' },
   { key: 'funny', label: '搞笑' },
+]
+
+export const RE_BLUM = [
+  {
+    name: '葬送的芙莉莲',
+    author: '日本 / 山田钟人',
+    cover: frierenUrl,
+    note: '',
+    labels: [RE_LABEL.animate],
+    key: 'frieren',
+    stars: 5,
+  },
 ]
