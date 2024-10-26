@@ -1,11 +1,9 @@
 'use client'
 
 import { useCallback, useEffect, useLayoutEffect, useMemo } from 'react'
-import Image from 'next/image'
 import { NAV_MENU } from '@/const/nav'
 import Link from 'next/link'
 import { setTheme, updateAppearance } from '@/utils/theme'
-import AtoriSvg from '../../../public/atori.svg'
 // import Image from 'next/image'
 
 import './index.css'
