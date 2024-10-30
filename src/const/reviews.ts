@@ -46,7 +46,7 @@ export const RE_BLUM = [
     author: '英国 / 威廉·萨默塞特·毛姆',
     cover: humanBondage,
     note: '',
-    labels: [RE_LABEL.animate],
+    labels: [RE_LABEL.notion],
     key: 'frieren',
     stars: 5,
   },

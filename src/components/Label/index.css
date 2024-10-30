@@ -10,10 +10,16 @@
 .atori-review-label {
   align-items: center;
   user-select: none;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
   &:hover {
     opacity: var(--atori-c-text-opac-full);
   }
+}
+
+.atori-review-label.active {
+  transition: all 0.2s ease;
+  font-weight: bold;
+  opacity: 1;
 }
 
 .atori-review-icon {
