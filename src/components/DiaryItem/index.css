@@ -1,0 +1,92 @@
+.atori-review-diary {
+  margin-top: 1.2rem;
+  padding-block: 0.8rem;
+  border-top: 1px solid var(--atori-c-border-2);
+  gap: 2.2rem;
+}
+
+.atori-review-cover {
+  width: 13rem;
+  height: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  opacity: 0.8;
+  background-color: var(--atori-c-bg-soft);
+  position: relative;
+  align-self: self-start;
+
+  &::before {
+    content: '封面';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-weight: 600;
+    color: var(--atori-c-text-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+  }
+}
+
+.atori-review-cover img {
+  position: relative;
+}
+
+html.dark .atori-review-cover {
+  opacity: var(--atori-c-text-opac-1ight);
+}
+
+.atori-review-content {
+  flex: 1;
+}
+
+.atori-review-name {
+  font-size: 1.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.atori-review-name .read-labels {
+  margin-left: 0.9rem;
+  font-size: 1.3rem;
+  font-weight: normal;
+  display: flex;
+  gap: 0.6rem;
+}
+.read-label-item {
+  background-color: var(--atori-c-bg-deep);
+  border-radius: 5px;
+  padding-inline: 0.4rem;
+  user-select: none;
+}
+
+.atori-review-notes {
+  min-height: 12rem;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  padding-top: 0.5rem;
+  padding-bottom: 0.2rem;
+  /* transition: all ease-in 0.5s; */
+  /* transform: translate(0, 10px); */
+}
+
+.atori-review-infos {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.atori-review-stars {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.star-item {
+  color: var(--atori-c-star-1);
+  opacity: 0.8;
+}
+.atori-review-date {
+  font-size: 1.3rem;
+  opacity: 0.5;
+}

@@ -1,8 +1,19 @@
 .atori-home-wraper {
 }
 
+.profile-title {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: text ease-out 1s forwards;
+  animation-delay: 0.1s;
+}
+
+.profile-content {
+  opacity: 0;
+  animation: op-move ease-in 1.5s forwards;
+  animation-delay: 0.3s;
+}
+
 .atori-home-content {
-  /* width: 1000px; */
   max-width: 60rem;
   margin: 0 auto;
 }
@@ -26,4 +37,24 @@
   margin-block: 2rem;
   font-size: 1.7rem;
   opacity: 0.7;
+}
+
+@keyframes text {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes op-move {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
