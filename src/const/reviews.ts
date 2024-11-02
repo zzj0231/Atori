@@ -1,4 +1,4 @@
-import frierenUrl from '../../public/diary/frieren.png'
+import frierenUrl from '../../public/diary/frieren.webp'
 import humanBondage from '../../public/diary/human-bondage.jpg'
 import { DiaryNotes } from './notes'
 
