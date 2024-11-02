@@ -3,8 +3,8 @@
   opacity: var(--atori-c-text-opac-1ight);
   border: 1px solid var(--atori-c-border-1);
   border-radius: 20px;
-  padding-inline: 0.4rem;
-  font-size: 1.4rem;
+  padding-inline: 0.6rem;
+  font-size: 1.3rem;
 }
 
 .atori-review-label {

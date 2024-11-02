@@ -1,0 +1,24 @@
+.atori-text-drop {
+  position: relative;
+}
+
+.atori-text-drop-content {
+  display: inline-block;
+  transition: all ease-in 0.5s;
+}
+
+.atori-text-drop-icon {
+  display: inline-block;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 2rem;
+
+  font-size: 1.3rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all ease-in 0.3s;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

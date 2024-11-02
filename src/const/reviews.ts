@@ -1,5 +1,6 @@
 import frierenUrl from '../../public/diary/frieren.png'
 import humanBondage from '../../public/diary/human-bondage.jpg'
+import { DiaryNotes } from './notes'
 
 export enum RE_LABEL {
   'notion' = '小说',
@@ -45,9 +46,9 @@ export const RE_BLUM = [
     name: '人性的枷锁',
     author: '英国 / 威廉·萨默塞特·毛姆',
     cover: humanBondage,
-    note: '',
+    note: DiaryNotes.homeBondage,
     labels: [RE_LABEL.notion],
-    key: 'frieren',
+    key: 'homeBondage',
     stars: 4.5,
     date: 'Nov 2, 24',
   },
@@ -55,7 +56,7 @@ export const RE_BLUM = [
     name: '葬送的芙莉莲',
     author: '日本 / 山田钟人',
     cover: frierenUrl,
-    note: '',
+    note: DiaryNotes.frieren,
     labels: [RE_LABEL.animate, RE_LABEL.soul],
     key: 'frieren',
     stars: 5,

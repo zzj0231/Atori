@@ -6,6 +6,7 @@ import { splitDecimal } from '@/utils/common'
 import { StarIcon } from '@/icon/star'
 import { HalfStarIcon } from '@/icon/halfStar'
 import { BlankStarIcon } from '@/icon/blankStar'
+import { TextDrop } from '../TextDrop'
 
 interface DiaryProps {
   name: string
@@ -18,7 +19,7 @@ interface DiaryProps {
 }
 
 export const DiaryItem = (props: DiaryProps) => {
-  const { name, cover, author, labels, stars = 3, date = '' } = props
+  const { name, cover, author, labels, stars = 3, date = '', note } = props
 
   const labelItem = useMemo(() => {
     if (labels?.length < 1) {
@@ -64,18 +65,20 @@ export const DiaryItem = (props: DiaryProps) => {
   return (
     <div className={`${reviewClPre}-diary flex`}>
       <div className={`${reviewClPre}-cover`}>
-        <Image src={cover} alt="cover" />
+        <Image src={cover} alt="cover" placeholder="blur" quality={100} />
       </div>
       <div className={`${reviewClPre}-content`}>
         <div className={`${reviewClPre}-name`}>
           <h1 className="opacity-80">{name}</h1>
           <div className="read-labels">{labelItem}</div>
         </div>
-        <p className="text-xl opacity-70">{author}</p>
-        <p className={`${reviewClPre}-notes`}></p>
+        <p className="text-xl opacity-60">{author}</p>
+        <div className={`${reviewClPre}-notes`}>
+          <TextDrop note={note} />
+        </div>
         <div className={`${reviewClPre}-infos`}>
-          <div className={`${reviewClPre}-stars`}>{startItems}</div>
           <div className={`${reviewClPre}-date`}>{date}</div>
+          {/* <div className={`${reviewClPre}-stars`}>{startItems}</div> */}
         </div>
       </div>
     </div>

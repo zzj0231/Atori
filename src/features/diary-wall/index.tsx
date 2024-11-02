@@ -2,6 +2,8 @@ import { DiaryItem } from '@/components/DiaryItem'
 import { RE_BLUM } from '@/const/reviews'
 import { useMemo } from 'react'
 
+import './index.css'
+
 interface DiaryWallProps {
   activeLabels?: string[]
 }
@@ -28,5 +30,5 @@ export const DiaryWall = (props: DiaryWallProps) => {
     })
   }, [activeLabels])
 
-  return <div>{diaryItems}</div>
+  return <div className="diary-wall">{diaryItems}</div>
 }

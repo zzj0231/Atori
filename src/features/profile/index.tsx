@@ -5,9 +5,9 @@ export const PersonProfile = () => {
   return (
     <div className={`${homeClPre}-wraper`}>
       <div className={`${homeClPre}-content`}>
-        <h1>Tomos Zhao</h1>
+        <h1 className="profile-title">Tomos Zhao</h1>
 
-        <article className="px-sm">
+        <article className="px-sm profile-content">
           <div className="side-item">
             <p>Hey, I am Tomos Zhao.</p>
           </div>
