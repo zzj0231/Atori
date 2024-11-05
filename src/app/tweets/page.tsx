@@ -10,7 +10,14 @@ export default function Tweets() {
       return []
     }
     return TE_RECORD.map(item => {
-      return <TweetCard text={item?.note} date={item.date} key={item.id} />
+      return (
+        <TweetCard
+          text={item?.note}
+          date={item.date}
+          key={item.id}
+          img={item?.img}
+        />
+      )
     })
   }, [])
   return (

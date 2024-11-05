@@ -64,7 +64,7 @@ export const DiaryItem = (props: DiaryProps) => {
 
   return (
     <div className={`${reviewClPre}-diary flex`}>
-      <div className={`${reviewClPre}-cover`}>
+      <div className={`${reviewClPre}-cover dark:opacity-70`}>
         <Image src={cover} alt="cover" placeholder="blur" quality={100} />
       </div>
       <div className={`${reviewClPre}-content`}>

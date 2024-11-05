@@ -34,10 +34,6 @@
   position: relative;
 }
 
-html.dark .atori-review-cover {
-  opacity: var(--atori-c-text-opac-1ight);
-}
-
 .atori-review-content {
   flex: 1;
 }
