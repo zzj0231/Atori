@@ -7,13 +7,14 @@
 
 .atori-review-cover {
   width: 13rem;
-  height: auto;
+  height: 186px;
   flex-grow: 0;
   flex-shrink: 0;
   opacity: 0.8;
   background-color: var(--atori-c-bg-soft);
   position: relative;
   align-self: self-start;
+  overflow: hidden;
 
   &::before {
     content: '封面';
@@ -33,16 +34,12 @@
   position: relative;
 }
 
-html.dark .atori-review-cover {
-  opacity: var(--atori-c-text-opac-1ight);
-}
-
 .atori-review-content {
   flex: 1;
 }
 
 .atori-review-name {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -50,10 +47,11 @@ html.dark .atori-review-cover {
 
 .atori-review-name .read-labels {
   margin-left: 0.9rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: normal;
   display: flex;
   gap: 0.6rem;
+  margin-bottom: 2px;
 }
 .read-label-item {
   background-color: var(--atori-c-bg-deep);

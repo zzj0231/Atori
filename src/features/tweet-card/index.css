@@ -1,0 +1,15 @@
+.atori-tweet-card {
+  border: 1px solid transparent;
+  border-left: 3px solid var(--atori-c-bg-deep);
+  margin-bottom: 2.4rem;
+}
+
+.atori-tweet-card pre {
+  font-size: 1.5rem;
+}
+
+.atori-tweet-card-img-item {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}

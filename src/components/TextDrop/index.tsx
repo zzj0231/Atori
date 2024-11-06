@@ -13,7 +13,7 @@ interface TextDropProps {
 }
 
 export const TextDrop = (props: TextDropProps) => {
-  const { height = 80, note = '', maxWordNum = 120 } = props
+  const { height = 90, note = '', maxWordNum = 120 } = props
   const [toggle, setToggle] = useState(false)
 
   const textDropStyle: CSSProperties = useMemo(() => {
@@ -57,7 +57,7 @@ export const TextDrop = (props: TextDropProps) => {
         className={`${siteClassPrefix}-text-drop-content`}
         style={{ ...textDropStyle }}
       >
-        <p className="break-words ">{content}</p>
+        <p className="break-words">{content}</p>
       </div>
       <div className={`${siteClassPrefix}-text-drop-icon`}>{toggleOperate}</div>
     </div>

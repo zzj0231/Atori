@@ -1,4 +1,4 @@
-import frierenUrl from '../../public/diary/frieren.png'
+import frierenUrl from '../../public/diary/frieren.webp'
 import humanBondage from '../../public/diary/human-bondage.jpg'
 import { DiaryNotes } from './notes'
 
@@ -50,7 +50,7 @@ export const RE_BLUM = [
     labels: [RE_LABEL.notion],
     key: 'homeBondage',
     stars: 4.5,
-    date: 'Nov 2, 24',
+    date: 'Nov 2, 2024',
   },
   {
     name: '葬送的芙莉莲',
@@ -60,6 +60,6 @@ export const RE_BLUM = [
     labels: [RE_LABEL.animate, RE_LABEL.soul],
     key: 'frieren',
     stars: 5,
-    date: 'Oct 30, 24',
+    date: 'Oct 30, 2024',
   },
 ]
