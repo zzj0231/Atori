@@ -27,7 +27,7 @@ export const DiaryItem = (props: DiaryProps) => {
     }
     return labels?.map(item => {
       return (
-        <span className={'read-label-item'}>
+        <span className={'read-label-item'} key={item}>
           <span className="opacity-80">{item}</span>
         </span>
       )
@@ -42,22 +42,22 @@ export const DiaryItem = (props: DiaryProps) => {
     const { int, deci } = split
     const blankNum = 5 - int - (deci ? 1 : 0)
     // prettier-ignore
-    const fullStars = Array(int).fill(1).map((item) => {
-      return <div className='star-item'>
+    const fullStars = Array(int).fill(1).map((item,index) => {
+      return <div className='star-item' key={index}>
         <StarIcon/>
       </div>
     })
     // prettier-ignore
-    const halStars = deci?[1].map( item => {
+    const halStars = deci?[1].map( (item,index) => {
       return (
-        <div className="star-item">
+        <div className="star-item" key={index} >
           <HalfStarIcon/>
         </div>
       )
     }):[];
     // prettier-ignore
-    const blankStars = blankNum > 0? Array(blankNum).fill(1).map((item) => {
-      return <div className="star-item"><BlankStarIcon/></div>
+    const blankStars = blankNum > 0? Array(blankNum).fill(1).map((item,index) => {
+      return <div className="star-item" key={index}><BlankStarIcon/></div>
     }) :[]
     return [...fullStars, ...halStars, ...blankStars]
   }, [stars])

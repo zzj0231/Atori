@@ -25,7 +25,7 @@ export const TextDrop = (props: TextDropProps) => {
           height: height,
           overflow: 'hidden',
         }
-  }, [toggle])
+  }, [toggle, height])
 
   const toggleOperate = useMemo(() => {
     if (note?.length > maxWordNum) {
@@ -41,7 +41,7 @@ export const TextDrop = (props: TextDropProps) => {
     } else {
       return <></>
     }
-  }, [toggle, maxWordNum])
+  }, [toggle, maxWordNum, note])
 
   const content = useMemo(() => {
     if (note?.length > maxWordNum) {
@@ -49,7 +49,7 @@ export const TextDrop = (props: TextDropProps) => {
     } else {
       return note
     }
-  }, [maxWordNum, toggle])
+  }, [maxWordNum, toggle, note])
 
   return (
     <div className={`${siteClassPrefix}-text-drop`}>
