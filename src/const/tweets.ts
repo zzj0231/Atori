@@ -1,12 +1,12 @@
 export const TE_RECORD = [
   {
-    note: '“The magic you"re looking for is in the work you"re avoiding',
+    note: "The magic you're looking for is in the work you're avoiding.",
     date: 'Nov 10 09:07, 2024',
     img: '',
     id: '2024-11-10-09-08',
   },
   {
-    note: '“简单而真挚的关怀之举，会让被施于的人感到格外温暖” AI应该具备类似的力量，就像灯泡的发明一样，作为我们的工具给生活带来的是光和便利，这才是站在人类自身的视角思考的结果。而并非是站在资本的视角聚焦于硅基生命、破坏性替代，这只会让少部分人收益。',
+    note: '“简单而真挚的关怀之举，会让被施于的人感到格外温暖” AI应该具备类似的力量，就像灯泡的发明一样，作为我们的工具给生活带来的是光和便利，这才是站在人类自身的视角思考的结果。而并非是站在资本聚焦于硅基生命、破坏性替代，这只会让少部分人收益。',
     date: 'Nov 06 23:17, 2024',
     img: '',
     id: '2024-11-06-23-17',
