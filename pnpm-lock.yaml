@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  atori:
+    specifier: 'link:'
+    version: 'link:'
   next:
     specifier: 14.2.13
     version: registry.npmmirror.com/next@14.2.13(react-dom@18.3.1)(react@18.3.1)
