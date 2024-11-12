@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { LabelIcon } from '@/icon/label'
 import { useRef, useState } from 'react'
 import { reviewClPre } from '@/const/style'
