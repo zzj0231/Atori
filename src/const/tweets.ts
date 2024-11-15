@@ -1,5 +1,11 @@
 export const TE_RECORD = [
   {
+    note: '正确的反传统的想法——大多数人不愿意做的事情',
+    date: 'Nov 10 09:07, 2024',
+    img: '',
+    id: '2024-11-15-09-47',
+  },
+  {
     note: "The magic you're looking for is in the work you're avoiding.",
     date: 'Nov 10 09:07, 2024',
     img: '',
