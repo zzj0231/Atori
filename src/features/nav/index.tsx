@@ -49,7 +49,10 @@ export const NavHeader = () => {
   }, [])
 
   useLayoutEffect(() => {
-    autoUpdateRootFontSize()
+    const clear = autoUpdateRootFontSize()
+    return () => {
+      clear?.()
+    }
   }, [])
 
   return (
