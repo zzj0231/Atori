@@ -7,6 +7,17 @@
   transition: all ease-in 0.5s;
 }
 
+@media (max-width: 640px) {
+  .atori-text-drop-content {
+    height: 12rem !important;
+  }
+}
+@media (max-width: 540px) {
+  .atori-text-drop-content {
+    height: 15rem !important;
+  }
+}
+
 .atori-text-drop-icon {
   display: inline-block;
   position: absolute;
