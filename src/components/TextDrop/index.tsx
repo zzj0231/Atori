@@ -7,13 +7,13 @@ import { DropTextIcon } from '@/icon/dropText'
 import { DropUpTextIcon } from '@/icon/dropUpText'
 
 interface TextDropProps {
-  height?: number
+  height?: number | string
   note?: string
   maxWordNum?: number
 }
 
 export const TextDrop = (props: TextDropProps) => {
-  const { height = 90, note = '', maxWordNum = 120 } = props
+  const { height = '10rem', note = '', maxWordNum = 120 } = props
   const [toggle, setToggle] = useState(false)
 
   const textDropStyle: CSSProperties = useMemo(() => {
