@@ -21,12 +21,20 @@
   }
 } */
 
-p {
-  margin: 0;
+@media screen and (max-width: 640px) {
+  :root {
+    font-size: 7.5px;
+  }
 }
 
-html {
-  font-size: 10px;
+@media screen and (min-width: 640px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+p {
+  margin: 0;
 }
 
 html.dark {

@@ -17,5 +17,10 @@ export const autoUpdateRootFontSize = () => {
     }
   }
   window.addEventListener(resizeEvt, recalc, false)
-  document.addEventListener('DOMContentLoaded', recalc, false)
+  window.addEventListener('DOMContentLoaded', recalc, false)
+
+  return () => {
+    window.removeEventListener(resizeEvt, recalc)
+    window.removeEventListener('DOMContentLoaded', recalc)
+  }
 }
