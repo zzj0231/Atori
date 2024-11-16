@@ -37,6 +37,9 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^9.1.0
     version: registry.npmmirror.com/eslint-config-prettier@9.1.0(eslint@8.57.1)
+  husky:
+    specifier: ^9.1.6
+    version: 9.1.6
   lint-staged:
     specifier: ^15.2.10
     version: registry.npmmirror.com/lint-staged@15.2.10
@@ -220,6 +223,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /husky@9.1.6:
+    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==, tarball: https://registry.npmmirror.com/husky/-/husky-9.1.6.tgz}
+    engines: {node: '>=18'}
+    hasBin: true
+    dev: true
 
   /is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==, tarball: https://registry.npmmirror.com/is-extglob/-/is-extglob-2.1.1.tgz}
