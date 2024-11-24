@@ -19,6 +19,9 @@ dependencies:
     version: registry.npmmirror.com/react-dom@18.3.1(react@18.3.1)
 
 devDependencies:
+  '@neondatabase/serverless':
+    specifier: ^0.9.3
+    version: 0.9.3
   '@types/node':
     specifier: ^20
     version: registry.npmmirror.com/@types/node@20.16.6
@@ -58,11 +61,10 @@ devDependencies:
 
 packages:
 
-  /@neondatabase/serverless@0.9.5:
-    resolution: {integrity: sha512-siFas6gItqv6wD/pZnvdu34wEqgG3nSE6zWZdq5j2DEsa+VvX8i/5HXJOo06qrw5axPXn+lGCxeR+NLaSPIXug==, tarball: https://registry.npmmirror.com/@neondatabase/serverless/-/serverless-0.9.5.tgz}
+  /@neondatabase/serverless@0.9.3:
+    resolution: {integrity: sha512-6ZBK8asl2Z3+ADEaELvbaVVGVlmY1oAzkxxZfpmXPKFuJhbDN+5fU3zYBamsahS/Ch1zE+CVWB3R+8QEI2LMSw==, tarball: https://registry.npmmirror.com/@neondatabase/serverless/-/serverless-0.9.3.tgz}
     dependencies:
       '@types/pg': 8.11.6
-    dev: false
 
   /@next/swc-darwin-arm64@14.2.13:
     resolution: {integrity: sha512-IkAmQEa2Htq+wHACBxOsslt+jMoV3msvxCn0WFSfJSkv/scy+i/EukBKNad36grRxywaXUYJc9mxEGkeIs8Bzg==, tarball: https://registry.npmmirror.com/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.2.13.tgz}
@@ -160,7 +162,6 @@ packages:
     resolution: {integrity: sha512-T7PpxM/6yeDE+AdlVysT62BX6/bECZOmQAgiFg5NoBd5MQheZ3tzal7f1wvzfiEcmrcJNRi2zRr2nY2zF+0uqw==, tarball: https://registry.npmmirror.com/@types/node/-/node-20.16.6.tgz}
     dependencies:
       undici-types: 6.19.8
-    dev: false
 
   /@types/pg@8.11.6:
     resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==, tarball: https://registry.npmmirror.com/@types/pg/-/pg-8.11.6.tgz}
@@ -168,13 +169,12 @@ packages:
       '@types/node': 20.16.6
       pg-protocol: 1.7.0
       pg-types: 4.0.2
-    dev: false
 
   /@vercel/postgres@0.10.0:
     resolution: {integrity: sha512-fSD23DxGND40IzSkXjcFcxr53t3Tiym59Is0jSYIFpG4/0f0KO9SGtcp1sXiebvPaGe7N/tU05cH4yt2S6/IPg==, tarball: https://registry.npmmirror.com/@vercel/postgres/-/postgres-0.10.0.tgz}
     engines: {node: '>=18.14'}
     dependencies:
-      '@neondatabase/serverless': 0.9.5
+      '@neondatabase/serverless': 0.9.3
       bufferutil: 4.0.8
       ws: 8.18.0(bufferutil@4.0.8)
     transitivePeerDependencies:
@@ -259,21 +259,17 @@ packages:
 
   /obuf@1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==, tarball: https://registry.npmmirror.com/obuf/-/obuf-1.1.2.tgz}
-    dev: false
 
   /pg-int8@1.0.1:
     resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==, tarball: https://registry.npmmirror.com/pg-int8/-/pg-int8-1.0.1.tgz}
     engines: {node: '>=4.0.0'}
-    dev: false
 
   /pg-numeric@1.0.2:
     resolution: {integrity: sha512-BM/Thnrw5jm2kKLE5uJkXqqExRUY/toLHda65XgFTBTFYZyopbKjBe29Ii3RbkvlsMoFwD+tHeGaCjjv0gHlyw==, tarball: https://registry.npmmirror.com/pg-numeric/-/pg-numeric-1.0.2.tgz}
     engines: {node: '>=4'}
-    dev: false
 
   /pg-protocol@1.7.0:
     resolution: {integrity: sha512-hTK/mE36i8fDDhgDFjy6xNOG+LCorxLG3WO17tku+ij6sVHXh1jQUJ8hYAnRhNla4QVD2H8er/FOjc/+EgC6yQ==, tarball: https://registry.npmmirror.com/pg-protocol/-/pg-protocol-1.7.0.tgz}
-    dev: false
 
   /pg-types@4.0.2:
     resolution: {integrity: sha512-cRL3JpS3lKMGsKaWndugWQoLOCoP+Cic8oseVcbr0qhPzYD5DWXK+RZ9LY9wxRf7RQia4SCwQlXk0q6FCPrVng==, tarball: https://registry.npmmirror.com/pg-types/-/pg-types-4.0.2.tgz}
@@ -286,33 +282,27 @@ packages:
       postgres-date: 2.1.0
       postgres-interval: 3.0.0
       postgres-range: 1.1.4
-    dev: false
 
   /postgres-array@3.0.2:
     resolution: {integrity: sha512-6faShkdFugNQCLwucjPcY5ARoW1SlbnrZjmGl0IrrqewpvxvhSLHimCVzqeuULCbG0fQv7Dtk1yDbG3xv7Veog==, tarball: https://registry.npmmirror.com/postgres-array/-/postgres-array-3.0.2.tgz}
     engines: {node: '>=12'}
-    dev: false
 
   /postgres-bytea@3.0.0:
     resolution: {integrity: sha512-CNd4jim9RFPkObHSjVHlVrxoVQXz7quwNFpz7RY1okNNme49+sVyiTvTRobiLV548Hx/hb1BG+iE7h9493WzFw==, tarball: https://registry.npmmirror.com/postgres-bytea/-/postgres-bytea-3.0.0.tgz}
     engines: {node: '>= 6'}
     dependencies:
       obuf: 1.1.2
-    dev: false
 
   /postgres-date@2.1.0:
     resolution: {integrity: sha512-K7Juri8gtgXVcDfZttFKVmhglp7epKb1K4pgrkLxehjqkrgPhfG6OO8LHLkfaqkbpjNRnra018XwAr1yQFWGcA==, tarball: https://registry.npmmirror.com/postgres-date/-/postgres-date-2.1.0.tgz}
     engines: {node: '>=12'}
-    dev: false
 
   /postgres-interval@3.0.0:
     resolution: {integrity: sha512-BSNDnbyZCXSxgA+1f5UU2GmwhoI0aU5yMxRGO8CdFEcY2BQF9xm/7MqKnYoM1nJDk8nONNWDk9WeSmePFhQdlw==, tarball: https://registry.npmmirror.com/postgres-interval/-/postgres-interval-3.0.0.tgz}
     engines: {node: '>=12'}
-    dev: false
 
   /postgres-range@1.1.4:
     resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==, tarball: https://registry.npmmirror.com/postgres-range/-/postgres-range-1.1.4.tgz}
-    dev: false
 
   /string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==, tarball: https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz}
@@ -332,7 +322,6 @@ packages:
 
   /undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==, tarball: https://registry.npmmirror.com/undici-types/-/undici-types-6.19.8.tgz}
-    dev: false
 
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==, tarball: https://registry.npmmirror.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz}
