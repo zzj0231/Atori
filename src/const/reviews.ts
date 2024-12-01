@@ -51,6 +51,7 @@ export const RE_BLUM = [
     key: 'homeBondage',
     stars: 4.5,
     date: 'Nov 2, 2024',
+    id: '001',
   },
   {
     name: '葬送的芙莉莲',
@@ -61,5 +62,6 @@ export const RE_BLUM = [
     key: 'frieren',
     stars: 5,
     date: 'Oct 30, 2024',
+    id: '002',
   },
 ]
