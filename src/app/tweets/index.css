@@ -1,7 +1,27 @@
+.atori-tweet-wrapper {
+  position: relative;
+}
+
 .atori-tweet-cards {
   opacity: 0;
   animation: op-move ease-in 1s forwards;
   animation-delay: 0.1s;
+}
+
+.atori-tweet-edit {
+  position: absolute;
+  font-size: 3rem;
+  top: 0.9rem;
+  right: 2px;
+  padding: 2px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
+  opacity: var(--atori-c-text-opac-1ight);
+  &:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+    border-bottom: 2px solid var(--atori-c-border-1);
+  }
 }
 
 @keyframes op-move {

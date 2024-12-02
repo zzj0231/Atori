@@ -39,6 +39,9 @@
   --atori-c-rubyred-soft: #ca9796;
   --atori-c-rubyred-lighter: #efe5dc;
   --atori-c-rubyred-gray: #d6ccc2;
+  --atori-c-gray-neutral: #968f8f;
+  --atori-c-gray-neutral-variant: #9a8e8e;
+  --atori-c-yellow-tertiary: #a28e73;
 
   --atori-c-text-light-1: var(--atori-c-rubyred);
   --atori-c-text-light-2: rgba(60, 60, 60, 0.7);
@@ -83,9 +86,11 @@
   --atori-c-bg-mute: var(--atori-c-white-mute);
   --atori-c-bg-alt: var(--atori-c-white-soft);
   --atori-c-bg-deep: var(--atori-c-rubyred-gray);
+  --atori-c-bg-neutral: var(--atori-c-gray-neutral);
 
   --atori-c-divider: var(--atori-c-divider-light-1);
   --atori-c-divider-light: var(--atori-c-divider-light-2);
+  --atori-c-divider-neutral: var(--atori-c-gray-neutral-variant);
 
   --atori-c-text-1: var(--atori-c-text-light-1);
   --atori-c-text-2: var(--atori-c-text-light-2);
