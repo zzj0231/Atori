@@ -1,0 +1,125 @@
+.atori-modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.atori-modal-content {
+  position: relative;
+  z-index: 1001;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10rem;
+  background: var(--atori-c-bg-neutral);
+  background-clip: padding-box;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+  animation: spread 0.3s;
+}
+
+.centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.atori-modal-header {
+  padding: 1.6rem 2.4rem;
+  color: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid #e8e8e8;
+  border-radius: 4px 4px 0 0;
+}
+
+.atori-modal-title {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  word-wrap: break-word;
+}
+
+.atori-mode-closeIcon {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 5px;
+  height: 2.2rem;
+  color: var(--atori-c-text-2);
+  font-size: 1.4rem;
+
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
+  border-radius: 4px;
+  transform: translateY(calc(50% - 0.6rem));
+  &:hover {
+    background-color: var(--atori-c-bg-soft);
+  }
+}
+
+.atori-modal-body {
+  padding: 1.6rem 2.4rem;
+}
+
+.atori-modal-footer {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  text-align: right;
+  background: transparent;
+  border-top: 1px solid #e8e8e8;
+  border-radius: 0 0 4px 4px;
+}
+
+.atori-modal-footer .btn-area .btn-cancel,
+.btn-ok {
+  cursor: pointer;
+  padding: 5px;
+  user-select: none;
+  transition: transform 0.1s ease-in;
+  &:hover {
+    background-color: var(--atori-c-bg-neutral);
+    border-radius: 4px;
+  }
+}
+
+.btn-area .btn-cancel {
+  color: var(--atori-c-text-2);
+}
+
+.btn-area .btn-ok {
+  color: var(--atori-c-text-1);
+}
+
+.atori-modal-mask {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spread {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

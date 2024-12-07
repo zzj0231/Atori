@@ -1,0 +1,11 @@
+.tweet-edit-icon {
+  font-size: 3rem;
+  transition: transform 0.1s ease-in;
+  opacity: var(--atori-c-text-opac-1ight);
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+    border-bottom: 2px solid var(--atori-c-border-1);
+  }
+}

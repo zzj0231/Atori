@@ -1,8 +1,9 @@
 import { tweetClPre } from '@/const/style'
 import { TE_RECORD } from '@/const/tweets'
 import { TweetCard } from '@/features/tweet-card'
-import { WeatherIcon } from '@/icon/weather'
+import { TweetEdit } from '@/features/tweet-edit'
 import { useMemo } from 'react'
+
 import './index.css'
 
 export default function Tweets() {
@@ -28,7 +29,7 @@ export default function Tweets() {
         <div className={`${tweetClPre}-cards`}>{cardItems}</div>
       </article>
       <div className={`${tweetClPre}-edit`}>
-        <WeatherIcon />
+        <TweetEdit />
       </div>
     </div>
   )

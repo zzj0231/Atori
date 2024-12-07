@@ -21,56 +21,164 @@
  */
 
 import { siteClassPrefix } from '@/const/style'
-import { CSSProperties, ReactNode } from 'react'
+import { CSSProperties, ReactNode, useEffect, useState } from 'react'
+
+import './index.css'
+import { CloseIcon } from './closeIcon'
 
 export interface ModelProps {
-  afterClose: () => void
-  bodyStyle: CSSProperties
-  cancelText: string
-  centered: boolean
-  closeable: boolean
-  closeIcon: ReactNode
-  destoryOnClose: boolean
-  footer: null | ReactNode
-  keyboard: boolean
-  mask: boolean
-  maskcloseable: boolean
-  maskStyle: CSSProperties
-  okText: string
-  title: string
+  afterClose?: () => void
+  bodyStyle?: CSSProperties
+  cancelText?: string
+  centered?: boolean
+  closeable?: boolean
+  closeIcon?: ReactNode
+  destoryOnClose?: boolean
+  footer?: null | ReactNode
+  keyboard?: boolean
+  mask?: boolean
+  maskcloseable?: boolean
+  maskStyle?: CSSProperties
+  okText?: string
+  title?: string
   visible: boolean
-  width: number
+  width?: number
   onCancel: () => void
   onOk: () => void
+  children: ReactNode
 }
+
+// 执行 afterclose 标志
+let hiddenCount = 0
 
 export const Model = (props: ModelProps) => {
   const {
     afterClose,
-    bodyStyle,
-    cancelText,
-    centered,
-    closeable,
+    bodyStyle = {},
+    cancelText = '取消',
+    centered = true,
+    closeable = true,
     closeIcon,
-    destoryOnClose,
+    destoryOnClose = false,
     footer,
-    keyboard,
-    mask,
-    maskcloseable,
-    maskStyle,
-    okText,
+    keyboard = true,
+    mask = true,
+    maskcloseable = true,
+    maskStyle = {},
+    okText = '确认',
     title,
     visible,
-    width,
+    width = 400,
     onCancel,
     onOk,
+    children,
   } = props
+  const [isHidden, setHidden] = useState(!visible)
+  const [destoryChild, setDestoryChild] = useState(false)
+
+  const handleClose = () => {
+    setHidden(true)
+    if (destoryOnClose) {
+      setDestoryChild(true)
+    }
+    onCancel?.()
+  }
+
+  const hanldeOk = () => {
+    setHidden(true)
+    onOk?.()
+  }
+
+  const closeModal = function (event: Event | null) {
+    const e = event || window?.event || arguments.callee.caller.arguments[0]
+    if (e && e.keyCode === 27) {
+      handleClose()
+    }
+  }
+
+  const closeMaskAble = () => {
+    if (maskcloseable) {
+      handleClose()
+    }
+  }
+
+  // 监听 esc 逻辑
+  useEffect(() => {
+    if (keyboard) {
+      document.addEventListener('keydown', closeModal, false)
+      return () => {
+        document.removeEventListener('keydown', closeModal, false)
+      }
+    }
+  }, [keyboard])
+
+  // 执行 afterclose 逻辑
+  useEffect(() => {
+    if (isHidden && hiddenCount === 1) {
+      afterClose?.()
+      hiddenCount = 0
+    }
+    hiddenCount = 1
+  }, [isHidden])
+
+  // visible/destoryOnclose更新时，重新渲染组件
+  useEffect(() => {
+    if (visible) {
+      if (destoryOnClose) {
+        setDestoryChild(true)
+      }
+      setHidden(false)
+    }
+  }, [visible, destoryOnClose])
 
   return (
-    <div className={`${siteClassPrefix}-modal`}>
-      <div className={`${siteClassPrefix}-modal-header`}></div>
-      <div className={`${siteClassPrefix}-modal-content`}></div>
-      <div className={`${siteClassPrefix}-modal-footer`}></div>
+    <div
+      className={`${siteClassPrefix}-modal`}
+      style={{ display: isHidden ? 'none' : 'block' }}
+    >
+      <div className={`${siteClassPrefix}-modal-content`} style={{ width }}>
+        <div className={`${siteClassPrefix}-modal-header`}>
+          <div className={`${siteClassPrefix}-mdoel-title`}>{title}</div>
+        </div>
+        {closeable ? (
+          <div
+            className={`${siteClassPrefix}-mode-closeIcon`}
+            onClick={handleClose}
+          >
+            {closeIcon || <CloseIcon />}
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className={`${siteClassPrefix}-modal-body`} style={bodyStyle}>
+          {children}
+        </div>
+        <div className={`${siteClassPrefix}-modal-footer`}>
+          {footer === null ? null : (
+            <>
+              {footer ? (
+                footer
+              ) : (
+                <div className={`btn-area flex gap-3 justify-self-end`}>
+                  <div className="btn-cancel" onClick={handleClose}>
+                    {cancelText}
+                  </div>
+                  <div className="btn-ok" onClick={hanldeOk}>
+                    {okText}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+      {mask && (
+        <div
+          style={maskStyle}
+          className={`${siteClassPrefix}-modal-mask`}
+          onClick={closeMaskAble}
+        ></div>
+      )}
     </div>
   )
 }
