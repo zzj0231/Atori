@@ -27,7 +27,7 @@ export const TweetCard = (props: TweetCardProps) => {
       ) : (
         <></>
       )}
-      <div className="opacity-50 pt-sm pl-ssm text-xl">{date}</div>
+      <div className="opacity-50 pt-sm pl-ssm text-sm">{date}</div>
     </div>
   )
 }

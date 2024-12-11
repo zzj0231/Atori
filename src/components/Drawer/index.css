@@ -1,0 +1,36 @@
+.atori-drawer {
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.atori-drawer-content {
+  position: absolute;
+  top: 0;
+  padding: 16px;
+  height: 100%;
+  transition: all 0.3s;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.atori-drawer-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.atori-drawer-closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 2.2rem;
+  color: var(--atori-c-text-2);
+  font-size: 1.4rem;
+  &:hover {
+    background-color: var(--atori-c-bg-soft);
+  }
+}

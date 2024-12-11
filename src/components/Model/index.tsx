@@ -24,7 +24,7 @@ import { siteClassPrefix } from '@/const/style'
 import { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
 import './index.css'
-import { CloseIcon } from './closeIcon'
+import { CloseIcon } from '../../icon/closeIcon'
 
 export interface ModelProps {
   afterClose?: () => void
