@@ -26,8 +26,18 @@ export const TweetEdit = () => {
         <WeatherIcon />
       </div>
 
-      <Model visible={visible} onCancel={handleClose} onOk={handleOk}>
-        <></>
+      <Model
+        visible={visible}
+        onCancel={handleClose}
+        onOk={handleOk}
+        okText="记录"
+        destoryOnClose
+      >
+        <textarea
+          placeholder="thinking..."
+          className="tweet-edit-textera"
+          minLength={200}
+        />
       </Model>
     </>
   )

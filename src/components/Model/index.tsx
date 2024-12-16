@@ -125,7 +125,7 @@ export const Model = (props: ModelProps) => {
   useEffect(() => {
     if (visible) {
       if (destoryOnClose) {
-        setDestoryChild(true)
+        setDestoryChild(false)
       }
       setHidden(false)
     }
@@ -151,7 +151,7 @@ export const Model = (props: ModelProps) => {
           <></>
         )}
         <div className={`${siteClassPrefix}-modal-body`} style={bodyStyle}>
-          {children}
+          {destoryChild ? <></> : children}
         </div>
         <div className={`${siteClassPrefix}-modal-footer`}>
           {footer === null ? null : (

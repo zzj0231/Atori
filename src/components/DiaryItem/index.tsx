@@ -79,7 +79,7 @@ export const DiaryItem = (props: DiaryProps) => {
           <h1 className="opacity-80">{name}</h1>
           <div className="read-labels">{labelItem}</div>
         </div>
-        <p className="text-xl opacity-60">{author}</p>
+        <p className="text-sm opacity-60">{author}</p>
         <div className={`${reviewClPre}-notes`}>
           <TextDrop note={note} />
         </div>

@@ -1,3 +1,4 @@
+'use client'
 /**
  *
  * Drawer 组件
@@ -30,7 +31,7 @@ export interface DrawerProps {
   visible: boolean
   closeable?: boolean
   destroyOnClose?: boolean
-  getContainer?: HTMLElement | false
+  getContainer?: HTMLElement | undefined
   maskClosable?: boolean
   mask?: boolean
   drawerStyle?: CSSProperties
@@ -53,7 +54,7 @@ export const Drawer = (props: DrawerProps) => {
     placement = 'right',
     children = <></>,
     onClose,
-    getContainer = document.body,
+    getContainer,
     zIndex = 999,
   } = props
 
@@ -65,12 +66,9 @@ export const Drawer = (props: DrawerProps) => {
     if (destroyOnClose) {
       setDestoryChild(true)
     }
-    if (getContainer !== undefined && getContainer !== false && isHidden) {
-      getContainer.style.overflow = 'auto'
-    }
 
     onClose?.()
-  }, [destroyOnClose, onClose, getContainer, isHidden])
+  }, [destroyOnClose, onClose])
 
   const handleMaseClose = useCallback(() => {
     if (maskClosable) {
@@ -85,19 +83,14 @@ export const Drawer = (props: DrawerProps) => {
     }
   }
 
-  console.log('isHidden', isHidden)
-
   useEffect(() => {
     if (visible) {
       setIsHidden(false)
       if (destroyOnClose) {
         setDestoryChild(false)
       }
-      if (getContainer !== undefined && getContainer !== false) {
-        getContainer.style.overflow = 'hidden'
-      }
     }
-  }, [visible, destroyOnClose, getContainer])
+  }, [visible, destroyOnClose])
 
   // 监听 esc 逻辑
   useEffect(() => {
@@ -112,9 +105,9 @@ export const Drawer = (props: DrawerProps) => {
       <div
         className={`${siteClassPrefix}-drawer`}
         style={{
-          position: getContainer === false ? 'absolute' : 'fixed',
+          position: 'fixed',
           width: !isHidden ? '100%' : '0',
-          zIndex: !isHidden ? zIndex : 0,
+          zIndex: zIndex,
         }}
       >
         {mask ? (
@@ -153,5 +146,7 @@ export const Drawer = (props: DrawerProps) => {
   )
 
   // prettier-ignore
-  return getContainer === false ? childDom : ReactDOM.createPortal(childDom, getContainer)
+  return !getContainer
+    ? ReactDOM.createPortal(childDom, document?.body)
+    : ReactDOM.createPortal(childDom, getContainer)
 }

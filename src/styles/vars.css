@@ -6,7 +6,7 @@
   --atori-c-black: #1a1a1a;
   --atori-c-black-pure: #000000;
   --atori-c-black-soft: #242424;
-  --atori-c-black-mute: #2f2f2f;
+  --atori-c-black-mute: #464545;
 
   --atori-c-gray: #8e8e8e;
   --atori-c-gray-light-1: #aeaeae;
@@ -44,15 +44,17 @@
   --atori-c-yellow-tertiary: #a28e73;
 
   --atori-c-text-light-1: var(--atori-c-rubyred);
-  --atori-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --atori-c-text-light-2: rgba(60, 60, 60, 0.4);
   --atori-c-text-light-3: rgba(60, 60, 60, 0.33);
   --atori-c-text-light-4: rgba(60, 60, 60, 0.18);
-
   --atori-c-text-dark-1: var(--atori-c-rubyred-dark);
   --atori-c-text-dark-2: rgba(255, 255, 255, 0.87);
   --atori-c-text-dark-3: rgba(235, 235, 235, 0.6);
   --atori-c-text-dark-4: rgba(235, 235, 235, 0.38);
   --atori-c-text-dark-6: rgba(235, 235, 235, 0.18);
+
+  --atori-c-mask-light: rgba(0, 0, 0, 0.5);
+  --atori-c-mask-dark: rgba(0, 0, 0, 0.3);
 
   --atori-c-blue-light: #747bff;
   --atori-c-blue-lighter: #9499ff;
@@ -82,49 +84,49 @@
 
 :root {
   --atori-c-bg: var(--atori-c-flax);
-  --atori-c-bg-soft: var(--atori-c-white-soft);
-  --atori-c-bg-mute: var(--atori-c-white-mute);
-  --atori-c-bg-alt: var(--atori-c-white-soft);
+  --atori-c-bg-second: var(--atori-c-flax);
+  --atori-c-bg-normal: var(--atori-c-text-dark-2);
   --atori-c-bg-deep: var(--atori-c-rubyred-gray);
-  --atori-c-bg-neutral: var(--atori-c-gray-neutral);
+  --atori-c-bg-soft: var(--atori-c-white-soft);
 
-  --atori-c-divider: var(--atori-c-divider-light-1);
-  --atori-c-divider-light: var(--atori-c-divider-light-2);
-  --atori-c-divider-neutral: var(--atori-c-gray-neutral-variant);
+  --atori-c-divider: var(--atori-c-rubyred-gray);
 
   --atori-c-text-1: var(--atori-c-text-light-1);
   --atori-c-text-2: var(--atori-c-text-light-2);
   --atori-c-text-3: var(--atori-c-text-light-3);
   --atori-c-text-4: var(--atori-c-text-light-4);
 
-  --atori-c-border-1: var(--atori-c-rubyred-soft);
-  --atori-c-border-2: var(--atori-c-rubyred-gray);
+  --atori-c-border-primary: var(--atori-c-rubyred-soft);
+  --atori-c-border-normal: var(--atori-c-rubyred-gray);
+  --atori-c-border-tweet: var(--atori-c-rubyred-gray);
 
   --atori-c-text-opac-1ight: 0.6;
   --atori-c-text-opac-full: 1;
 
   --atori-c-star-1: var(--atori-c-rubyred);
+  --atori-c-mask: var(--atori-c-mask-light);
 }
 
 .dark {
   --atori-c-bg: var(--atori-c-black-soft);
-  --atori-c-bg-soft: var(--atori-c-black-mute);
-  --atori-c-bg-mute: var(--atori-c-gray-dark-3);
-  --atori-c-bg-alt: var(--atori-c-black);
+  --atori-c-bg-second: var(--atori-c-black-mute);
+  --atori-c-bg-normal: var(--atori-c-gray-light-2);
   --atori-c-bg-deep: var(--atori-c-gray-dark-2);
+  --atori-c-bg-soft: var(--atori-c-black-mute);
 
   --atori-c-divider: var(--atori-c-divider-dark-1);
-  --atori-c-divider-light: var(--atori-c-divider-dark-2);
 
   --atori-c-text-1: var(--atori-c-text-dark-1);
   --atori-c-text-2: var(--atori-c-text-dark-2);
   --atori-c-text-3: var(--atori-c-text-dark-3);
   --atori-c-text-4: var(--atori-c-text-dark-4);
 
-  --atori-c-border-1: var(--atori-c-rubyred-dark);
-  --atori-c-border-2: var(--atori-c-gray-dark-2);
+  --atori-c-border-primary: var(--atori-c-rubyred-dark);
+  --atori-c-border-normal: var(--atori-c-gray-dark-2);
+  --atori-c-border-tweet: var(--atori-c-gray-dark-2);
 
   --atori-c-star-1: var(--atori-c-rubyred-dark);
+  --atori-c-mask: var(--atori-c-mask-dark);
 }
 
 /**

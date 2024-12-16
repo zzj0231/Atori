@@ -20,6 +20,26 @@
   animation-delay: 0s;
 }
 
+.nav-setting-form-list {
+}
+.nav-setting-form-field {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.nav-setting-form-field .field-label {
+  width: 6rem;
+  display: inline-block;
+  text-align: right;
+}
+
+.nav-setting-form-field .field-value {
+  min-width: 10rem;
+  border: 1px solid var(--atori-c-border-tweet);
+  padding-inline: 8px;
+}
+
 @keyframes grow {
   0% {
     stroke-dashoffset: 1px;
