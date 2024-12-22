@@ -1,4 +1,6 @@
-export const TE_RECORD = [
+import { TweetsProps } from '@/types/schema'
+
+export const TE_RECORD: TweetsProps[] = [
   {
     note: '无条件信任自己，为自己感到骄傲——奇拉比',
     date: 'Nov 17 11:47, 2024',
@@ -48,3 +50,5 @@ export const TE_RECORD = [
     private: false,
   },
 ]
+
+export const REVALIDATE_TWEET_KEY = 'tweets'

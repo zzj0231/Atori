@@ -30,18 +30,16 @@
 }
 
 .atori-modal-header {
-  padding: 1.6rem 2.4rem;
-  color: rgba(0, 0, 0, 0.65);
+  padding: 0.8rem 1.2rem;
   border-bottom: 1px solid var(--atori-c-divider);
   border-radius: 4px 4px 0 0;
+  min-height: 30px;
 }
 
 .atori-modal-title {
   margin: 0;
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.6rem;
-  line-height: 2.2rem;
   word-wrap: break-word;
 }
 

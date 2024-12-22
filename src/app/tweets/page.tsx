@@ -1,17 +1,18 @@
 import { tweetClPre } from '@/const/style'
-import { TE_RECORD } from '@/const/tweets'
 import { TweetCard } from '@/features/tweet-card'
 import { TweetEdit } from '@/features/tweet-edit'
-import { useMemo } from 'react'
 
 import './index.css'
+import { getExistTweets } from '@/server/tweets'
 
-export default function Tweets() {
-  const cardItems = useMemo(() => {
-    if (TE_RECORD?.length < 1) {
+export default async function Tweets() {
+  const res = await getExistTweets()
+
+  const getCardItems = () => {
+    if (res?.length < 1) {
       return []
     }
-    return TE_RECORD.map(item => {
+    return res.map(item => {
       return (
         <TweetCard
           text={item?.note}
@@ -21,12 +22,13 @@ export default function Tweets() {
         />
       )
     })
-  }, [])
+  }
+
   return (
     <div className={`prose ${tweetClPre}-wrapper`}>
       <h1 className="pg-h1">Tweets</h1>
       <article className="px-sm">
-        <div className={`${tweetClPre}-cards`}>{cardItems}</div>
+        <div className={`${tweetClPre}-cards`}>{getCardItems()}</div>
       </article>
       <div className={`${tweetClPre}-edit`}>
         <TweetEdit />

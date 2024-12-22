@@ -70,7 +70,7 @@ export const Drawer = (props: DrawerProps) => {
     onClose?.()
   }, [destroyOnClose, onClose])
 
-  const handleMaseClose = useCallback(() => {
+  const handleMaskClose = useCallback(() => {
     if (maskClosable) {
       handleClose()
     }
@@ -82,23 +82,6 @@ export const Drawer = (props: DrawerProps) => {
       handleClose()
     }
   }
-
-  useEffect(() => {
-    if (visible) {
-      setIsHidden(false)
-      if (destroyOnClose) {
-        setDestoryChild(false)
-      }
-    }
-  }, [visible, destroyOnClose])
-
-  // 监听 esc 逻辑
-  useEffect(() => {
-    document.addEventListener('keydown', handleEscClose, false)
-    return () => {
-      document.removeEventListener('keydown', handleEscClose, false)
-    }
-  }, [])
 
   const childDom = (
     <>
@@ -113,7 +96,7 @@ export const Drawer = (props: DrawerProps) => {
         {mask ? (
           <div
             className={`${siteClassPrefix}-drawer-mask`}
-            onClick={handleMaseClose}
+            onClick={handleMaskClose}
           />
         ) : (
           <></>
@@ -145,8 +128,25 @@ export const Drawer = (props: DrawerProps) => {
     </>
   )
 
+  useEffect(() => {
+    if (visible) {
+      setIsHidden(false)
+      if (destroyOnClose) {
+        setDestoryChild(false)
+      }
+    }
+  }, [visible, destroyOnClose])
+
+  // 监听 esc 逻辑
+  useEffect(() => {
+    document.addEventListener('keydown', handleEscClose, false)
+    return () => {
+      document.removeEventListener('keydown', handleEscClose, false)
+    }
+  }, [])
+
   // prettier-ignore
-  return !getContainer
+  return typeof document === 'undefined' ? childDom : !getContainer
     ? ReactDOM.createPortal(childDom, document?.body)
     : ReactDOM.createPortal(childDom, getContainer)
 }

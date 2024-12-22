@@ -85,7 +85,6 @@ export const Model = (props: ModelProps) => {
   }
 
   const hanldeOk = () => {
-    setHidden(true)
     onOk?.()
   }
 
@@ -128,6 +127,8 @@ export const Model = (props: ModelProps) => {
         setDestoryChild(false)
       }
       setHidden(false)
+    } else {
+      setHidden(true)
     }
   }, [visible, destoryOnClose])
 
@@ -138,7 +139,7 @@ export const Model = (props: ModelProps) => {
     >
       <div className={`${siteClassPrefix}-modal-content`} style={{ width }}>
         <div className={`${siteClassPrefix}-modal-header`}>
-          <div className={`${siteClassPrefix}-mdoel-title`}>{title}</div>
+          <div className={`${siteClassPrefix}-modal-title`}>{title}</div>
         </div>
         {closeable ? (
           <div
