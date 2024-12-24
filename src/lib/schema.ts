@@ -30,7 +30,7 @@ export const createTweets = async (db: VercelPoolClient) => {
     await db.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`
     const result = await db.sql`
         CREATE TABLE IF NOT EXISTS tweets (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         author VARCHAR(255) NOT NULL,
         date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         note TEXT NOT NULL,

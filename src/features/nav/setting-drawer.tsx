@@ -59,8 +59,8 @@ export const SettingDrawer = (props: SettingDrawerProps) => {
             />
           </div>
         </div>
-        <div className="nav-setting-btn-save" onClick={handleSave}>
-          <span>保存</span>
+        <div className="nav-setting-save" onClick={handleSave}>
+          <div className="btn-save">保存</div>
         </div>
       </Drawer>
     </>

@@ -111,7 +111,10 @@ export const deleteUserByName = async (name: string, db: VercelPoolClient) => {
   return res
 }
 
-export const deleteTweetById = async (id: string, db: VercelPoolClient) => {
+export const deleteTweetById = async (
+  id: string | number,
+  db: VercelPoolClient
+) => {
   const res = { result: {}, error: '', isFinish: false }
   try {
     const result = await db.sql`DELETE FROM tweets WHERE id=${id};`

@@ -19,6 +19,7 @@ export default async function Tweets() {
           date={item.date}
           key={item.id}
           img={item?.img}
+          id={item?.id || 0}
         />
       )
     })
