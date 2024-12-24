@@ -67,33 +67,35 @@ export const NavHeader = () => {
 
   return (
     <>
-      <div className={'atori-nav'}>
-        <div className={'atori-nav-favicon'}>
-          <Link href={'/'}>
-            {/* <Image alt="home" src={AtoriSvg} width={16} /> */}
-            <HomeIcon />
-          </Link>
+      <div className={'atori-nav-wrapper'}>
+        <div className={'atori-nav'}>
+          <div className={'atori-nav-favicon'}>
+            <Link href={'/'}>
+              {/* <Image alt="home" src={AtoriSvg} width={16} /> */}
+              <HomeIcon />
+            </Link>
+          </div>
+          <div className={'atori-nav-menu'}>{options}</div>
+          <div className={'atori-nav-extra'}>
+            <a
+              className="atroi-nav-icon"
+              href={'https://github.com/zzj0231'}
+              target="_blank"
+            >
+              <GithubIcon />
+            </a>
+            <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
+              <LightIcon />
+            </div>
+            <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
+              <MoonIcon />
+            </div>
+            <div className="atroi-nav-icon" onClick={() => setIsOpen(true)}>
+              <SettingIcon />
+            </div>
+          </div>
+          <SettingDrawer visible={isOpen} handleVisible={setIsOpen} />
         </div>
-        <div className={'atori-nav-menu'}>{options}</div>
-        <div className={'atori-nav-extra'}>
-          <a
-            className="atroi-nav-icon"
-            href={'https://github.com/zzj0231'}
-            target="_blank"
-          >
-            <GithubIcon />
-          </a>
-          <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
-            <LightIcon />
-          </div>
-          <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
-            <MoonIcon />
-          </div>
-          <div className="atroi-nav-icon" onClick={() => setIsOpen(true)}>
-            <SettingIcon />
-          </div>
-        </div>
-        <SettingDrawer visible={isOpen} handleVisible={setIsOpen} />
       </div>
     </>
   )

@@ -1,9 +1,17 @@
+.atori-nav-wrapper {
+  /* position: fixed;
+  height: var(--atori-nav-height);
+  right: 0;
+  left: 0;
+  z-index: 20; */
+}
+
 .atori-nav {
   display: flex;
   align-items: center;
-  height: var(--atori-nav-height);
   padding: 3.2rem;
   gap: 2.4rem;
+  height: var(--atori-nav-height);
 }
 
 .atori-nav-favicon {
@@ -108,7 +116,7 @@ html.dark .atroi-nav-icon.moon {
   }
 }
 
-.nav-setting-btn-save {
+.nav-setting-save {
   color: var(--atori-c-text-1);
   opacity: 0.7;
   display: flex;
@@ -117,4 +125,11 @@ html.dark .atroi-nav-icon.moon {
   &:hover {
     opacity: 1;
   }
+}
+
+.nav-setting-save .btn-save {
+  width: 5rem;
+  text-align: center;
+  padding: 3px;
+  background-color: var(--atori-c-bg-deep);
 }
