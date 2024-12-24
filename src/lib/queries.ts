@@ -2,10 +2,14 @@ import { TweetsProps, UsersProps } from '@/types/schema'
 import { VercelPoolClient } from '@vercel/postgres'
 
 export const getUsers = async (db: VercelPoolClient) => {
-  const res = { result: {}, error: '', isFinish: false }
+  const res = {
+    result: {} as { data: UsersProps[]; total: number | null },
+    error: '',
+    isFinish: false,
+  }
   try {
     const result = await db.sql`select * from users`
-    res.result = { data: result.rows, total: result.rowCount }
+    res.result = { data: result.rows as UsersProps[], total: result.rowCount }
     res.isFinish = true
   } catch (e) {
     res.error = typeof e === 'string' ? e : 'unkonw-error'
@@ -14,10 +18,14 @@ export const getUsers = async (db: VercelPoolClient) => {
 }
 
 export const getTweets = async (db: VercelPoolClient) => {
-  const res = { result: {}, error: '', isFinish: false }
+  const res = {
+    result: {} as { data: TweetsProps[]; total: number | null },
+    error: '',
+    isFinish: false,
+  }
   try {
     const result = await db.sql`select * from tweets`
-    res.result = { data: result.rows, total: result.rowCount }
+    res.result = { data: result.rows as TweetsProps[], total: result.rowCount }
     res.isFinish = true
   } catch (e) {
     res.error = typeof e === 'string' ? e : 'unkonw-error'
@@ -103,7 +111,10 @@ export const deleteUserByName = async (name: string, db: VercelPoolClient) => {
   return res
 }
 
-export const deleteTweetById = async (id: string, db: VercelPoolClient) => {
+export const deleteTweetById = async (
+  id: string | number,
+  db: VercelPoolClient
+) => {
   const res = { result: {}, error: '', isFinish: false }
   try {
     const result = await db.sql`DELETE FROM tweets WHERE id=${id};`

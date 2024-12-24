@@ -1,15 +1,17 @@
 import { tweetClPre } from '@/const/style'
 import Image, { StaticImageData } from 'next/image'
 import './index.css'
+import { ItemOperator } from './operator'
 
 interface TweetCardProps {
   text: string
   date: string
   img?: string | StaticImageData
+  id: number | string
 }
 
 export const TweetCard = (props: TweetCardProps) => {
-  const { text, date, img } = props
+  const { text, date, img, id } = props
   return (
     <div className={`${tweetClPre}-card pl-md`}>
       <pre className="break-all whitespace-pre-line opacity-80">{text}</pre>
@@ -27,7 +29,10 @@ export const TweetCard = (props: TweetCardProps) => {
       ) : (
         <></>
       )}
-      <div className="opacity-50 pt-sm pl-ssm text-xl">{date}</div>
+      <div className="opacity-50 pt-sm pl-ssm text-sm flex gap-2 items-center">
+        {date}
+        <ItemOperator id={id} />
+      </div>
     </div>
   )
 }

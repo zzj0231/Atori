@@ -1,0 +1,42 @@
+.atori-drawer {
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.atori-drawer-header {
+  margin-bottom: 24px;
+}
+
+.atori-drawer-content {
+  position: absolute;
+  top: 0;
+  padding: 16px;
+  height: 100%;
+  transition: all 0.3s;
+  background-color: var(--atori-c-bg-second);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.atori-drawer-mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--atori-c-mask);
+}
+
+.atori-drawer-closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  color: var(--atori-c-text-1);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in;
+  border-radius: 4px;
+  &:hover {
+    background-color: var(--atori-c-bg-normal);
+  }
+}

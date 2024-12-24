@@ -1,7 +1,18 @@
 .atori-tweet-card {
   border: 1px solid transparent;
-  border-left: 3px solid var(--atori-c-bg-deep);
+  border-left: 3px solid var(--atori-c-border-tweet);
   margin-bottom: 2.4rem;
+}
+
+.atori-tweet-card .tweet-item-operate-icon {
+  opacity: 0;
+}
+.atori-tweet-card:hover .tweet-item-operate-icon {
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .atori-tweet-card pre {

@@ -1,9 +1,17 @@
+.atori-nav-wrapper {
+  /* position: fixed;
+  height: var(--atori-nav-height);
+  right: 0;
+  left: 0;
+  z-index: 20; */
+}
+
 .atori-nav {
   display: flex;
   align-items: center;
-  height: var(--atori-nav-height);
   padding: 3.2rem;
   gap: 2.4rem;
+  height: var(--atori-nav-height);
 }
 
 .atori-nav-favicon {
@@ -18,6 +26,26 @@
   transform-origin: center;
   stroke: #a26769;
   animation-delay: 0s;
+}
+
+.nav-setting-form-list {
+}
+.nav-setting-form-field {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.nav-setting-form-field .field-label {
+  width: 6rem;
+  display: inline-block;
+  text-align: right;
+}
+
+.nav-setting-form-field .field-value {
+  min-width: 10rem;
+  border: 1px solid var(--atori-c-border-tweet);
+  padding-inline: 8px;
 }
 
 @keyframes grow {
@@ -86,4 +114,22 @@ html.dark .atroi-nav-icon.moon {
   &:hover {
     opacity: var(--atori-c-text-opac-full);
   }
+}
+
+.nav-setting-save {
+  color: var(--atori-c-text-1);
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.nav-setting-save .btn-save {
+  width: 5rem;
+  text-align: center;
+  padding: 3px;
+  background-color: var(--atori-c-bg-deep);
 }

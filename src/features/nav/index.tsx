@@ -1,19 +1,29 @@
 'use client'
 
-import { useCallback, useEffect, useLayoutEffect, useMemo } from 'react'
 import { NAV_MENU } from '@/const/nav'
-import Link from 'next/link'
 import { setTheme, updateAppearance } from '@/utils/theme'
+import Link from 'next/link'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from 'react'
 // import Image from 'next/image'
-
-import './index.css'
-import { LightIcon } from '@/icon/light'
-import { MoonIcon } from '@/icon/moon'
-import { autoUpdateRootFontSize } from '@/utils/window'
 import { GithubIcon } from '@/icon/github'
 import { HomeIcon } from '@/icon/home'
+import { LightIcon } from '@/icon/light'
+import { MoonIcon } from '@/icon/moon'
+import { SettingIcon } from '@/icon/setting'
+import { autoUpdateRootFontSize } from '@/utils/window'
+import { SettingDrawer } from './setting-drawer'
+
+import './index.css'
 
 export const NavHeader = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const options = useMemo(() => {
     const menus = NAV_MENU
     return menus.map(item => {
@@ -56,29 +66,37 @@ export const NavHeader = () => {
   }, [])
 
   return (
-    <div className={'atori-nav'}>
-      <div className={'atori-nav-favicon'}>
-        <Link href={'/'}>
-          {/* <Image alt="home" src={AtoriSvg} width={16} /> */}
-          <HomeIcon />
-        </Link>
-      </div>
-      <div className={'atori-nav-menu'}>{options}</div>
-      <div className={'atori-nav-extra'}>
-        <a
-          className="atroi-nav-icon"
-          href={'https://github.com/zzj0231'}
-          target="_blank"
-        >
-          <GithubIcon />
-        </a>
-        <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
-          <LightIcon />
+    <>
+      <div className={'atori-nav-wrapper'}>
+        <div className={'atori-nav'}>
+          <div className={'atori-nav-favicon'}>
+            <Link href={'/'}>
+              {/* <Image alt="home" src={AtoriSvg} width={16} /> */}
+              <HomeIcon />
+            </Link>
+          </div>
+          <div className={'atori-nav-menu'}>{options}</div>
+          <div className={'atori-nav-extra'}>
+            <a
+              className="atroi-nav-icon"
+              href={'https://github.com/zzj0231'}
+              target="_blank"
+            >
+              <GithubIcon />
+            </a>
+            <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
+              <LightIcon />
+            </div>
+            <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
+              <MoonIcon />
+            </div>
+            <div className="atroi-nav-icon" onClick={() => setIsOpen(true)}>
+              <SettingIcon />
+            </div>
+          </div>
+          <SettingDrawer visible={isOpen} handleVisible={setIsOpen} />
         </div>
-        <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
-          <MoonIcon />
-        </div>
       </div>
-    </div>
+    </>
   )
 }
