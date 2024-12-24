@@ -1,5 +1,3 @@
-import { Demo } from '@/server'
-
 export default async function Blog() {
   return (
     <>
