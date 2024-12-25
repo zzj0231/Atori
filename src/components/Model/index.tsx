@@ -68,7 +68,7 @@ export const Model = (props: ModelProps) => {
     okText = '确认',
     title,
     visible,
-    width = 400,
+    width = 300,
     onCancel,
     onOk,
     children,
