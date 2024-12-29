@@ -97,6 +97,9 @@
   &:hover {
     opacity: var(--atori-c-text-opac-full);
   }
+  &:active {
+    opacity: var(--atori-c-text-opac-full);
+  }
 }
 
 .atroi-nav-icon.moon {
