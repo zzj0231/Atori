@@ -1,4 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="public/atori.svg" alt="Atori Logo" width="65" height="78.6" />
+  </br>
+  <p>
+    <a href="https://atori-ckjg.vercel.app/">
+      <img src="https://img.shields.io/badge/Atori-v0.1.0-red" alt="atori version" />
+    </a>
+    <img src="https://img.shields.io/badge/pnpm-8.15.4-blue?logo=pnpm" alt="pnpm version" />
+    <img src="https://img.shields.io/badge/node-v20.11.1-green?logo=node.js" alt="node version" />
+    <img src="https://img.shields.io/badge/license-MIT-orange" alt="license" />
+  </p>
+
+  </p>
+</div>
+
+## Atori
+
+This platform serves as a space where I:
+
+- Share technical articles and hobby practices
+- Write reviews about favorite animes and books
+- Record random musings from life
+
+Atori, inspired by the anime "[ATRI-My Dear Moments](https://atri-animation.com/)"。In the future, the project also plans to incorporate AI capabilities, to make Atori as intelligent and emotionally responsive as its anime namesake.
+
+## Features
+
+- 📝 Technical Articles
+- 📚 Book Reviews
+- 🎬 Anime Reviews
+- 💭 Personal Musings
+- 🤖 AI Integration (Planned)
 
 ## Getting Started
 
