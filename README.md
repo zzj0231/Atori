@@ -3,7 +3,7 @@
   </br>
   <p>
     <a href="https://atori-ckjg.vercel.app/">
-      <img src="https://img.shields.io/badge/Atori-v0.1.0-red" alt="atori version" />
+      <img src="https://img.shields.io/badge/Atori-v0.1.0-da627d" alt="atori version" />
     </a>
     <img src="https://img.shields.io/badge/pnpm-8.15.4-blue?logo=pnpm" alt="pnpm version" />
     <img src="https://img.shields.io/badge/node-v20.11.1-green?logo=node.js" alt="node version" />
@@ -43,9 +43,9 @@ This platform serves as a space where I:
 
 - [ ] 💬 Comment System
 
-  - User comments
-  - Reply threading
-  - Comment moderation
+  - Article comment support
+  - Comment editing and deletion
+  - Reply threading support
 
 - [ ] 📱 Mobile Optimization
 
@@ -58,8 +58,6 @@ This platform serves as a space where I:
   - App-like experience
   - Push notifications
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
