@@ -21,7 +21,7 @@ This platform serves as a space where I:
 - Write reviews about favorite animes and books
 - Record random musings from life
 
-Atori, inspired by the anime "[ATRI-My Dear Moments](https://atri-animation.com/)"。In the future, the project also plans to incorporate AI capabilities, to make Atori as intelligent and emotionally responsive as its anime namesake.
+[Atori](https://atori-ckjg.vercel.app/) is inspired by the anime "[ATRI-My Dear Moments](https://atri-animation.com/)"。In the future, the project also plans to incorporate AI capabilities, to make Atori as intelligent and emotionally responsive as its anime namesake.
 
 ## Features
 
@@ -31,34 +31,32 @@ Atori, inspired by the anime "[ATRI-My Dear Moments](https://atri-animation.com/
 - 💭 Personal Musings
 - 🤖 AI Integration (Planned)
 
-## Getting Started
+## Next
 
-First, run the development server:
+🚀 Upcoming Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [ ] 📝 Article Management
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  - Markdown editor support
+  - Article categories and tags
+  - Draft saving and preview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [ ] 💬 Comment System
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  - User comments
+  - Reply threading
+  - Comment moderation
 
-## Learn More
+- [ ] 📱 Mobile Optimization
 
-To learn more about Next.js, take a look at the following resources:
+  - Responsive design enhancement
+  - Touch interaction optimization
+  - Mobile navigation improvement
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] 📲 PWA Support
+  - Offline access
+  - App-like experience
+  - Push notifications
 
 ## Deploy on Vercel
 
