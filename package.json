@@ -2,17 +2,20 @@
   "name": "atori",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "nextjs",
+    "blog",
+    "atori"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "homepage": "https://atori-ckjg.vercel.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/zzj0231/Atori"
   },
-  "keywords": [
-    "personal",
-    "blog",
-    "nextjs",
-    "atori"
-  ],
+  "license": "MIT",
   "scripts": {
     "dev": "next dev -p 8000",
     "build": "next build",
@@ -22,8 +25,8 @@
   },
   "packageManager": "pnpm@8.15.5",
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.1.4",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
     "@vercel/postgres": "^0.10.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -35,7 +38,7 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
-    "zustand": "^4.5.5"
+    "zustand": "^4.5.6"
   },
   "lint-staged": {
     "*.{js,json}": [
@@ -48,17 +51,17 @@
   },
   "devDependencies": {
     "@neondatabase/serverless": "^0.9.5",
-    "@types/node": "^20.17.10",
+    "@types/node": "^20.17.19",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.13",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.11",
-    "postcss": "^8.4.49",
-    "prettier": "^3.4.2",
+    "lint-staged": "^15.4.3",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   }
 }
