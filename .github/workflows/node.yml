@@ -34,4 +34,8 @@ jobs:
       - run: pnpm install
 
       - name: Validate code with TypeScript
-        run: pnpm dev
+        env:
+          POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+        run: pnpm build
