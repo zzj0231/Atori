@@ -37,4 +37,5 @@ jobs:
         env:
           POSTGRES_DATABASE: 'test_db'
           POSTGRES_HOST: 'localhost'
+          POSTGRES_URL: 'postgresql://postgres:postgres@localhost/test_db'
         run: pnpm build
