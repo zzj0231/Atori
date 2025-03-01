@@ -34,4 +34,7 @@ jobs:
       - run: pnpm install
 
       - name: Validate code with TypeScript
+        env:
+          POSTGRES_DATABASE: 'test_db'
+          POSTGRES_HOST: 'localhost'
         run: pnpm build
