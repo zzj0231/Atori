@@ -1,6 +1,6 @@
 {
   "name": "atori",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "keywords": [
     "nextjs",
@@ -21,7 +21,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "standard-version && git push --follow-tags"
   },
   "packageManager": "pnpm@8.15.5",
   "dependencies": {
@@ -61,6 +62,7 @@
     "lint-staged": "^15.4.3",
     "postcss": "^8.5.3",
     "prettier": "^3.5.2",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.2"
   }
