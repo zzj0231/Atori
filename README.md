@@ -3,7 +3,7 @@
   </br>
   <p>
     <a href="https://atori-ckjg.vercel.app/">
-      <img src="https://img.shields.io/badge/Atori-v0.1.0-da627d" alt="atori version" />
+      <img src="https://img.shields.io/badge/Atori-v0.1.1-da627d" alt="atori version" />
     </a>
     <img src="https://img.shields.io/badge/pnpm-8.15.4-blue?logo=pnpm" alt="pnpm version" />
     <img src="https://img.shields.io/badge/node-v20.11.1-green?logo=node.js" alt="node version" />

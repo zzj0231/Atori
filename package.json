@@ -22,7 +22,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "release": "standard-version && git push --follow-tags"
+    "release": "standard-version"
   },
   "packageManager": "pnpm@8.15.5",
   "dependencies": {
