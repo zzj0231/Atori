@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.atori-tweet-wrapper .prose {
+  font-weight: normal;
+}
+
 .atori-tweet-cards {
   opacity: 0;
   animation: op-move ease-in 1s forwards;
