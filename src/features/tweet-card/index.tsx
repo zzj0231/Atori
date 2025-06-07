@@ -14,7 +14,9 @@ export const TweetCard = (props: TweetCardProps) => {
   const { text, date, img, id } = props
   return (
     <div className={`${tweetClPre}-card pl-md`}>
-      <pre className="break-all whitespace-pre-line opacity-80">{text}</pre>
+      <pre className="break-all whitespace-pre-line opacity-80 font-normal">
+        {text}
+      </pre>
       {img ? (
         <div className={`${tweetClPre}-card-img-item dark:opacity-70`}>
           <Image
