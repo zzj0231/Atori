@@ -29,7 +29,9 @@ export default async function Tweets() {
     <div className={`prose ${tweetClPre}-wrapper`}>
       <h1 className="pg-h1">Tweets</h1>
       <article className="px-sm">
-        <div className={`${tweetClPre}-cards`}>{getCardItems()}</div>
+        <div className={`${tweetClPre}-cards animate-op-move`}>
+          {getCardItems()}
+        </div>
       </article>
       <div className={`${tweetClPre}-edit`}>
         <TweetEdit />

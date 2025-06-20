@@ -30,5 +30,5 @@ export const DiaryWall = (props: DiaryWallProps) => {
     })
   }, [activeLabels])
 
-  return <div className="diary-wall">{diaryItems}</div>
+  return <div className="diary-wall animate-op-move">{diaryItems}</div>
 }

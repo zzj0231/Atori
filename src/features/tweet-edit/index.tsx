@@ -9,12 +9,12 @@ import { TweetsProps } from '@/types/schema'
 import './index.css'
 import { postNewTweets } from '@/server/tweets'
 import { useGlobSettingState } from '@/store/setting'
+import { GlobalEditIcon } from '@/components/Editbutton'
 
 export const TweetEdit = () => {
   const [visible, setVisible] = useState(false)
   const recordRef = useRef<string>()
 
-  const isEditAuth = useGlobSettingState(state => state.isEdit)
   const handleClose = () => {
     setVisible(false)
   }
@@ -52,13 +52,7 @@ export const TweetEdit = () => {
 
   return (
     <>
-      {isEditAuth ? (
-        <div onClick={handleEdit} className="tweet-edit-icon">
-          <WeatherIcon />
-        </div>
-      ) : (
-        <></>
-      )}
+      <GlobalEditIcon onClick={handleEdit} />
 
       <Model
         visible={visible}
