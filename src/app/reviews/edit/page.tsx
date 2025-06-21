@@ -1,6 +1,7 @@
 'use client'
 
 import { reviewEditClPre } from '@/const/style'
+import { ReviewsEditArea } from '@/features/reviews-edit'
 import { ArrowLeft } from '@/icon/arrowLeft'
 import { useRouter } from 'next/navigation'
 
@@ -23,7 +24,9 @@ export default function ReviewsEdit() {
         </button>
         <h1 className="pg-h1">Edit Reviews</h1>
       </div>
-      <article className="px-sm"></article>
+      <article className="px-sm">
+        <ReviewsEditArea />
+      </article>
     </div>
   )
 }

@@ -1,19 +1,20 @@
 'use client'
 
 import { Model } from '@/components/Model'
-import { WeatherIcon } from '@/icon/weather'
 import { useCallback, useRef, useState } from 'react'
 
 import { formatCurrentTime } from '@/utils/common'
 import { TweetsProps } from '@/types/schema'
 import './index.css'
 import { postNewTweets } from '@/server/tweets'
-import { useGlobSettingState } from '@/store/setting'
 import { GlobalEditIcon } from '@/components/Editbutton'
+import { useRouter } from 'next/navigation'
 
 export const TweetEdit = () => {
   const [visible, setVisible] = useState(false)
   const recordRef = useRef<string>()
+
+  const router = useRouter()
 
   const handleClose = () => {
     setVisible(false)
@@ -40,7 +41,8 @@ export const TweetEdit = () => {
   }, [])
 
   const handleEdit = () => {
-    setVisible(true)
+    // setVisible(true)
+    router.push('/tweets/edit')
   }
 
   const handleChange = useCallback((e: { target: { value: string } }) => {
@@ -53,8 +55,7 @@ export const TweetEdit = () => {
   return (
     <>
       <GlobalEditIcon onClick={handleEdit} />
-
-      <Model
+      {/* <Model
         visible={visible}
         onCancel={handleClose}
         onOk={handleOk}
@@ -68,7 +69,7 @@ export const TweetEdit = () => {
           minLength={200}
           onChange={handleChange}
         />
-      </Model>
+      </Model> */}
     </>
   )
 }
