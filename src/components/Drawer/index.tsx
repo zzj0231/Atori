@@ -134,6 +134,8 @@ export const Drawer = (props: DrawerProps) => {
       if (destroyOnClose) {
         setDestoryChild(false)
       }
+    } else {
+      setIsHidden(true)
     }
   }, [visible, destroyOnClose])
 

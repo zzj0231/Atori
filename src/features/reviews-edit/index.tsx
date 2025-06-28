@@ -3,6 +3,7 @@ import { COUNTRIES, RE_THEME_TYPE } from '@/const/reviews'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import { DeleteIcon } from '@/icon/delete'
+import { SaveButton } from '@/components/SaveButton'
 import './index.css'
 
 export const ReviewsEditArea = () => {
@@ -221,13 +222,7 @@ export const ReviewsEditArea = () => {
       </div>
       <div className="w-[70rem] flex flex-col gap-4 relative">
         {/* 矩形保存按钮 - 绝对定位在顶部 */}
-        <button
-          onClick={handleSave}
-          className="absolute right-0 top-[-7rem] px-3 py-1.5 text-sm rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 z-50 save-button"
-          title="保存评论"
-        >
-          保存
-        </button>
+        <SaveButton handleOk={handleSave} />
 
         {/* 国家选择和作者输入框 - 同一行 */}
         <div className="flex gap-4">

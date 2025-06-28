@@ -6,6 +6,7 @@ import { TweetsProps } from '@/types/schema'
 import { formatCurrentTime } from '@/utils/common'
 import { useRouter } from 'next/navigation'
 import { useCallback, useRef } from 'react'
+import { SaveButton } from '@/components/SaveButton'
 import './index.css'
 
 export default function TweetsEdit() {
@@ -64,13 +65,7 @@ export default function TweetsEdit() {
           <div className="flex tweets-edit-wrapper">
             <div className="w-[70rem] flex flex-col gap-4 relative">
               {/* 矩形保存按钮 - 绝对定位在顶部 */}
-              <button
-                onClick={handleOk}
-                className="absolute right-0 top-[-7rem] px-3 py-1.5 text-sm rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 z-50 save-button"
-                title="保存评论"
-              >
-                保存
-              </button>
+              <SaveButton handleOk={handleOk} />
 
               {/* 评论内容输入框 */}
               <div className="flex flex-col gap-2 flex-1">

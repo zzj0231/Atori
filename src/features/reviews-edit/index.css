@@ -42,42 +42,6 @@
   border-color: var(--atori-c-border-primary);
 }
 
-/* 矩形保存按钮样式 */
-.save-button {
-  background-color: var(--atori-c-border-primary);
-  color: white;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-weight: 500;
-  border: none;
-}
-
-.save-button:hover {
-  background-color: var(--atori-c-text-1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.save-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.save-button:focus {
-  outline: none;
-  ring: 2px;
-  ring-color: var(--atori-c-border-primary);
-  ring-opacity: 0.5;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .save-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-}
-
 /* 防止在非输入框区域显示光标 */
 .reviews-edit-wrapper textarea {
   caret-color: auto;

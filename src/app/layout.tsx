@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { NavHeader } from '@/features/nav'
+import { MessageProvider } from '@/components/Message'
 
 import './globals.css'
 
@@ -31,10 +32,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavHeader />
-        <main className="p-xl overflow-x-hidden overflow-y-hidden">
-          {children}
-        </main>
+        <MessageProvider>
+          <NavHeader />
+          <main className="p-xl overflow-x-hidden overflow-y-hidden">
+            {children}
+          </main>
+        </MessageProvider>
       </body>
     </html>
   )
