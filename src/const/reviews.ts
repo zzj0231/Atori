@@ -2,6 +2,54 @@ import frierenUrl from '../../public/diary/frieren.webp'
 import humanBondage from '../../public/diary/human-bondage.jpg'
 import { DiaryNotes } from './notes'
 
+// 国家列表
+export const COUNTRIES = [
+  { code: 'CN', name: '中国' },
+  { code: 'US', name: '美国' },
+  { code: 'JP', name: '日本' },
+  { code: 'KR', name: '韩国' },
+  { code: 'GB', name: '英国' },
+  { code: 'FR', name: '法国' },
+  { code: 'DE', name: '德国' },
+  { code: 'IT', name: '意大利' },
+  { code: 'ES', name: '西班牙' },
+  { code: 'CA', name: '加拿大' },
+  { code: 'AU', name: '澳大利亚' },
+  { code: 'RU', name: '俄罗斯' },
+  { code: 'IN', name: '印度' },
+  { code: 'BR', name: '巴西' },
+  { code: 'MX', name: '墨西哥' },
+  { code: 'NL', name: '荷兰' },
+  { code: 'SE', name: '瑞典' },
+  { code: 'NO', name: '挪威' },
+  { code: 'DK', name: '丹麦' },
+  { code: 'FI', name: '芬兰' },
+  { code: 'CH', name: '瑞士' },
+  { code: 'AT', name: '奥地利' },
+  { code: 'BE', name: '比利时' },
+  { code: 'PT', name: '葡萄牙' },
+  { code: 'IE', name: '爱尔兰' },
+  { code: 'NZ', name: '新西兰' },
+  { code: 'SG', name: '新加坡' },
+  { code: 'MY', name: '马来西亚' },
+  { code: 'TH', name: '泰国' },
+  { code: 'VN', name: '越南' },
+  { code: 'PH', name: '菲律宾' },
+  { code: 'ID', name: '印度尼西亚' },
+  { code: 'TR', name: '土耳其' },
+  { code: 'SA', name: '沙特阿拉伯' },
+  { code: 'AE', name: '阿联酋' },
+  { code: 'IL', name: '以色列' },
+  { code: 'EG', name: '埃及' },
+  { code: 'ZA', name: '南非' },
+  { code: 'AR', name: '阿根廷' },
+  { code: 'CL', name: '智利' },
+  { code: 'PE', name: '秘鲁' },
+  { code: 'CO', name: '哥伦比亚' },
+  { code: 'VE', name: '委内瑞拉' },
+  { code: 'OTHER', name: '其他' },
+]
+
 export enum RE_LABEL {
   'notion' = '小说',
   'biography' = '传记',
@@ -43,10 +91,11 @@ export const RE_CUSTOME_TYPE = [
 
 export const RE_BLUM = [
   {
-    name: '葬送的芙莉莲',
-    author: '日本 / 山田钟人',
+    title: '葬送的芙莉莲',
+    author: '山田钟人',
+    country: 'JP',
     cover: frierenUrl,
-    note: DiaryNotes.frieren,
+    content: DiaryNotes.frieren,
     labels: [RE_LABEL.animate, RE_LABEL.soul],
     key: 'frieren',
     stars: 5,
@@ -54,10 +103,11 @@ export const RE_BLUM = [
     id: '002',
   },
   {
-    name: '人性的枷锁',
-    author: '英国 / 威廉·萨默塞特·毛姆',
+    title: '人性的枷锁',
+    author: '威廉·萨默塞特·毛姆',
+    country: 'GB',
     cover: humanBondage,
-    note: DiaryNotes.homeBondage,
+    content: DiaryNotes.homeBondage,
     labels: [RE_LABEL.notion],
     key: 'homeBondage',
     stars: 4.5,
@@ -65,3 +115,5 @@ export const RE_BLUM = [
     id: '001',
   },
 ]
+
+export const REVALIDATE_REVIEW_KEY = 'reviews'

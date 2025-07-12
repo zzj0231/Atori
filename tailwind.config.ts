@@ -85,6 +85,21 @@ const config: Config = {
         5: '2rem',
         6: '2.4rem',
       },
+      keyframes: {
+        'op-move': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0px)',
+          },
+        },
+      },
+      animation: {
+        'op-move': 'op-move 1.5s ease-in forwards',
+      },
     },
     color: {
       transparent: 'transparent',

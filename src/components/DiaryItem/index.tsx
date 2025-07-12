@@ -1,4 +1,4 @@
-import { reviewClPre } from '@/const/style'
+import { BLUR_PLACEHOLDER, reviewClPre } from '@/const/style'
 import Image, { StaticImageData } from 'next/image'
 import { useMemo } from 'react'
 import './index.css'
@@ -7,19 +7,38 @@ import { StarIcon } from '@/icon/star'
 import { HalfStarIcon } from '@/icon/halfStar'
 import { BlankStarIcon } from '@/icon/blankStar'
 import { TextDrop } from '../TextDrop'
+import { ItemOperator } from './operator'
 
 interface DiaryProps {
-  name: string
-  cover: StaticImageData
+  title: string
+  cover: StaticImageData | string
   author: string
-  note: string
-  stars: number
+  content: string
+  country: string
+  stars?: number
   labels: string[]
   date?: string
+  id: number | string
+  handleDelete: (id: number | string) => void
 }
 
 export const DiaryItem = (props: DiaryProps) => {
-  const { name, cover, author, labels, stars = 3, date = '', note } = props
+  const {
+    title,
+    cover,
+    author,
+    labels,
+    stars = 3,
+    date = '',
+    content,
+    country,
+    id,
+    handleDelete,
+  } = props
+
+  const authorWithCountry = useMemo(() => {
+    return `${country} / ${author}`
+  }, [country, author])
 
   const labelItem = useMemo(() => {
     if (labels?.length < 1) {
@@ -69,6 +88,7 @@ export const DiaryItem = (props: DiaryProps) => {
           src={cover}
           alt="cover"
           placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
           quality={100}
           fill
           objectFit="cover"
@@ -76,15 +96,16 @@ export const DiaryItem = (props: DiaryProps) => {
       </div>
       <div className={`${reviewClPre}-content`}>
         <div className={`${reviewClPre}-name`}>
-          <h1 className="opacity-80">{name}</h1>
+          <h1 className="opacity-80">{title}</h1>
           <div className="read-labels">{labelItem}</div>
         </div>
-        <p className="text-sm opacity-60">{author}</p>
+        <p className="text-sm opacity-60">{authorWithCountry}</p>
         <div className={`${reviewClPre}-notes`}>
-          <TextDrop note={note} />
+          <TextDrop note={content} />
         </div>
         <div className={`${reviewClPre}-infos`}>
           <div className={`${reviewClPre}-date`}>{date}</div>
+          <ItemOperator id={id} handleDelete={handleDelete} />
           {/* <div className={`${reviewClPre}-stars`}>{startItems}</div> */}
         </div>
       </div>

@@ -1,0 +1,48 @@
+.reviews-edit-image {
+  background-color: var(--atori-c-bg-soft);
+  border: 2px dashed var(--atori-c-border-primary);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.reviews-edit-image:hover {
+  border-color: var(--atori-c-text-1);
+  background-color: var(--atori-c-bg-second);
+}
+
+.reviews-edit-image.has-image {
+  border: none;
+  background-color: transparent;
+}
+
+/* 表单输入框样式 */
+.reviews-edit-wrapper select,
+.reviews-edit-wrapper input,
+.reviews-edit-wrapper textarea {
+  background-color: var(--atori-c-bg-soft);
+  transition: all 0.2s ease;
+}
+
+.reviews-edit-wrapper select:focus,
+.reviews-edit-wrapper input:focus,
+.reviews-edit-wrapper textarea:focus {
+  background-color: var(--atori-c-bg-second);
+  border-color: var(--atori-c-border-primary);
+}
+
+/* textarea专用样式 */
+.reviews-edit-textarea {
+  background-color: var(--atori-c-bg-soft);
+  color: var(--atori-c-text-1);
+  transition: all 0.2s ease;
+}
+
+.reviews-edit-textarea:focus {
+  background-color: var(--atori-c-bg-second);
+  border-color: var(--atori-c-border-primary);
+}
+
+/* 防止在非输入框区域显示光标 */
+.reviews-edit-wrapper textarea {
+  caret-color: auto;
+}

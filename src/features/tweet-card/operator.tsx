@@ -1,5 +1,6 @@
 'use client'
 
+import { message } from '@/components/Message'
 import { DeleteIcon } from '@/icon/delete'
 import { deleteTweetItem } from '@/server/tweets'
 import { useGlobSettingState } from '@/store/setting'
@@ -14,9 +15,8 @@ export const ItemOperator = (props: OperatorProps) => {
 
   const handleDelete = useCallback(async () => {
     const res = await deleteTweetItem(id)
-    console.log('res', res)
     if (res?.code === 2000) {
-      console.log('删除成功')
+      message.success('删除成功')
     }
   }, [id])
 

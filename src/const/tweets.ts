@@ -1,14 +1,14 @@
 import { TweetsProps } from '@/types/schema'
 
 export const TE_RECORD: TweetsProps[] = [
-  {
-    note: '无条件信任自己，为自己感到骄傲——奇拉比',
-    date: 'Nov 17 11:47, 2024',
-    img: '',
-    id: '2024-11-17-09-47',
-    author: '',
-    private: true,
-  },
+  // {
+  //   note: '无条件信任自己，为自己感到骄傲——奇拉比',
+  //   date: 'Nov 17 11:47, 2024',
+  //   img: '',
+  //   id: '2024-11-17-09-46',
+  //   author: '',
+  //   private: true,
+  // },
   {
     note: '正确的反传统的想法，它可能是大多数人不愿意做的事情，但会成为你的北极星',
     date: 'Nov 15 21:47, 2024',

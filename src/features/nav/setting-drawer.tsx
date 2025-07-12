@@ -1,6 +1,7 @@
 'use client'
 
 import { Drawer } from '@/components/Drawer'
+import { message } from '@/components/Message'
 import { authEdit } from '@/server/auth'
 import { useGlobSettingState } from '@/store/setting'
 import { useCallback } from 'react'
@@ -35,15 +36,25 @@ export const SettingDrawer = (props: SettingDrawerProps) => {
   const handleSave = useCallback(async () => {
     const { name, password } = user
     const isAuth = await authEdit({ name, password })
-    setIsEdit(isAuth)
-  }, [user])
+    if (isAuth) {
+      setIsEdit(isAuth)
+      handleClose()
+      message?.success('编辑模式打开', {
+        duration: 3,
+      })
+    } else {
+      message?.error('密码/用户名错误', {
+        duration: 3,
+      })
+    }
+  }, [user, handleClose, setIsEdit])
 
   return (
     <>
       <Drawer visible={visible} onClose={handleClose} placement="right">
         <div className="nav-setting-form-list">
           <div className="nav-setting-form-field">
-            <span className="field-label">用户名</span>
+            <span className="field-label">用户</span>
             <input
               className="field-value"
               placeholder="用户名"
