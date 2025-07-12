@@ -91,10 +91,11 @@ export const RE_CUSTOME_TYPE = [
 
 export const RE_BLUM = [
   {
-    name: '葬送的芙莉莲',
-    author: '日本 / 山田钟人',
+    title: '葬送的芙莉莲',
+    author: '山田钟人',
+    country: 'JP',
     cover: frierenUrl,
-    note: DiaryNotes.frieren,
+    content: DiaryNotes.frieren,
     labels: [RE_LABEL.animate, RE_LABEL.soul],
     key: 'frieren',
     stars: 5,
@@ -102,10 +103,11 @@ export const RE_BLUM = [
     id: '002',
   },
   {
-    name: '人性的枷锁',
-    author: '英国 / 威廉·萨默塞特·毛姆',
+    title: '人性的枷锁',
+    author: '威廉·萨默塞特·毛姆',
+    country: 'GB',
     cover: humanBondage,
-    note: DiaryNotes.homeBondage,
+    content: DiaryNotes.homeBondage,
     labels: [RE_LABEL.notion],
     key: 'homeBondage',
     stars: 4.5,
@@ -113,3 +115,5 @@ export const RE_BLUM = [
     id: '001',
   },
 ]
+
+export const REVALIDATE_REVIEW_KEY = 'reviews'

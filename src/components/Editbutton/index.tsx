@@ -1,3 +1,5 @@
+'use client'
+
 import { WeatherIcon } from '@/icon/weather'
 import { useGlobSettingState } from '@/store/setting'
 import { useCallback } from 'react'

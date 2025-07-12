@@ -1,3 +1,5 @@
+'use client'
+
 import { Label } from '@/components/Label'
 import { RE_THEME_TYPE } from '@/const/reviews'
 import { useMemo } from 'react'
