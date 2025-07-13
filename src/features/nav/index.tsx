@@ -75,6 +75,7 @@ export const NavHeader = () => {
               <HomeIcon />
             </Link>
           </div>
+          <div className={'flex-1'}></div>
           <div className={'atori-nav-menu'}>{options}</div>
           <div className={'atori-nav-extra'}>
             <a
