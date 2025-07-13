@@ -166,9 +166,10 @@ textarea::placeholder {
     margin-block: 2rem;
     font-weight: bold;
     font-size: 3.5rem;
+    margin-bottom: 5rem;
   }
   .prose {
-    max-width: 60rem;
+    max-width: 70rem;
     margin: 0 auto;
   }
 }

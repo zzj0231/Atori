@@ -16,7 +16,7 @@
 
 .atori-nav-favicon {
   flex: 1;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
 }
 
 .atori-nav-favicon path {
@@ -78,6 +78,7 @@
 .atori-nav-menu .menu-item {
   opacity: var(--atori-c-text-opac-1ight);
   transition: opacity 0.2s ease;
+  font-size: 1.8rem;
   &:hover {
     opacity: var(--atori-c-text-opac-full);
   }
@@ -91,6 +92,7 @@
 
 .atroi-nav-icon {
   display: inline-block;
+  font-size: 1.8rem;
   opacity: var(--atori-c-text-opac-1ight);
   cursor: pointer;
   transition: opacity 0.2s ease;
