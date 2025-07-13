@@ -134,9 +134,10 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --atori-font-family-base: 'Inter var experimental', 'Inter var', -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --atori-font-family-base:
+    'Inter var experimental', 'Inter var', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   --atori-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
@@ -154,4 +155,5 @@
 
 :root {
   --atori-nav-height: 56px;
+  --atori-footer-height: 9rem;
 }
