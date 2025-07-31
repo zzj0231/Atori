@@ -56,6 +56,9 @@ dependencies:
   sharp:
     specifier: ^0.34.2
     version: 0.34.2
+  shiki:
+    specifier: ^3.8.1
+    version: 3.8.1
   swr:
     specifier: ^2.3.4
     version: 2.3.4(react@18.3.1)
@@ -76,6 +79,21 @@ devDependencies:
   '@neondatabase/serverless':
     specifier: 0.9.5
     version: 0.9.5
+  '@shikijs/markdown-it':
+    specifier: ^3.8.1
+    version: 3.8.1
+  '@shikijs/transformers':
+    specifier: ^3.8.1
+    version: 3.8.1
+  '@shikijs/twoslash':
+    specifier: ^3.8.1
+    version: 3.8.1(typescript@5.8.2)
+  '@types/markdown-it':
+    specifier: ^14.1.2
+    version: 14.1.2
+  '@types/markdown-it-link-attributes':
+    specifier: ^3.0.5
+    version: 3.0.5
   '@types/node':
     specifier: ^20.17.22
     version: 20.17.22
@@ -106,6 +124,24 @@ devDependencies:
   lint-staged:
     specifier: ^15.4.3
     version: 15.4.3
+  markdown-it:
+    specifier: ^14.1.0
+    version: 14.1.0
+  markdown-it-anchor:
+    specifier: ^9.2.0
+    version: 9.2.0(@types/markdown-it@14.1.2)(markdown-it@14.1.0)
+  markdown-it-github-alerts:
+    specifier: ^1.0.0
+    version: 1.0.0(markdown-it@14.1.0)
+  markdown-it-link-attributes:
+    specifier: ^4.0.1
+    version: 4.0.1
+  markdown-it-magic-link:
+    specifier: ^0.1.4
+    version: 0.1.4
+  markdown-it-table-of-contents:
+    specifier: ^0.9.0
+    version: 0.9.0
   postcss:
     specifier: ^8.5.3
     version: 8.5.3
@@ -913,6 +949,78 @@ packages:
     resolution: {integrity: sha512-kkKUDVlII2DQiKy7UstOR1ErJP8kUKAQ4oa+SQtM0K+lPdmmjj0YnnxBgtTVYH7mUKtbsxeFC9y0AmK7Yb78/A==, tarball: https://registry.npmmirror.com/@rushstack/eslint-patch/-/eslint-patch-1.10.5.tgz}
     dev: true
 
+  /@shikijs/core@3.8.1:
+    resolution: {integrity: sha512-uTSXzUBQ/IgFcUa6gmGShCHr4tMdR3pxUiiWKDm8pd42UKJdYhkAYsAmHX5mTwybQ5VyGDgTjW4qKSsRvGSang==, tarball: https://registry.npmmirror.com/@shikijs/core/-/core-3.8.1.tgz}
+    dependencies:
+      '@shikijs/types': 3.8.1
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+      hast-util-to-html: 9.0.5
+
+  /@shikijs/engine-javascript@3.8.1:
+    resolution: {integrity: sha512-rZRp3BM1llrHkuBPAdYAzjlF7OqlM0rm/7EWASeCcY7cRYZIrOnGIHE9qsLz5TCjGefxBFnwgIECzBs2vmOyKA==, tarball: https://registry.npmmirror.com/@shikijs/engine-javascript/-/engine-javascript-3.8.1.tgz}
+    dependencies:
+      '@shikijs/types': 3.8.1
+      '@shikijs/vscode-textmate': 10.0.2
+      oniguruma-to-es: 4.3.3
+
+  /@shikijs/engine-oniguruma@3.8.1:
+    resolution: {integrity: sha512-KGQJZHlNY7c656qPFEQpIoqOuC4LrxjyNndRdzk5WKB/Ie87+NJCF1xo9KkOUxwxylk7rT6nhlZyTGTC4fCe1g==, tarball: https://registry.npmmirror.com/@shikijs/engine-oniguruma/-/engine-oniguruma-3.8.1.tgz}
+    dependencies:
+      '@shikijs/types': 3.8.1
+      '@shikijs/vscode-textmate': 10.0.2
+
+  /@shikijs/langs@3.8.1:
+    resolution: {integrity: sha512-TjOFg2Wp1w07oKnXjs0AUMb4kJvujML+fJ1C5cmEj45lhjbUXtziT1x2bPQb9Db6kmPhkG5NI2tgYW1/DzhUuQ==, tarball: https://registry.npmmirror.com/@shikijs/langs/-/langs-3.8.1.tgz}
+    dependencies:
+      '@shikijs/types': 3.8.1
+
+  /@shikijs/markdown-it@3.8.1:
+    resolution: {integrity: sha512-5/zTzhQfL4nYq68cw98JLBac3Ex2AzMcMBvQoB4am2uNaqISDqMSSSEvOKRXSQL357M7YxRtbyjgtg1Xpaboog==, tarball: https://registry.npmmirror.com/@shikijs/markdown-it/-/markdown-it-3.8.1.tgz}
+    peerDependencies:
+      markdown-it-async: ^2.2.0
+    peerDependenciesMeta:
+      markdown-it-async:
+        optional: true
+    dependencies:
+      markdown-it: 14.1.0
+      shiki: 3.8.1
+    dev: true
+
+  /@shikijs/themes@3.8.1:
+    resolution: {integrity: sha512-Vu3t3BBLifc0GB0UPg2Pox1naTemrrvyZv2lkiSw3QayVV60me1ujFQwPZGgUTmwXl1yhCPW8Lieesm0CYruLQ==, tarball: https://registry.npmmirror.com/@shikijs/themes/-/themes-3.8.1.tgz}
+    dependencies:
+      '@shikijs/types': 3.8.1
+
+  /@shikijs/transformers@3.8.1:
+    resolution: {integrity: sha512-nmTyFfBrhJk6HJi118jes0wuWdfKXeVUq1Nq+hm8h6wbk1KUfvtg+LY/uDfxZD2VDItHO3QoINIs3NtoKBmgxw==, tarball: https://registry.npmmirror.com/@shikijs/transformers/-/transformers-3.8.1.tgz}
+    dependencies:
+      '@shikijs/core': 3.8.1
+      '@shikijs/types': 3.8.1
+    dev: true
+
+  /@shikijs/twoslash@3.8.1(typescript@5.8.2):
+    resolution: {integrity: sha512-Y6hF8cA0fS5w8iIPC20pLgVABfzwkWeQ8hca9h2XaZvdCR0R121JDr+HmjJ6lc9l8MyCOww+k9HK+QUbH6CCag==, tarball: https://registry.npmmirror.com/@shikijs/twoslash/-/twoslash-3.8.1.tgz}
+    peerDependencies:
+      typescript: '>=5.5.0'
+    dependencies:
+      '@shikijs/core': 3.8.1
+      '@shikijs/types': 3.8.1
+      twoslash: 0.3.3(typescript@5.8.2)
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@shikijs/types@3.8.1:
+    resolution: {integrity: sha512-5C39Q8/8r1I26suLh+5TPk1DTrbY/kn3IdWA5HdizR0FhlhD05zx5nKCqhzSfDHH3p4S0ZefxWd77DLV+8FhGg==, tarball: https://registry.npmmirror.com/@shikijs/types/-/types-3.8.1.tgz}
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+
+  /@shikijs/vscode-textmate@10.0.2:
+    resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==, tarball: https://registry.npmmirror.com/@shikijs/vscode-textmate/-/vscode-textmate-10.0.2.tgz}
+
   /@swc/counter@0.1.3:
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==, tarball: https://registry.npmmirror.com/@swc/counter/-/counter-0.1.3.tgz}
     dev: false
@@ -938,7 +1046,6 @@ packages:
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==, tarball: https://registry.npmmirror.com/@types/hast/-/hast-3.0.4.tgz}
     dependencies:
       '@types/unist': 3.0.3
-    dev: false
 
   /@types/js-cookie@2.2.7:
     resolution: {integrity: sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==, tarball: https://registry.npmmirror.com/@types/js-cookie/-/js-cookie-2.2.7.tgz}
@@ -946,6 +1053,23 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==, tarball: https://registry.npmmirror.com/@types/json5/-/json5-0.0.29.tgz}
+    dev: true
+
+  /@types/linkify-it@5.0.0:
+    resolution: {integrity: sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q==, tarball: https://registry.npmmirror.com/@types/linkify-it/-/linkify-it-5.0.0.tgz}
+    dev: true
+
+  /@types/markdown-it-link-attributes@3.0.5:
+    resolution: {integrity: sha512-VZ2BGN3ywUg7mBD8W6PwR8ChpOxaQSBDbLqPgvNI+uIra3zY2af1eG/3XzWTKjEraTWskMKnZqZd6m1fDF67Bg==, tarball: https://registry.npmmirror.com/@types/markdown-it-link-attributes/-/markdown-it-link-attributes-3.0.5.tgz}
+    dependencies:
+      '@types/markdown-it': 14.1.2
+    dev: true
+
+  /@types/markdown-it@14.1.2:
+    resolution: {integrity: sha512-promo4eFwuiW+TfGxhi+0x3czqTYJkG8qB17ZUJiVF10Xm7NLVRSLUsfRTU/6h1e24VvRnXCx+hG7li58lkzog==, tarball: https://registry.npmmirror.com/@types/markdown-it/-/markdown-it-14.1.2.tgz}
+    dependencies:
+      '@types/linkify-it': 5.0.0
+      '@types/mdurl': 2.0.0
     dev: true
 
   /@types/mdast@3.0.15:
@@ -957,6 +1081,10 @@ packages:
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==, tarball: https://registry.npmmirror.com/@types/mdast/-/mdast-4.0.4.tgz}
     dependencies:
       '@types/unist': 3.0.3
+
+  /@types/mdurl@2.0.0:
+    resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==, tarball: https://registry.npmmirror.com/@types/mdurl/-/mdurl-2.0.0.tgz}
+    dev: true
 
   /@types/minimist@1.2.5:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==, tarball: https://registry.npmmirror.com/@types/minimist/-/minimist-1.2.5.tgz}
@@ -1127,6 +1255,17 @@ packages:
     dependencies:
       '@typescript-eslint/types': 8.25.0
       eslint-visitor-keys: 4.2.0
+    dev: true
+
+  /@typescript/vfs@1.6.1(typescript@5.8.2):
+    resolution: {integrity: sha512-JwoxboBh7Oz1v38tPbkrZ62ZXNHAk9bJ7c9x0eI5zBfBnBYGhURdbnh7Z4smN/MV48Y5OCcZb58n972UtbazsA==, tarball: https://registry.npmmirror.com/@typescript/vfs/-/vfs-1.6.1.tgz}
+    peerDependencies:
+      typescript: '*'
+    dependencies:
+      debug: 4.4.0
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@ungap/structured-clone@1.3.0:
@@ -1578,7 +1717,6 @@ packages:
 
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==, tarball: https://registry.npmmirror.com/ccount/-/ccount-2.0.1.tgz}
-    dev: false
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==, tarball: https://registry.npmmirror.com/chalk/-/chalk-2.4.2.tgz}
@@ -1604,11 +1742,9 @@ packages:
 
   /character-entities-html4@2.1.0:
     resolution: {integrity: sha512-1v7fgQRj6hnSwFpq1Eu0ynr/CDEw0rXo2B61qXrLNdHZmPKgb7fqS1a2JwF0rISo9q77jDI8VMEHoApn8qDoZA==, tarball: https://registry.npmmirror.com/character-entities-html4/-/character-entities-html4-2.1.0.tgz}
-    dev: false
 
   /character-entities-legacy@3.0.0:
     resolution: {integrity: sha512-RpPp0asT/6ufRm//AJVwpViZbGM/MkjQFxJccQRHmISF/22NBtsHqAWmL+/pmkPWoIUJdWyeVleTl1wydHATVQ==, tarball: https://registry.npmmirror.com/character-entities-legacy/-/character-entities-legacy-3.0.0.tgz}
-    dev: false
 
   /character-entities@2.0.2:
     resolution: {integrity: sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==, tarball: https://registry.npmmirror.com/character-entities/-/character-entities-2.0.2.tgz}
@@ -1716,7 +1852,6 @@ packages:
 
   /comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==, tarball: https://registry.npmmirror.com/comma-separated-tokens/-/comma-separated-tokens-2.0.3.tgz}
-    dev: false
 
   /commander@13.1.0:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==, tarball: https://registry.npmmirror.com/commander/-/commander-13.1.0.tgz}
@@ -2154,7 +2289,6 @@ packages:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==, tarball: https://registry.npmmirror.com/devlop/-/devlop-1.1.0.tgz}
     dependencies:
       dequal: 2.0.3
-    dev: false
 
   /didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==, tarball: https://registry.npmmirror.com/didyoumean/-/didyoumean-1.2.2.tgz}
@@ -2251,6 +2385,11 @@ packages:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.2.1
+    dev: true
+
+  /entities@4.5.0:
+    resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==, tarball: https://registry.npmmirror.com/entities/-/entities-4.5.0.tgz}
+    engines: {node: '>=0.12'}
     dev: true
 
   /environment@1.1.0:
@@ -3199,13 +3338,11 @@ packages:
       space-separated-tokens: 2.0.2
       stringify-entities: 4.0.4
       zwitch: 2.0.4
-    dev: false
 
   /hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==, tarball: https://registry.npmmirror.com/hast-util-whitespace/-/hast-util-whitespace-3.0.0.tgz}
     dependencies:
       '@types/hast': 3.0.4
-    dev: false
 
   /hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==, tarball: https://registry.npmmirror.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz}
@@ -3227,7 +3364,6 @@ packages:
 
   /html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==, tarball: https://registry.npmmirror.com/html-void-elements/-/html-void-elements-3.0.0.tgz}
-    dev: false
 
   /http-proxy-agent@4.0.1:
     resolution: {integrity: sha512-k0zdNgqWTGA6aeIRVpvfVob4fL52dTfaehylg0Y4UvSySvOq/Y+BOyPrgpUrA7HylqvU8vIZGsRuXmspskV0Tg==, tarball: https://registry.npmmirror.com/http-proxy-agent/-/http-proxy-agent-4.0.1.tgz}
@@ -3809,6 +3945,12 @@ packages:
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==, tarball: https://registry.npmmirror.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz}
 
+  /linkify-it@5.0.0:
+    resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==, tarball: https://registry.npmmirror.com/linkify-it/-/linkify-it-5.0.0.tgz}
+    dependencies:
+      uc.micro: 2.1.0
+    dev: true
+
   /lint-staged@15.4.3:
     resolution: {integrity: sha512-FoH1vOeouNh1pw+90S+cnuoFwRfUD9ijY2GKy5h7HS3OR7JVir2N2xrsa0+Twc1B7cW72L+88geG5cW4wIhn7g==, tarball: https://registry.npmmirror.com/lint-staged/-/lint-staged-15.4.3.tgz}
     engines: {node: '>=18.12.0'}
@@ -3941,6 +4083,51 @@ packages:
   /map-obj@4.3.0:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==, tarball: https://registry.npmmirror.com/map-obj/-/map-obj-4.3.0.tgz}
     engines: {node: '>=8'}
+    dev: true
+
+  /markdown-it-anchor@9.2.0(@types/markdown-it@14.1.2)(markdown-it@14.1.0):
+    resolution: {integrity: sha512-sa2ErMQ6kKOA4l31gLGYliFQrMKkqSO0ZJgGhDHKijPf0pNFM9vghjAh3gn26pS4JDRs7Iwa9S36gxm3vgZTzg==, tarball: https://registry.npmmirror.com/markdown-it-anchor/-/markdown-it-anchor-9.2.0.tgz}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dependencies:
+      '@types/markdown-it': 14.1.2
+      markdown-it: 14.1.0
+    dev: true
+
+  /markdown-it-github-alerts@1.0.0(markdown-it@14.1.0):
+    resolution: {integrity: sha512-RU3cbB/ewujrDpYNdyabvp4CscZ5J/3D71NWbJW+JSA0nplfutIXDMCwtGWlMLwzgBDAYkFMvYGkigq8nWOVdA==, tarball: https://registry.npmmirror.com/markdown-it-github-alerts/-/markdown-it-github-alerts-1.0.0.tgz}
+    peerDependencies:
+      markdown-it: '>= 13.0.0'
+    dependencies:
+      markdown-it: 14.1.0
+    dev: true
+
+  /markdown-it-link-attributes@4.0.1:
+    resolution: {integrity: sha512-pg5OK0jPLg62H4k7M9mRJLT61gUp9nvG0XveKYHMOOluASo9OEF13WlXrpAp2aj35LbedAy3QOCgQCw0tkLKAQ==, tarball: https://registry.npmmirror.com/markdown-it-link-attributes/-/markdown-it-link-attributes-4.0.1.tgz}
+    dev: true
+
+  /markdown-it-magic-link@0.1.4:
+    resolution: {integrity: sha512-Y0CgJVtqdGGeWJ+8bN+eBEr2q2ugmf5AMJWSbxBpmGcqARbKBB62biB7LwkoxtbddlmVkACYBFyjlMP/SzYlzg==, tarball: https://registry.npmmirror.com/markdown-it-magic-link/-/markdown-it-magic-link-0.1.4.tgz}
+    dependencies:
+      markdown-it: 14.1.0
+    dev: true
+
+  /markdown-it-table-of-contents@0.9.0:
+    resolution: {integrity: sha512-PKtgvLweW/PXj8Pg2EfJM9qANbYqchxOiZy+70kLKFfCL4IkdlMzc53Z4Yj2ABw45MEzrXUSHh+4Cs2tDjwEig==, tarball: https://registry.npmmirror.com/markdown-it-table-of-contents/-/markdown-it-table-of-contents-0.9.0.tgz}
+    engines: {node: '>6.4.0'}
+    dev: true
+
+  /markdown-it@14.1.0:
+    resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==, tarball: https://registry.npmmirror.com/markdown-it/-/markdown-it-14.1.0.tgz}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
     dev: true
 
   /markdown-table@3.0.4:
@@ -4093,7 +4280,6 @@ packages:
       unist-util-position: 5.0.0
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-    dev: false
 
   /mdast-util-to-markdown@1.5.0:
     resolution: {integrity: sha512-bbv7TPv/WC49thZPg3jXuqzuvI45IL2EVAr/KxF0BSdHsU0ceFHOmwQn6evxAh1GaoK/6GQ1wp4R4oW2+LFL/A==, tarball: https://registry.npmmirror.com/mdast-util-to-markdown/-/mdast-util-to-markdown-1.5.0.tgz}
@@ -4137,6 +4323,10 @@ packages:
   /mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==, tarball: https://registry.npmmirror.com/mdn-data/-/mdn-data-2.0.14.tgz}
     dev: false
+
+  /mdurl@2.0.0:
+    resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==, tarball: https://registry.npmmirror.com/mdurl/-/mdurl-2.0.0.tgz}
+    dev: true
 
   /meow@8.1.2:
     resolution: {integrity: sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==, tarball: https://registry.npmmirror.com/meow/-/meow-8.1.2.tgz}
@@ -4377,7 +4567,6 @@ packages:
     dependencies:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.2
-    dev: false
 
   /micromark-util-chunked@1.1.0:
     resolution: {integrity: sha512-Ye01HXpkZPNcV6FiyoW2fGZDUw4Yc7vT0E9Sad83+bEDiCJ1uXu0S3mr8WLpsz3HaG3x2q0HM6CTuPdcZcluFQ==, tarball: https://registry.npmmirror.com/micromark-util-chunked/-/micromark-util-chunked-1.1.0.tgz}
@@ -4457,7 +4646,6 @@ packages:
 
   /micromark-util-encode@2.0.1:
     resolution: {integrity: sha512-c3cVx2y4KqUnwopcO9b/SCdo2O67LwJJ/UyqGfbigahfegL9myoEFoDYZgkT7f36T0bLrM9hZTAaAyH+PCAXjw==, tarball: https://registry.npmmirror.com/micromark-util-encode/-/micromark-util-encode-2.0.1.tgz}
-    dev: false
 
   /micromark-util-html-tag-name@1.2.0:
     resolution: {integrity: sha512-VTQzcuQgFUD7yYztuQFKXT49KghjtETQ+Wv/zUjGSGBioZnkA4P1XXZPT1FHeJA6RwRXSF47yvJ1tsJdoxwO+Q==, tarball: https://registry.npmmirror.com/micromark-util-html-tag-name/-/micromark-util-html-tag-name-1.2.0.tgz}
@@ -4505,7 +4693,6 @@ packages:
       micromark-util-character: 2.1.1
       micromark-util-encode: 2.0.1
       micromark-util-symbol: 2.0.1
-    dev: false
 
   /micromark-util-subtokenize@1.1.0:
     resolution: {integrity: sha512-kUQHyzRoxvZO2PuLzMt2P/dwVsTiivCK8icYTeR+3WgbuPqfHgPPy7nFKbeqRivBvn/3N3GBiNC+JRTMSxEC7A==, tarball: https://registry.npmmirror.com/micromark-util-subtokenize/-/micromark-util-subtokenize-1.1.0.tgz}
@@ -4531,7 +4718,6 @@ packages:
 
   /micromark-util-symbol@2.0.1:
     resolution: {integrity: sha512-vs5t8Apaud9N28kgCrRUdEed4UJ+wWNvicHLPxCa9ENlYuAY31M0ETy5y1vA33YoNPDFTghEbnh6efaE8h4x0Q==, tarball: https://registry.npmmirror.com/micromark-util-symbol/-/micromark-util-symbol-2.0.1.tgz}
-    dev: false
 
   /micromark-util-types@1.1.0:
     resolution: {integrity: sha512-ukRBgie8TIAcacscVHSiddHjO4k/q3pnedmzMQ4iwDcK0FtFCohKOlFbaOL/mPgfnPsL3C1ZyxJa4sbWrBl3jg==, tarball: https://registry.npmmirror.com/micromark-util-types/-/micromark-util-types-1.1.0.tgz}
@@ -4539,7 +4725,6 @@ packages:
 
   /micromark-util-types@2.0.2:
     resolution: {integrity: sha512-Yw0ECSpJoViF1qTU4DC6NwtC4aWGt1EkzaQB8KPPyCRR8z9TWeV0HbEFGTO+ZY1wB22zmxnJqhPyTpOVCpeHTA==, tarball: https://registry.npmmirror.com/micromark-util-types/-/micromark-util-types-2.0.2.tgz}
-    dev: false
 
   /micromark@3.2.0:
     resolution: {integrity: sha512-uD66tJj54JLYq0De10AhWycZWGQNUvDI55xPgk2sQM5kn1JYlhbCMTtEeT27+vAhW2FBQxLlOmS3pmA7/2z4aA==, tarball: https://registry.npmmirror.com/micromark/-/micromark-3.2.0.tgz}
@@ -4901,6 +5086,16 @@ packages:
     dependencies:
       mimic-function: 5.0.1
     dev: true
+
+  /oniguruma-parser@0.12.1:
+    resolution: {integrity: sha512-8Unqkvk1RYc6yq2WBYRj4hdnsAxVze8i7iPfQr8e4uSP3tRv0rpZcbGUDvxfQQcdwHt/e9PrMvGCsa8OqG9X3w==, tarball: https://registry.npmmirror.com/oniguruma-parser/-/oniguruma-parser-0.12.1.tgz}
+
+  /oniguruma-to-es@4.3.3:
+    resolution: {integrity: sha512-rPiZhzC3wXwE59YQMRDodUwwT9FZ9nNBwQQfsd1wfdtlKEyCdRV0avrTcSZ5xlIvGRVPd/cx6ZN45ECmS39xvg==, tarball: https://registry.npmmirror.com/oniguruma-to-es/-/oniguruma-to-es-4.3.3.tgz}
+    dependencies:
+      oniguruma-parser: 0.12.1
+      regex: 6.0.1
+      regex-recursion: 6.0.2
 
   /optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==, tarball: https://registry.npmmirror.com/optionator/-/optionator-0.9.4.tgz}
@@ -5277,7 +5472,6 @@ packages:
 
   /property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==, tarball: https://registry.npmmirror.com/property-information/-/property-information-7.1.0.tgz}
-    dev: false
 
   /protobufjs@7.5.3:
     resolution: {integrity: sha512-sildjKwVqOI2kmFDiXQ6aEB0fjYTafpEvIBs8tOR8qI4spuL9OPROLVu2qZqi/xgCfsHIwVqlaF8JBjWFHnKbw==, tarball: https://registry.npmmirror.com/protobufjs/-/protobufjs-7.5.3.tgz}
@@ -5310,6 +5504,11 @@ packages:
       end-of-stream: 1.4.5
       once: 1.4.0
     dev: false
+
+  /punycode.js@2.3.1:
+    resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==, tarball: https://registry.npmmirror.com/punycode.js/-/punycode.js-2.3.1.tgz}
+    engines: {node: '>=6'}
+    dev: true
 
   /punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==, tarball: https://registry.npmmirror.com/punycode/-/punycode-2.3.1.tgz}
@@ -5541,6 +5740,19 @@ packages:
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==, tarball: https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.14.1.tgz}
     dev: false
+
+  /regex-recursion@6.0.2:
+    resolution: {integrity: sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg==, tarball: https://registry.npmmirror.com/regex-recursion/-/regex-recursion-6.0.2.tgz}
+    dependencies:
+      regex-utilities: 2.3.0
+
+  /regex-utilities@2.3.0:
+    resolution: {integrity: sha512-8VhliFJAWRaUiVvREIiW2NXXTmHs4vMNnSzuJVhscgmGav3g9VDxLrQndI3dZZVVdp0ZO/5v0xmX516/7M9cng==, tarball: https://registry.npmmirror.com/regex-utilities/-/regex-utilities-2.3.0.tgz}
+
+  /regex@6.0.1:
+    resolution: {integrity: sha512-uorlqlzAKjKQZ5P+kTJr3eeJGSVroLKoHmquUj4zHWuR+hEyNqlXsSKlYYF5F4NI6nl7tWCs0apKJ0lmfsXAPA==, tarball: https://registry.npmmirror.com/regex/-/regex-6.0.1.tgz}
+    dependencies:
+      regex-utilities: 2.3.0
 
   /regexp.prototype.flags@1.5.4:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==, tarball: https://registry.npmmirror.com/regexp.prototype.flags/-/regexp.prototype.flags-1.5.4.tgz}
@@ -5911,6 +6123,18 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==, tarball: https://registry.npmmirror.com/shebang-regex/-/shebang-regex-3.0.0.tgz}
     engines: {node: '>=8'}
 
+  /shiki@3.8.1:
+    resolution: {integrity: sha512-+MYIyjwGPCaegbpBeFN9+oOifI8CKiKG3awI/6h3JeT85c//H2wDW/xCJEGuQ5jPqtbboKNqNy+JyX9PYpGwNg==, tarball: https://registry.npmmirror.com/shiki/-/shiki-3.8.1.tgz}
+    dependencies:
+      '@shikijs/core': 3.8.1
+      '@shikijs/engine-javascript': 3.8.1
+      '@shikijs/engine-oniguruma': 3.8.1
+      '@shikijs/langs': 3.8.1
+      '@shikijs/themes': 3.8.1
+      '@shikijs/types': 3.8.1
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+
   /side-channel-list@1.0.0:
     resolution: {integrity: sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==, tarball: https://registry.npmmirror.com/side-channel-list/-/side-channel-list-1.0.0.tgz}
     engines: {node: '>= 0.4'}
@@ -5988,7 +6212,6 @@ packages:
 
   /space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==, tarball: https://registry.npmmirror.com/space-separated-tokens/-/space-separated-tokens-2.0.2.tgz}
-    dev: false
 
   /spdx-correct@3.2.0:
     resolution: {integrity: sha512-kN9dJbvnySHULIluDHy32WHRUu3Og7B9sbY7tsFLctQkIqnMh3hErYgdMjTYuqmcXX+lK5T1lnUt3G7zNswmZA==, tarball: https://registry.npmmirror.com/spdx-correct/-/spdx-correct-3.2.0.tgz}
@@ -6216,7 +6439,6 @@ packages:
     dependencies:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
-    dev: false
 
   /stringify-package@1.0.1:
     resolution: {integrity: sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==, tarball: https://registry.npmmirror.com/stringify-package/-/stringify-package-1.0.1.tgz}
@@ -6457,7 +6679,6 @@ packages:
 
   /trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==, tarball: https://registry.npmmirror.com/trim-lines/-/trim-lines-3.0.1.tgz}
-    dev: false
 
   /trim-newlines@3.0.1:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==, tarball: https://registry.npmmirror.com/trim-newlines/-/trim-newlines-3.0.1.tgz}
@@ -6495,6 +6716,22 @@ packages:
   /tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.8.1.tgz}
     dev: false
+
+  /twoslash-protocol@0.3.3:
+    resolution: {integrity: sha512-26NXjXEj+2NgytwOjjhFtNpQI7Zgct6PTyLg6JO7fIbO7MIm+kx89IxvBustgBOSKxoWjNBN2LXjNHHMD7+k0g==, tarball: https://registry.npmmirror.com/twoslash-protocol/-/twoslash-protocol-0.3.3.tgz}
+    dev: true
+
+  /twoslash@0.3.3(typescript@5.8.2):
+    resolution: {integrity: sha512-Yen1RBSYh/NUR6tfK6xT7DsXkBYby7lfp078Q7XoJR5dtAeG9jB5PVL1oF2sZwHapLjaqcZNlw7GSB8himZNsQ==, tarball: https://registry.npmmirror.com/twoslash/-/twoslash-0.3.3.tgz}
+    peerDependencies:
+      typescript: ^5.5.0
+    dependencies:
+      '@typescript/vfs': 1.6.1(typescript@5.8.2)
+      twoslash-protocol: 0.3.3
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==, tarball: https://registry.npmmirror.com/type-check/-/type-check-0.4.0.tgz}
@@ -6578,6 +6815,10 @@ packages:
     hasBin: true
     dev: true
 
+  /uc.micro@2.1.0:
+    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==, tarball: https://registry.npmmirror.com/uc.micro/-/uc.micro-2.1.0.tgz}
+    dev: true
+
   /uglify-js@3.19.3:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==, tarball: https://registry.npmmirror.com/uglify-js/-/uglify-js-3.19.3.tgz}
     engines: {node: '>=0.8.0'}
@@ -6640,7 +6881,6 @@ packages:
     resolution: {integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw==, tarball: https://registry.npmmirror.com/unist-util-is/-/unist-util-is-6.0.0.tgz}
     dependencies:
       '@types/unist': 3.0.3
-    dev: false
 
   /unist-util-map@2.0.1:
     resolution: {integrity: sha512-VdNvk4BQUUU9Rgr8iUOvclHa/iN9O+6Dt66FKij8l9OVezGG37gGWCPU5KSax1R2degqXFvl3kWTkvzL79e9tQ==, tarball: https://registry.npmmirror.com/unist-util-map/-/unist-util-map-2.0.1.tgz}
@@ -6653,7 +6893,6 @@ packages:
     resolution: {integrity: sha512-fucsC7HjXvkB5R3kTCO7kUjRdrS0BJt3M/FPxmHMBOm8JQi2BsHAHFsy27E0EolP8rp0NzXsJ+jNPyDWvOJZPA==, tarball: https://registry.npmmirror.com/unist-util-position/-/unist-util-position-5.0.0.tgz}
     dependencies:
       '@types/unist': 3.0.3
-    dev: false
 
   /unist-util-stringify-position@3.0.3:
     resolution: {integrity: sha512-k5GzIBZ/QatR8N5X2y+drfpWG8IDBzdnVj6OInRNWm1oXrzydiaAT2OQiA8DPRRZyAKb9b6I2a6PxYklZD0gKg==, tarball: https://registry.npmmirror.com/unist-util-stringify-position/-/unist-util-stringify-position-3.0.3.tgz}
@@ -6665,7 +6904,6 @@ packages:
     resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==, tarball: https://registry.npmmirror.com/unist-util-stringify-position/-/unist-util-stringify-position-4.0.0.tgz}
     dependencies:
       '@types/unist': 3.0.3
-    dev: false
 
   /unist-util-visit-parents@5.1.3:
     resolution: {integrity: sha512-x6+y8g7wWMyQhL1iZfhIPhDAs7Xwbn9nRosDXl7qoPTSCy0yNxnKc+hWokFifWQIDGi154rdUqKvbCa4+1kLhg==, tarball: https://registry.npmmirror.com/unist-util-visit-parents/-/unist-util-visit-parents-5.1.3.tgz}
@@ -6679,7 +6917,6 @@ packages:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
-    dev: false
 
   /unist-util-visit@4.1.2:
     resolution: {integrity: sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg==, tarball: https://registry.npmmirror.com/unist-util-visit/-/unist-util-visit-4.1.2.tgz}
@@ -6695,7 +6932,6 @@ packages:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
-    dev: false
 
   /universalify@0.2.0:
     resolution: {integrity: sha512-CJ1QgKmNg3CwvAv/kOFmtnEN05f0D/cn9QntgNOQlQF9dgvVTHj3t+8JPdjqawCHk7V/KA+fbUqzZ9XWhcqPUg==, tarball: https://registry.npmmirror.com/universalify/-/universalify-0.2.0.tgz}
@@ -6835,7 +7071,6 @@ packages:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-stringify-position: 4.0.0
-    dev: false
 
   /vfile@5.3.7:
     resolution: {integrity: sha512-r7qlzkgErKjobAmyNIkkSpizsFPYiUPuJb5pNW1RB4JcYVZhs4lIbVqk8XPk033CV/1z8ss5pkax8SuhGpcG8g==, tarball: https://registry.npmmirror.com/vfile/-/vfile-5.3.7.tgz}
@@ -6851,7 +7086,6 @@ packages:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
-    dev: false
 
   /w3c-hr-time@1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==, tarball: https://registry.npmmirror.com/w3c-hr-time/-/w3c-hr-time-1.0.2.tgz}

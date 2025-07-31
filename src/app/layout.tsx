@@ -3,6 +3,10 @@ import localFont from 'next/font/local'
 import { NavHeader } from '@/features/nav'
 import { MessageProvider } from '@/components/Message'
 
+import 'markdown-it-github-alerts/styles/github-colors-light.css'
+import 'markdown-it-github-alerts/styles/github-colors-dark-class.css'
+import 'markdown-it-github-alerts/styles/github-base.css'
+import '@shikijs/twoslash/style-rich.css'
 import './globals.css'
 
 const geistSans = localFont({

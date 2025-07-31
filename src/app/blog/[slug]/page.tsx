@@ -41,53 +41,29 @@ export default function PostPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <article>
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">{post.frontmatter.title}</h1>
-
-          <div className="flex items-center gap-4 text-gray-600 mb-4">
-            <time dateTime={post.frontmatter.date}>
-              {formatDate(post.frontmatter.date)}
-            </time>
-            {post.frontmatter.duration && (
-              <span>· {post.frontmatter.duration}</span>
-            )}
-            {post.frontmatter.author && (
-              <span>· {post.frontmatter.author}</span>
-            )}
-          </div>
-
+      <div className="prose prose--blog mb-[4rem]">
+        <h1 className="!mb-1">{post.frontmatter.title}</h1>
+        <div className="flex items-center gap-2 mb-4 opacity-60">
+          <time dateTime={post.frontmatter.date}>
+            {formatDate(post.frontmatter.date)}
+          </time>
+          {post.frontmatter.duration && (
+            <span>· {post.frontmatter.duration}</span>
+          )}
           {post.frontmatter.lang && post.frontmatter.lang !== 'en' && (
-            <span className="inline-block px-2 py-1 text-xs bg-gray-200 text-gray-600 rounded">
+            <span
+              className="inline-block px-1 py-1 text-xs rounded"
+              style={{
+                backgroundColor: 'var(--atori-c-bg-deep)',
+              }}
+            >
               {post.frontmatter.lang === 'zh' ? '中文' : '日本語'}
             </span>
           )}
-
-          {post.frontmatter.description && (
-            <p className="text-lg text-gray-600 mt-4">
-              {post.frontmatter.description}
-            </p>
-          )}
-        </header>
-
+        </div>
+      </div>
+      <article className="prose prose--blog">
         <PostContent content={post.content} />
-
-        {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-          <footer className="mt-8 pt-8 border-t">
-            <div className="flex items-center gap-2">
-              <span className="text-gray-600">Tags:</span>
-              {post.frontmatter.tags.map(tag => (
-                <a
-                  key={tag}
-                  href={`/blog/tags/${tag}`}
-                  className="px-2 py-1 text-sm bg-blue-100 text-blue-800 rounded hover:bg-blue-200 transition-colors"
-                >
-                  {tag}
-                </a>
-              ))}
-            </div>
-          </footer>
-        )}
       </article>
     </div>
   )

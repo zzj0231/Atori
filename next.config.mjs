@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    // 忽略 @typescript/vfs 的动态依赖警告
+    config.ignoreWarnings = [
+      {
+        module: /node_modules\/@typescript\/vfs/,
+      },
+    ]
+    return config
+  },
 }
 
 export default nextConfig

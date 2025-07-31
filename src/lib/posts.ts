@@ -7,7 +7,6 @@ import { generateExcerpt, slugify } from '@/utils/blog'
 const postsDirectory = path.join(process.cwd(), 'src/app/posts')
 
 export function getAllPosts(): Post[] {
-  console.log('postsDirectory', postsDirectory)
   if (!fs.existsSync(postsDirectory)) {
     return []
   }

@@ -10,11 +10,11 @@
 
   --atori-c-gray: #8e8e8e;
   --atori-c-gray-light-1: #aeaeae;
-  --atori-c-gray-light-2: #c7c7c7;
+  --atori-c-gray-light-2: #c7c7c7; /* light */
   --atori-c-gray-light-3: #d1d1d1;
   --atori-c-gray-light-4: #e5e5e5;
   --atori-c-gray-light-5: #f2f2f2;
-  --atori-c-gray-dark-1: #636363;
+  --atori-c-gray-dark-1: #636363; /* dark */
   --atori-c-gray-dark-2: #484848;
   --atori-c-gray-dark-3: #3a3a3a;
   --atori-c-gray-dark-4: #282828;
@@ -37,6 +37,7 @@
   --atori-c-rubyred: #a26769;
   --atori-c-rubyred-dark: #96616b;
   --atori-c-rubyred-soft: #ca9796;
+  --atori-c-rubyred-soft-2: #9c6c6b;
   --atori-c-rubyred-lighter: #efe5dc;
   --atori-c-rubyred-gray: #d6ccc2;
   --atori-c-gray-neutral: #968f8f;
@@ -95,6 +96,7 @@
   --atori-c-text-2: var(--atori-c-text-light-2);
   --atori-c-text-3: var(--atori-c-text-light-3);
   --atori-c-text-4: var(--atori-c-text-light-4);
+  --atori-c-text-desc: var(--atori-c-gray-light-2);
 
   --atori-c-border-primary: var(--atori-c-rubyred-soft);
   --atori-c-border-normal: var(--atori-c-rubyred-gray);
@@ -105,6 +107,9 @@
 
   --atori-c-star-1: var(--atori-c-rubyred);
   --atori-c-mask: var(--atori-c-mask-light);
+
+  --atori-c-scrollbar: #eee;
+  --atori-c-scrollbar-hover: #bbb;
 }
 
 .dark {
@@ -120,6 +125,7 @@
   --atori-c-text-2: var(--atori-c-text-dark-2);
   --atori-c-text-3: var(--atori-c-text-dark-3);
   --atori-c-text-4: var(--atori-c-text-dark-4);
+  --atori-c-text-desc: var(--atori-c-gray-dark-1);
 
   --atori-c-border-primary: var(--atori-c-rubyred-dark);
   --atori-c-border-normal: var(--atori-c-gray-dark-2);
@@ -127,6 +133,9 @@
 
   --atori-c-star-1: var(--atori-c-rubyred-dark);
   --atori-c-mask: var(--atori-c-mask-dark);
+
+  --atori-c-scrollbar: #111;
+  --atori-c-scrollbar-hover: #222;
 }
 
 /**

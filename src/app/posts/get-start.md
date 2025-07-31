@@ -1,11 +1,11 @@
 ---
 title: Getting Started with Next.js 14
-date: 2024-01-15T10:00:00.000Z
+date: 2024-12-15T10:00:00.000Z
 description: Learn how to build modern web applications with Next.js 14 and App Router
 tags: [nextjs, react, typescript, web-development]
 lang: en
 duration: 10min
-author: Your Name
+author: Atori
 ---
 
 # Getting Started with Next.js 14

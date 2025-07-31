@@ -8,14 +8,12 @@ interface Props {
 
 export function YearGroup({ year, posts }: Props) {
   return (
-    <div>
-      <div className="relative h-20 pointer-events-none mb-8">
-        <span className="absolute left-0 top-0 text-8xl font-bold text-gray-100 select-none">
-          {year}
-        </span>
-      </div>
+    <div className="year-group">
+      {/* 年份背景 */}
+      <div className="year-background">{year}</div>
 
-      <div className="space-y-6">
+      {/* 文章列表 */}
+      <div className="posts-container">
         {posts.map(post => (
           <PostItem key={post.slug} post={post} />
         ))}

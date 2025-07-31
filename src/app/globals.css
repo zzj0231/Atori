@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import '../styles/vars.css';
+@import './mark.css';
 
 *,
 ::before,
@@ -148,6 +149,26 @@ textarea::placeholder {
   color: var(--atori-c-text-2);
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: var(--atori-c-bg);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--atori-c-scrollbar);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--atori-c-scrollbar-hover);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -237,9 +258,6 @@ textarea::placeholder {
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
   }

@@ -1,0 +1,362 @@
+/* .prose--blog > :first-child {
+  margin-top: 0;
+}
+
+/* 基础 Markdown 样式 */
+.prose--blog {
+  color: var(--atori-c-text-1);
+  line-height: 1.6;
+}
+
+/* 标题样式 */
+.prose--blog h1 {
+  color: var(--atori-c-text-1);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
+.prose--blog h2 {
+  color: var(--atori-c-text-1);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+.prose--blog h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+}
+.prose--blog h4 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+.prose--blog h6 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose--blog h2 + * {
+  margin-top: 0;
+}
+
+.prose--blog h3 + * {
+  margin-top: 0 !important;
+}
+
+.prose--blog h4 + * {
+  margin-top: 0 !important;
+}
+
+.prose--blog h5 + * {
+  margin-top: 0 !important;
+}
+
+/* 段落样式 */
+.prose--blog p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* 链接样式 */
+.prose--blog a {
+  color: var(--atori-c-rubyred, #a26769);
+  text-decoration: underline;
+  text-decoration-color: var(--atori-c-rubyred-soft, #ca9796);
+  transition: all 0.2s ease;
+}
+
+.prose--blog a:hover {
+  color: var(--atori-c-rubyred-deep, #990000);
+  text-decoration-color: var(--atori-c-rubyred-deep, #990000);
+}
+
+/* 列表样式 */
+.prose--blog ol[type='A'] {
+  --list-counter-style: upper-alpha;
+}
+.prose--blog ol[type='a'] {
+  --list-counter-style: lower-alpha;
+}
+.prose--blog ol[type='A s'] {
+  --list-counter-style: upper-alpha;
+}
+.prose--blog ol[type='a s'] {
+  --list-counter-style: lower-alpha;
+}
+.prose--blog ol[type='I'] {
+  --list-counter-style: upper-roman;
+}
+.prose--blog ol[type='i'] {
+  --list-counter-style: lower-roman;
+}
+.prose--blog ol[type='I s'] {
+  --list-counter-style: upper-roman;
+}
+.prose--blog ol[type='i s'] {
+  --list-counter-style: lower-roman;
+}
+.prose--blog ol[type='1'] {
+  --list-counter-style: decimal;
+}
+.prose--blog ol > li {
+  position: relative;
+  padding-left: 1.75em;
+}
+.prose--blog ol > li::before {
+  content: counter(list-item, var(--list-counter-style, decimal)) '.';
+  position: absolute;
+  font-weight: 400;
+  color: var(--atori-c-text-1);
+  left: 0;
+}
+.prose--blog ul > li {
+  position: relative;
+  padding-left: 1.75em;
+}
+.prose--blog ul > li::before {
+  content: '';
+  position: absolute;
+  background-color: var(--atori-c-text-1);
+  border-radius: 50%;
+  width: 0.375em;
+  height: 0.375em;
+  top: calc(0.875em - 0.1875em);
+  left: 0.25em;
+}
+.prose--blog ul,
+.prose--blog ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+  list-style-type: none;
+}
+.prose--blog li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.prose--blog > ul > li p {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+.prose--blog > ol > li > *:first-child {
+  margin-top: 1.25em;
+}
+.prose--blog > ol > li > *:last-child {
+  margin-bottom: 1.25em;
+}
+.prose--blog ul ul,
+.prose--blog ul ol,
+.prose--blog ol ul,
+.prose--blog ol ol {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.dark .shiki,
+.dark .shiki span {
+  color: var(--c-dark, inherit);
+  --twoslash-popup-bg: #191919;
+  --twoslash-border-color: #8884;
+}
+.dark .shiki {
+  background-color: #0e0e0e;
+}
+
+html:not(.dark) .shiki {
+  background-color: #fafafa;
+}
+
+html:not(.dark) .shiki,
+html:not(.dark) .shiki span {
+  color: var(--c-light, inherit);
+  --twoslash-popup-bg: #fafafa;
+}
+
+/* 代码块样式 */
+.prose--blog pre {
+  background-color: var(--atori-c-bg-deep);
+  border: 1px solid var(--atori-c-border-normal, #d6ccc2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.dark .prose--blog pre {
+  background-color: var(--atori-c-bg-soft, #242424);
+  border-color: var(--atori-c-border-normal, #484848);
+}
+
+/* 行内代码样式 */
+.prose--blog code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 1.3rem;
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace;
+}
+
+/* 引用样式 */
+.prose--blog blockquote {
+  border-left: 4px solid var(--atori-c-rubyred-soft, #ca9796);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--atori-c-text-2, rgba(60, 60, 60, 0.4));
+}
+
+.dark .prose--blog blockquote {
+  color: var(--atori-c-text-2, rgba(235, 235, 235, 0.87));
+}
+
+/* 表格样式 */
+.prose--blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875em;
+}
+
+.prose--blog th,
+.prose--blog td {
+  border: 1px solid var(--atori-c-border-normal, #d6ccc2);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.prose--blog th {
+  background-color: var(--atori-c-bg-soft, #f9f9f9);
+  font-weight: 600;
+}
+
+.dark .prose--blog th {
+  background-color: var(--atori-c-bg-soft, #242424);
+}
+
+/* 水平线样式 */
+.prose--blog hr {
+  border: none;
+  border-top: 1px solid var(--atori-c-border-normal, #d6ccc2);
+  margin: 2rem 0;
+}
+
+/* 图片样式 */
+.prose--blog img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* 锚点链接样式 */
+.prose--blog .header-anchor {
+  float: left;
+  margin-top: 0.125em;
+  margin-left: -1.2em;
+  padding-right: 0.5em;
+  font-size: 0.85em;
+  opacity: 0;
+  text-decoration: none;
+  border: 0 !important;
+  color: var(--atori-c-text-3, rgba(60, 60, 60, 0.33));
+  transition: opacity 0.2s ease;
+}
+
+.prose--blog h1:hover .header-anchor,
+.prose--blog h2:hover .header-anchor,
+.prose--blog h3:hover .header-anchor,
+.prose--blog h4:hover .header-anchor,
+.prose--blog h5:hover .header-anchor,
+.prose--blog h6:hover .header-anchor {
+  opacity: 1;
+}
+
+/* GitHub Alerts 样式 */
+.prose--blog .markdown-alert {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  border-left: 4px solid;
+}
+
+.prose--blog .markdown-alert-note {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left-color: #3b82f6;
+}
+
+.prose--blog .markdown-alert-tip {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-left-color: #22c55e;
+}
+
+.prose--blog .markdown-alert-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-left-color: #f59e0b;
+}
+
+.prose--blog .markdown-alert-important {
+  background-color: rgba(168, 85, 247, 0.1);
+  border-left-color: #a855f7;
+}
+
+.prose--blog .markdown-alert-caution {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left-color: #ef4444;
+}
+
+/* Shiki 代码高亮样式 */
+.prose--blog .shiki {
+  font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace;
+  font-size: 0.875em;
+  line-height: 1.5;
+  margin: 0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* 差异对比样式 */
+.prose--blog .shiki-diff-add {
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.prose--blog .shiki-diff-remove {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* 高亮样式 */
+.prose--blog .shiki-highlight {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid #3b82f6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .prose--blog {
+    font-size: 0.875em;
+  }
+
+  .prose--blog h1 {
+    font-size: 1.875em;
+  }
+
+  .prose--blog h2 {
+    font-size: 1.25em;
+  }
+
+  .prose--blog pre {
+    padding: 0.75rem;
+    font-size: 0.75em;
+  }
+}

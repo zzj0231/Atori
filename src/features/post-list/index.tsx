@@ -10,14 +10,15 @@ export function PostList({ groupedPosts }: Props) {
 
   if (years.length === 0) {
     return (
-      <div className="text-center py-12">
-        <p className="text-gray-500">No posts found.</p>
+      <div className="empty-state">
+        <div className="empty-state-icon">📝</div>
+        <p className="empty-state-text">暂无文章</p>
       </div>
     )
   }
 
   return (
-    <div className="space-y-12">
+    <div>
       {years.map(year => (
         <YearGroup key={year} year={year} posts={groupedPosts[year]} />
       ))}
