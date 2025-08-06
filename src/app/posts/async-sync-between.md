@@ -6,6 +6,7 @@ tags: [programming, async, javascript, patterns]
 lang: en
 duration: 12min
 author: Atori
+draft: true
 ---
 
 ### Synchronous Operations

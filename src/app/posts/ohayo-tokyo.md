@@ -6,6 +6,7 @@ tags: [travel, japan, tokyo]
 lang: ja
 duration: 5min
 author: Atori
+draft: true
 ---
 
 ## 朝の散歩

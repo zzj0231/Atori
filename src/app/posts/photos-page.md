@@ -6,6 +6,7 @@ tags: [web-development, photos, gallery, design]
 lang: en
 duration: 8min
 author: Atori
+draft: true
 ---
 
 # Photos Page

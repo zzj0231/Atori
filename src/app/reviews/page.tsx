@@ -64,8 +64,8 @@ export default function Reviews() {
     <>
       <div className={`prose ${reviewClPre}-wrapper`}>
         <h1 className="pg-h1">Reviews</h1>
+        <LabelWall handleLabelClick={handleClick} />
         <article className="px-sm">
-          <LabelWall handleLabelClick={handleClick} />
           {isLoading ? (
             <PageLoading type="spinner" />
           ) : (

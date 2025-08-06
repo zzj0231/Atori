@@ -6,6 +6,7 @@ tags: [typescript, javascript, programming, best-practices]
 lang: en
 duration: 20min
 author: Atori
+draft: true
 ---
 
 # TypeScript 最佳实践指南

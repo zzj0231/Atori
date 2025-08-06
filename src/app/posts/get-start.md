@@ -1,32 +1,44 @@
 ---
-title: Getting Started with Next.js 14
-date: 2024-12-15T10:00:00.000Z
-description: Learn how to build modern web applications with Next.js 14 and App Router
-tags: [nextjs, react, typescript, web-development]
-lang: en
+title: 开垦-新的地方
+date: 2025-1-15T10:00:00.000Z
+description: 第一篇 Blog 生活、技术、感悟、照片记录的地方
+lang: zh
 duration: 10min
 author: Atori
 ---
 
-# Getting Started with Next.js 14
+一直想有个写博客的地方，但总是拖拉没动手。到了今年，有了想写的东西，也想着给自己搭个新充电的地方。
 
-Next.js 14 introduces the App Router, a new paradigm for building React applications...
+## 灵感的来源
 
-## What's New in Next.js 14
+2022 年第一次看到 [Antfu](https://antfu.me) 的个人网站时，就被那种简洁优雅的设计迷住了。当时就想，要是我也能有个这样的网站就好了。两年过去了，这个想法一直藏在心里，只是缺个合适的时机。
 
-- App Router
-- Server Components
-- Improved performance
-- Better developer experience
+直到今年，我开始有更多想记录和分享的东西——技术笔记、生活感悟、旅行照片，还有那些零零碎碎的想法。于是，这个博客的想法又重新冒出来了。
 
-## Getting Started
+## 选择的技术栈
 
-First, create a new Next.js project:
+这次选了 Next.js作为基础框架。其实一开始也想过其他方案，比如 Gridsome 或者 Gatsby，但最后还是被 Next.js 的 App Router 和 Server Components 吸引住了。
 
-```bash
-npx create-next-app@latest my-app
-```
+Next.js 的 SSR（服务端渲染）特性特别适合博客这种内容型网站。它可以在服务端预渲染页面，不仅加载速度快，对 SEO 也很友好。更重要的是，它支持静态生成（SSG），可以把 Markdown 文件在构建时转换成静态页面，这样既保证了性能，又简化了部署流程。
 
-## Conclusion
+这让我想到了基于 Git 管理的 CMS 方式。因为 Next.js 本身就支持从文件系统读取内容，我可以在本地用 Markdown 写文章，然后直接推送到 GitHub。每次推送后，构建系统会自动读取这些 Markdown 文件，生成对应的静态页面。整个过程简单又优雅，完全不需要复杂的数据库或者管理后台。
 
-Next.js 14 is a powerful framework for building modern web applications...
+这种工作流让我想起了 Forestry.io 的设计理念，只是现在有了更多现代化的选择。Next.js 的 App Router 让路由配置变得更直观，Server Components 也让组件逻辑更清晰。最重要的是，这种基于文件的内容管理方式，让我可以完全控制内容的版本和部署流程。
+
+## 关于内容规划
+
+这个博客会是个混合的地方。技术笔记、生活记录、旅行照片，还有那些突然冒出来的想法，都会在这里找到它们的角落。
+
+我打算写一些双语的内容，有些用中文，有些用英文，看心情和内容而定。em...顺带练习下英语？
+
+照片部分也是我特别期待的功能。我有很多旅行时拍的照片，一直想找个地方好好整理和展示。这里会有个专门的相册页面，到时候可以和大家分享那些美好的瞬间。
+
+## 未来的期待
+
+这个网站还在慢慢完善中，就像个小花园，需要慢慢浇灌和修剪。我希望这里能成为记录生活、分享想法的地方，也希望过一段时间回头看时，会觉得这些记录都很有意思。
+
+:)
+
+---
+
+_这个博客还在建设中，如果发现任何问题或者有改进建议，欢迎告诉我！_
