@@ -26,9 +26,9 @@
   gap: 1rem;
   padding: 2rem;
   border-radius: 12px;
-  background: var(--atori-c-bg, #f9f9f9);
-  border: 1px solid var(--atori-c-border-normal, #e5e5e5);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  /* background: var(--atori-c-bg, #f9f9f9); */
+  /* border: 1px solid var(--atori-c-border-normal, #e5e5e5); */
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(8px);
   min-width: 200px;
   min-height: 120px;
@@ -309,11 +309,6 @@
 }
 
 /* 暗色主题支持 */
-.dark .atori-page-loading-content {
-  background: var(--atori-c-bg, #242424);
-  border-color: var(--atori-c-border-normal, #464545);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
 
 .dark .atori-page-loading-text {
   color: var(--atori-c-text-1, #fff);

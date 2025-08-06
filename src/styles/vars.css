@@ -110,6 +110,8 @@
 
   --atori-c-scrollbar: #eee;
   --atori-c-scrollbar-hover: #bbb;
+
+  --atori-c-a-hover-line: var(--atori-c-rubyred-soft-2);
 }
 
 .dark {
@@ -136,6 +138,7 @@
 
   --atori-c-scrollbar: #111;
   --atori-c-scrollbar-hover: #222;
+  --atori-c-a-hover-line: var(--atori-c-rubyred-soft);
 }
 
 /**

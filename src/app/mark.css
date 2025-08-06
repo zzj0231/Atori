@@ -6,6 +6,7 @@
 .prose--blog {
   color: var(--atori-c-text-1);
   line-height: 1.6;
+  opacity: 0.9;
 }
 
 /* 标题样式 */
@@ -68,15 +69,15 @@
 
 /* 链接样式 */
 .prose--blog a {
-  color: var(--atori-c-rubyred, #a26769);
+  opacity: 0.8;
   text-decoration: underline;
-  text-decoration-color: var(--atori-c-rubyred-soft, #ca9796);
+  text-decoration-color: var(--atori-c-a-hover-line);
   transition: all 0.2s ease;
 }
 
 .prose--blog a:hover {
-  color: var(--atori-c-rubyred-deep, #990000);
-  text-decoration-color: var(--atori-c-rubyred-deep, #990000);
+  opacity: 1;
+  text-decoration-color: var(--atori-c-a-hover-line);
 }
 
 /* 列表样式 */
@@ -167,13 +168,6 @@
   --twoslash-popup-bg: #191919;
   --twoslash-border-color: #8884;
 }
-.dark .shiki {
-  background-color: #0e0e0e;
-}
-
-html:not(.dark) .shiki {
-  background-color: #fafafa;
-}
 
 html:not(.dark) .shiki,
 html:not(.dark) .shiki span {
@@ -183,8 +177,8 @@ html:not(.dark) .shiki span {
 
 /* 代码块样式 */
 .prose--blog pre {
-  background-color: var(--atori-c-bg-deep);
-  border: 1px solid var(--atori-c-border-normal, #d6ccc2);
+  background-color: var(--atori-c-bg-soft);
+  border: 1px solid var(--atori-c-divider);
   border-radius: 0.5rem;
   padding: 1rem;
   overflow-x: auto;
@@ -192,11 +186,6 @@ html:not(.dark) .shiki span {
   font-family: 'DM Mono', 'Input Mono', 'Fira Code', monospace;
   font-size: 1.2rem;
   line-height: 1.5;
-}
-
-.dark .prose--blog pre {
-  background-color: var(--atori-c-bg-soft, #242424);
-  border-color: var(--atori-c-border-normal, #484848);
 }
 
 /* 行内代码样式 */
@@ -230,24 +219,20 @@ html:not(.dark) .shiki span {
 
 .prose--blog th,
 .prose--blog td {
-  border: 1px solid var(--atori-c-border-normal, #d6ccc2);
+  border: 1px solid var(--atori-c-divider);
   padding: 0.75rem;
   text-align: left;
 }
 
 .prose--blog th {
-  background-color: var(--atori-c-bg-soft, #f9f9f9);
+  background-color: var(--atori-c-bg-soft);
   font-weight: 600;
-}
-
-.dark .prose--blog th {
-  background-color: var(--atori-c-bg-soft, #242424);
 }
 
 /* 水平线样式 */
 .prose--blog hr {
   border: none;
-  border-top: 1px solid var(--atori-c-border-normal, #d6ccc2);
+  border-top: 1px solid var(--atori-c-divider);
   margin: 2rem 0;
 }
 
