@@ -4,7 +4,7 @@ import { GlobalEditIcon } from '@/components/Editbutton'
 import { reviewClPre } from '@/const/style'
 import { DiaryWall } from '@/features/diary-wall'
 import { LabelWall } from '@/features/label-wall'
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ReviewProps } from '@/types/schema'
 import { useGetReviewList } from '@/hooks/reviews/useGetReviewList'
@@ -64,8 +64,8 @@ export default function Reviews() {
     <>
       <div className={`prose ${reviewClPre}-wrapper`}>
         <h1 className="pg-h1">Reviews</h1>
+        <LabelWall handleLabelClick={handleClick} />
         <article className="px-sm">
-          <LabelWall handleLabelClick={handleClick} />
           {isLoading ? (
             <PageLoading type="spinner" />
           ) : (

@@ -1,8 +1,20 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { NavHeader } from '@/features/nav'
-import { MessageProvider } from '@/components/Message'
+import dynamic from 'next/dynamic'
 
+const MessageProvider = dynamic(
+  () =>
+    import('@/components/Message').then(mod => ({
+      default: mod.MessageProvider,
+    })),
+  { ssr: false }
+)
+
+import 'markdown-it-github-alerts/styles/github-colors-light.css'
+import 'markdown-it-github-alerts/styles/github-colors-dark-class.css'
+import 'markdown-it-github-alerts/styles/github-base.css'
+import '@shikijs/twoslash/style-rich.css'
 import './globals.css'
 
 const geistSans = localFont({
