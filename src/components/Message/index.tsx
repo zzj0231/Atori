@@ -188,10 +188,17 @@ export const MessageProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const { messages, removeMessage } = useMessage()
 
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   return (
     <>
       {children}
       {typeof window !== 'undefined' &&
+        isMounted &&
         createPortal(
           <MessageContainer messages={messages} onRemove={removeMessage} />,
           document.body
