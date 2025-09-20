@@ -16,6 +16,7 @@ import { HomeIcon } from '@/icon/home'
 import { LightIcon } from '@/icon/light'
 import { MoonIcon } from '@/icon/moon'
 import { SettingIcon } from '@/icon/setting'
+import { CameraIcon } from '@/icon/camera'
 import { autoUpdateRootFontSize } from '@/utils/window'
 import { SettingDrawer } from './setting-drawer'
 
@@ -77,6 +78,11 @@ export const NavHeader = () => {
           </div>
           <div className={'flex-1'}></div>
           <div className={'atori-nav-menu'}>{options}</div>
+          <div className="atroi-nav-icon camera">
+            <Link href={'/photo-wall'}>
+              <CameraIcon />
+            </Link>
+          </div>
           <div className={'atori-nav-extra'}>
             <a
               className="atroi-nav-icon"
