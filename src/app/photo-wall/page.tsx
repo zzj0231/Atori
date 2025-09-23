@@ -45,12 +45,15 @@ export default function PhotoWall() {
         const photosData = yearGroup.photos.map(photo => ({
           src: photo.image,
           year: photo.year,
+          date: photo.date,
           description: photo.description,
         }))
 
         return (
           <div key={yearGroup.year}>
-            <div className="year-title">{yearGroup.year}</div>
+            <div className="year-title font-bold text-[2.5rem] mb-4">
+              {yearGroup.year}
+            </div>
             <BounceCards
               className="custom-bounceCards"
               images={images}

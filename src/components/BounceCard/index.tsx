@@ -3,12 +3,15 @@
 import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import SinglePhotoPreview from '../SinglePhotoPreview'
+import Image from 'next/image'
+import dayjs from 'dayjs'
 import './index.css'
 
 interface PhotoData {
   src: string
   year?: string
   description?: string
+  date?: string
 }
 
 interface BounceCardsProps {
@@ -161,26 +164,42 @@ export default function BounceCards({
 
   return (
     <>
-      <div className={`atori-photo-bounceCardsContainer ${className}`}>
+      <div
+        className={`${className} position-relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 w-full mx-auto`}
+      >
         {displayImages.map((src, idx) => (
-          <div
-            key={idx}
-            className={`atori-photo-card card-${idx}`}
-            style={{ transform: transformStyles[idx] ?? 'none' }}
-            onMouseEnter={() => pushSiblings(idx)}
-            onMouseLeave={resetSiblings}
-            onClick={() => {
-              // 如果有外部点击处理器，则调用外部的
-              if (onImageClick) {
-                onImageClick(idx)
-              } else {
-                // 否则使用内部预览
-                handleImagePreview(idx)
-              }
-            }}
-          >
-            <img className="image" src={src} alt={`card-${idx}`} />
-          </div>
+          <>
+            <div
+              key={idx}
+              className={`atori-photo-card card-${idx}`}
+              style={{ transform: transformStyles[idx] ?? 'none' }}
+              onMouseEnter={() => pushSiblings(idx)}
+              onMouseLeave={resetSiblings}
+              onClick={() => {
+                // 如果有外部点击处理器，则调用外部的
+                if (onImageClick) {
+                  onImageClick(idx)
+                } else {
+                  // 否则使用内部预览
+                  handleImagePreview(idx)
+                }
+              }}
+            >
+              <Image
+                src={src}
+                alt={`card-${idx}`}
+                fill={true}
+                objectFit="cover"
+                quality={100}
+              />
+
+              <div className="absolute left-0 right-0 bottom-[-4rem] p-2 mt-auto flex items-center justify-center">
+                <span>{dayjs(photosData[idx].date).format('MM/DD')}</span>
+                <span className="text-sm w-[1rem] h-[1rem] rounded-full color-red" />
+                <span>{photosData[idx].description}</span>
+              </div>
+            </div>
+          </>
         ))}
       </div>
 

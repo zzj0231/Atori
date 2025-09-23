@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import './index.css'
+import Image from 'next/image'
 
 interface SinglePhotoPreviewProps {
   src: string
@@ -24,7 +25,6 @@ export default function SinglePhotoPreview({
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
-  const [isLoading, setIsLoading] = useState(true)
   const imageRef = useRef<HTMLImageElement>(null)
 
   // 重置缩放和位置
@@ -37,7 +37,7 @@ export default function SinglePhotoPreview({
   useEffect(() => {
     if (isOpen) {
       resetTransform()
-      setIsLoading(true)
+      //   setIsLoading(true)
     }
   }, [isOpen])
 
@@ -137,11 +137,6 @@ export default function SinglePhotoPreview({
     }
   }
 
-  // 图片加载完成
-  const handleImageLoad = () => {
-    setIsLoading(false)
-  }
-
   if (!isOpen) return null
 
   return (
@@ -178,24 +173,19 @@ export default function SinglePhotoPreview({
           onTouchEnd={handleTouchEnd}
           onDoubleClick={handleDoubleClick}
         >
-          {isLoading && (
-            <div className="single-photo-preview-loading">
-              <div className="loading-spinner"></div>
-            </div>
-          )}
-
-          <img
+          <Image
             ref={imageRef}
             src={src}
             alt={alt}
-            className="single-photo-preview-image"
+            fill={true}
+            className="
+            single-photo-preview-image"
+            objectFit="contain"
             style={{
               transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
               cursor:
                 scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in',
             }}
-            onLoad={handleImageLoad}
-            draggable={false}
           />
         </div>
 
