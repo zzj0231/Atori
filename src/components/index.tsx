@@ -1,1 +1,4 @@
 export * from './Message'
+export { default as BounceCard } from './BounceCard'
+export { default as PhotoPreview } from './PhotoPreview'
+export { default as SinglePhotoPreview } from './SinglePhotoPreview'

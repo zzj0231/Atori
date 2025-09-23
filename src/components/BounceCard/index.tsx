@@ -1,12 +1,20 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
+import SinglePhotoPreview from '../SinglePhotoPreview'
 import './index.css'
+
+interface PhotoData {
+  src: string
+  year?: string
+  description?: string
+}
 
 interface BounceCardsProps {
   className?: string
   images?: string[]
+  photosData?: PhotoData[] // 新增照片数据，包含年份和描述
   containerWidth?: number
   containerHeight?: number
   animationDelay?: number
@@ -14,11 +22,13 @@ interface BounceCardsProps {
   easeType?: string
   transformStyles?: string[]
   enableHover?: boolean
+  onImageClick?: (index: number) => void
 }
 
 export default function BounceCards({
   className = '',
   images = [],
+  photosData = [],
   containerWidth = 400,
   containerHeight = 400,
   animationDelay = 0.5,
@@ -32,10 +42,36 @@ export default function BounceCards({
     'rotate(2deg) translate(170px)',
   ],
   enableHover = false,
+  onImageClick,
 }: BounceCardsProps) {
+  const [previewState, setPreviewState] = useState({
+    isOpen: false,
+    currentPhotoData: null as PhotoData | null,
+  })
+
+  // 处理图片点击预览
+  const handleImagePreview = (index: number) => {
+    const photoData = photosData[index] || { src: images[index] }
+    setPreviewState({
+      isOpen: true,
+      currentPhotoData: photoData,
+    })
+  }
+
+  // 关闭预览
+  const closePreview = () => {
+    setPreviewState({
+      isOpen: false,
+      currentPhotoData: null,
+    })
+  }
+
+  // 决定使用哪个数据源
+  const displayImages =
+    photosData.length > 0 ? photosData.map(p => p.src) : images
   useEffect(() => {
     gsap.fromTo(
-      '.card',
+      '.atori-photo-card',
       { scale: 0 },
       {
         scale: 1,
@@ -77,7 +113,7 @@ export default function BounceCards({
   const pushSiblings = (hoveredIdx: number) => {
     if (!enableHover) return
 
-    images.forEach((_, i) => {
+    displayImages.forEach((_, i) => {
       gsap.killTweensOf(`.card-${i}`)
 
       const baseTransform = transformStyles[i] || 'none'
@@ -111,7 +147,7 @@ export default function BounceCards({
   const resetSiblings = () => {
     if (!enableHover) return
 
-    images.forEach((_, i) => {
+    displayImages.forEach((_, i) => {
       gsap.killTweensOf(`.card-${i}`)
       const baseTransform = transformStyles[i] || 'none'
       gsap.to(`.card-${i}`, {
@@ -124,25 +160,40 @@ export default function BounceCards({
   }
 
   return (
-    <div
-      className={`atori-photo-bounceCardsContainer ${className}`}
-      style={{
-        position: 'relative',
-        width: containerWidth,
-        height: containerHeight,
-      }}
-    >
-      {images.map((src, idx) => (
-        <div
-          key={idx}
-          className={`atori-photo-card card-${idx}`}
-          style={{ transform: transformStyles[idx] ?? 'none' }}
-          onMouseEnter={() => pushSiblings(idx)}
-          onMouseLeave={resetSiblings}
-        >
-          <img className="image" src={src} alt={`card-${idx}`} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className={`atori-photo-bounceCardsContainer ${className}`}>
+        {displayImages.map((src, idx) => (
+          <div
+            key={idx}
+            className={`atori-photo-card card-${idx}`}
+            style={{ transform: transformStyles[idx] ?? 'none' }}
+            onMouseEnter={() => pushSiblings(idx)}
+            onMouseLeave={resetSiblings}
+            onClick={() => {
+              // 如果有外部点击处理器，则调用外部的
+              if (onImageClick) {
+                onImageClick(idx)
+              } else {
+                // 否则使用内部预览
+                handleImagePreview(idx)
+              }
+            }}
+          >
+            <img className="image" src={src} alt={`card-${idx}`} />
+          </div>
+        ))}
+      </div>
+
+      {/* 单张图片预览 */}
+      {previewState.currentPhotoData && (
+        <SinglePhotoPreview
+          src={previewState.currentPhotoData.src}
+          year={previewState.currentPhotoData.year}
+          description={previewState.currentPhotoData.description}
+          isOpen={previewState.isOpen}
+          onClose={closePreview}
+        />
+      )}
+    </>
   )
 }

@@ -1,20 +1,24 @@
 .atori-photo-bounceCardsContainer {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  gap: 20px;
 }
 
 .atori-photo-card {
-  position: absolute;
+  /* position: absolute; */
   width: 200px;
   aspect-ratio: 1;
   border: 5px solid #fff;
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* left: 0; */
+  /* top: 20px; */
 }
 
 .atori-photo-card .image {
