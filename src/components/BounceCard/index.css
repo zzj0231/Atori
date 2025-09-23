@@ -1,7 +1,5 @@
 .atori-photo-card {
-  /* position: absolute; */
   position: relative;
-  /* width: 200px; */
   aspect-ratio: 1;
   border: 15px solid #fff;
   border-bottom: 40px solid #fff;
@@ -17,8 +15,9 @@
   overflow: hidden; /* 只让图片保持裁剪 */
 }
 
-/* @media screen and (max-width: 768px) {
-  .atori-photo-card {
-    width: 50%;
-  }
-} */
+.atori-photo-description {
+  font-family: var(--font-geist-hand-ch), cursive;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.8rem;
+}

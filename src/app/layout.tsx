@@ -29,6 +29,12 @@ const geistMono = localFont({
   weight: '100 900',
 })
 
+const geisHandCh = localFont({
+  src: './fonts/ZhiMangXing-Regular.ttf',
+  variable: '--font-geist-hand-ch',
+  weight: '100 400',
+})
+
 export const metadata: Metadata = {
   title: 'Tomos Zhao',
   description: 'personal site',
@@ -42,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${geisHandCh.variable} antialiased`}
       >
         <MessageProvider>
           <NavHeader />

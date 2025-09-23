@@ -193,7 +193,7 @@ export default function BounceCards({
                 quality={100}
               />
 
-              <div className="absolute left-0 right-0 bottom-[-4rem] p-2 mt-auto flex items-center justify-center">
+              <div className="absolute left-0 right-0 bottom-[-4rem] p-2 mt-auto flex items-center justify-center atori-photo-description">
                 <span>{dayjs(photosData[idx].date).format('MM/DD')}</span>
                 <span className="text-sm w-[1rem] h-[1rem] rounded-full color-red" />
                 <span>{photosData[idx].description}</span>

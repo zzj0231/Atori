@@ -2,12 +2,11 @@ import BounceCards from '@/components/BounceCard'
 import { photoClPre } from '@/const/style'
 import { getAllPhotos } from '@/lib/photos'
 import { PhotoWallGroup } from '@/types/photo-wall'
+import './index.css'
 
 export default function PhotoWall() {
   // 服务端执行 - 获取照片数据
   const photos = getAllPhotos()
-
-  console.log('photos', photos)
 
   // 按年份分组照片，并按年份降序排列（最新的在上面）
   const photosByYear: PhotoWallGroup[] = photos
