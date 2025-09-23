@@ -1,0 +1,22 @@
+.atori-photo-card {
+  position: relative;
+  aspect-ratio: 1;
+  border: 15px solid #fff;
+  border-bottom: 40px solid #fff;
+  border-radius: 2px;
+  overflow: visible; /* 改为 visible 让文案能显示在边框外 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1; /* 确保相框有基础层级 */
+}
+
+.atori-photo-card img {
+  overflow: hidden; /* 只让图片保持裁剪 */
+}
+
+.atori-photo-description {
+  font-family: var(--font-geist-hand-ch), cursive;
+  font-style: normal;
+  font-size: 1.8rem;
+}

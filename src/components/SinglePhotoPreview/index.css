@@ -1,0 +1,239 @@
+/* 遮罩层 */
+.single-photo-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 主容器 */
+.single-photo-preview-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* 关闭按钮 */
+.single-photo-preview-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.single-photo-preview-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* 图片信息 - 左上角 */
+.single-photo-info {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.photo-year {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.photo-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+/* 图片容器 */
+.single-photo-preview-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-height: calc(100vh - 120px);
+  touch-action: pan-x pan-y;
+}
+
+/* 图片 */
+.single-photo-preview-image {
+  transition: transform 0.2s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 控制栏 */
+.single-photo-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  font-size: 14px;
+  z-index: 10001;
+  backdrop-filter: blur(10px);
+}
+
+.single-photo-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-photo-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.single-photo-controls button:active {
+  transform: scale(0.95);
+}
+
+.single-photo-controls span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .single-photo-preview-close {
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .single-photo-info {
+    top: 15px;
+    left: 15px;
+    padding: 10px 12px;
+    max-width: calc(100vw - 100px);
+  }
+
+  .photo-year {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+
+  .photo-description {
+    font-size: 13px;
+  }
+
+  .single-photo-controls {
+    bottom: 20px;
+    padding: 8px 16px;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .single-photo-controls button {
+    padding: 6px 10px;
+    font-size: 12px;
+    min-width: 32px;
+  }
+
+  .single-photo-controls span {
+    font-size: 12px;
+    min-width: 45px;
+  }
+
+  .single-photo-preview-image-container {
+    max-height: calc(100vh - 100px);
+  }
+}
+
+/* 触摸设备优化 */
+@media (pointer: coarse) {
+  .single-photo-preview-close {
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+  }
+
+  .single-photo-controls button {
+    padding: 12px 16px;
+    min-width: 50px;
+  }
+
+  .single-photo-info {
+    padding: 14px 18px;
+  }
+
+  .photo-year {
+    font-size: 18px;
+  }
+
+  .photo-description {
+    font-size: 15px;
+  }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .single-photo-preview-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

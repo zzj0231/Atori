@@ -4,6 +4,7 @@ export const reviewClPre = `${siteClassPrefix}-review`
 export const tweetClPre = `${siteClassPrefix}-tweet`
 export const reviewEditClPre = `${siteClassPrefix}-review-edit`
 export const blogClPre = `${siteClassPrefix}-blog`
+export const photoClPre = `${siteClassPrefix}-photo`
 
 // 1x1 #f5f5f7 base64
 export const BLUR_PLACEHOLDER =

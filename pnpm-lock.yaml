@@ -26,6 +26,12 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
+  dayjs:
+    specifier: ^1.11.18
+    version: 1.11.18
+  gsap:
+    specifier: ^3.13.0
+    version: 3.13.0
   lucide-react:
     specifier: ^0.468.0
     version: 0.468.0(react@18.3.1)
@@ -2168,6 +2174,10 @@ packages:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==, tarball: https://registry.npmmirror.com/dateformat/-/dateformat-3.0.3.tgz}
     dev: true
 
+  /dayjs@1.11.18:
+    resolution: {integrity: sha512-zFBQ7WFRvVRhKcWoUh+ZA1g2HVgUbsZm9sbddh8EC5iv93sui8DVVz1Npvz+r6meo9VKfa8NyLWBsQK1VvIKPA==, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.18.tgz}
+    dev: false
+
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==, tarball: https://registry.npmmirror.com/debug/-/debug-2.6.9.tgz}
     peerDependencies:
@@ -3253,6 +3263,10 @@ packages:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
     dev: true
+
+  /gsap@3.13.0:
+    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==, tarball: https://registry.npmmirror.com/gsap/-/gsap-3.13.0.tgz}
+    dev: false
 
   /handlebars@4.7.8:
     resolution: {integrity: sha512-vafaFqs8MZkRrSX7sFVUdo3ap/eNiLnb4IakshzvP56X5Nr1iGKAIqdX6tMlm6HcNRIkr6AxO5jFEoJzzpT8aQ==, tarball: https://registry.npmmirror.com/handlebars/-/handlebars-4.7.8.tgz}
