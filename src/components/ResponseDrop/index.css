@@ -1,0 +1,18 @@
+.atori-response-drop-container {
+  position: relative;
+}
+
+.atori-response-drop-button {
+  color: var(--atori-c-text-1);
+  opacity: var(--atori-c-text-opac-1ight);
+  &:hover {
+    opacity: var(--atori-c-text-opac-full);
+  }
+  &:active {
+    opacity: var(--atori-c-text-opac-full);
+  }
+}
+
+.atori-response-drop-menu {
+  background-color: var(--atori-c-bg-second);
+}
