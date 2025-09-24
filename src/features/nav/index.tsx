@@ -38,6 +38,17 @@ export const NavHeader = () => {
     })
   }, [])
 
+  const mobileOptions = useMemo(() => {
+    const menus = NAV_MENU
+    return menus.map(item => {
+      return (
+        <Link key={item?.key} href={item?.url}>
+          <span className="menu-item mobile">{item.label}</span>
+        </Link>
+      )
+    })
+  }, [])
+
   const handleDarkTheme = useCallback(() => {
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       setTheme('dark')
@@ -83,7 +94,7 @@ export const NavHeader = () => {
             <ResponseDrop
               align="right"
               desktopContent={<>{options}</>}
-              mobileContent={<>{options}</>}
+              mobileContent={<>{mobileOptions}</>}
             />
           </div>
 
