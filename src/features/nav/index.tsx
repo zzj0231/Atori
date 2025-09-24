@@ -19,18 +19,31 @@ import { SettingIcon } from '@/icon/setting'
 import { CameraIcon } from '@/icon/camera'
 import { autoUpdateRootFontSize } from '@/utils/window'
 import { SettingDrawer } from './setting-drawer'
+import { ResponseDrop } from '@/components'
 
 import './index.css'
 
 export const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
 
+  // 菜单项
   const options = useMemo(() => {
     const menus = NAV_MENU
     return menus.map(item => {
       return (
         <Link key={item?.key} href={item?.url}>
           <span className="menu-item">{item.label}</span>
+        </Link>
+      )
+    })
+  }, [])
+
+  const mobileOptions = useMemo(() => {
+    const menus = NAV_MENU
+    return menus.map(item => {
+      return (
+        <Link key={item?.key} href={item?.url}>
+          <span className="menu-item mobile">{item.label}</span>
         </Link>
       )
     })
@@ -77,13 +90,20 @@ export const NavHeader = () => {
             </Link>
           </div>
           <div className={'flex-1'}></div>
-          <div className={'atori-nav-menu'}>{options}</div>
-          <div className="atroi-nav-icon camera">
-            <Link href={'/photo-wall'}>
-              <CameraIcon />
-            </Link>
+          <div className={'atori-nav-menu'}>
+            <ResponseDrop
+              align="right"
+              desktopContent={<>{options}</>}
+              mobileContent={<>{mobileOptions}</>}
+            />
           </div>
+
           <div className={'atori-nav-extra'}>
+            <div className="atroi-nav-icon camera">
+              <Link href={'/photo-wall'}>
+                <CameraIcon />
+              </Link>
+            </div>
             <a
               className="atroi-nav-icon"
               href={'https://github.com/zzj0231'}

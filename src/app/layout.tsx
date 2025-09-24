@@ -32,7 +32,7 @@ const geistMono = localFont({
 const geisHandCh = localFont({
   src: './fonts/ZhiMangXing-Regular.ttf',
   variable: '--font-geist-hand-ch',
-  weight: '100 400',
+  weight: '400',
 })
 
 export const metadata: Metadata = {

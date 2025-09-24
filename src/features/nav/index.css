@@ -88,6 +88,14 @@
   }
 }
 
+.atori-nav-menu .menu-item.mobile {
+  display: inline-block;
+  width: 100%;
+  &:hover {
+    background-color: var(--atori-c-bg-deep);
+  }
+}
+
 .atori-nav-extra {
   display: flex;
   align-items: center;
