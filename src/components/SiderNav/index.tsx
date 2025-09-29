@@ -65,7 +65,6 @@ export const SiderNav = (props: SiderNavProps) => {
   // 点击导航项跳转到对应年份
   const scrollToYear = (year: string) => {
     const element = document.getElementById(year)
-    console.log('element', element)
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
@@ -82,7 +81,7 @@ export const SiderNav = (props: SiderNavProps) => {
           <div
             key={year.name}
             onClick={() => scrollToYear(year.id)}
-            className="cursor-pointer p-2"
+            className="atori-nav-sider-item-wrapper cursor-pointer p-2 rounded-md"
           >
             <div
               className={`atori-nav-sider-item w-[1.6rem] ${

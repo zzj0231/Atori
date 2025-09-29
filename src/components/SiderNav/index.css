@@ -1,3 +1,9 @@
+.atori-nav-sider-item-wrapper {
+  &:hover {
+    background-color: var(--atori-c-bg-second);
+  }
+}
+
 /* 滑块指示器 */
 .atori-nav-sider-item {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
