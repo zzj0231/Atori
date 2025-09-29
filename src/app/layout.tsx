@@ -52,7 +52,7 @@ export default function RootLayout({
       >
         <MessageProvider>
           <NavHeader />
-          <main className="overflow-x-hidden overflow-y-hidden px-[2.8rem] py-[4.0rem] min-h-[calc(100vh-var(--atori-nav-height)-var(--atori-footer-height))]">
+          <main className="overflow-x-hidden px-[2.8rem] py-[4.0rem] min-h-[calc(100vh-var(--atori-nav-height)-var(--atori-footer-height))]">
             {children}
           </main>
           <footer className="p-xl text-sm opacity-60 mx-auto text-center">
