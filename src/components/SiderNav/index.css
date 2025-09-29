@@ -1,0 +1,11 @@
+/* 滑块指示器 */
+.atori-nav-sider-item {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--atori-c-border-tweet);
+}
+
+/* 滑块激活状态 */
+.atori-nav-sider-item.active {
+  opacity: 1;
+  border: 1px solid var(--atori-c-border-primary);
+}

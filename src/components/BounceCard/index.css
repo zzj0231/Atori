@@ -2,10 +2,9 @@
   position: relative;
   aspect-ratio: 1;
   border: 15px solid #fff;
-  border-bottom: 40px solid #fff;
+  border-bottom: 42px solid #fff;
   border-radius: 2px;
   overflow: visible; /* 改为 visible 让文案能显示在边框外 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1; /* 确保相框有基础层级 */
