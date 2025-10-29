@@ -38,6 +38,16 @@ const geisHandCh = localFont({
 export const metadata: Metadata = {
   title: 'Tomos Zhao',
   description: 'personal site',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Atori',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  themeColor: '#000000',
 }
 
 export default function RootLayout({
@@ -48,6 +58,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+        <link rel="apple-touch-icon" href="/atori.svg" />
         <script
           src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
           async
@@ -59,6 +72,8 @@ export default function RootLayout({
               OneSignalDeferred.push(async function(OneSignal) {
                 await OneSignal.init({
                   appId: "${process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID}",
+                  serviceWorkerParam: { scope: '/push/onesignal/' },
+                  serviceWorkerPath: 'OneSignalSDKWorker.js'
                 });
               });
           `,
