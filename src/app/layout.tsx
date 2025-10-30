@@ -72,8 +72,6 @@ export default function RootLayout({
               OneSignalDeferred.push(async function(OneSignal) {
                 await OneSignal.init({
                   appId: "${process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID}",
-                  serviceWorkerParam: { scope: '/push/onesignal/' },
-                  serviceWorkerPath: 'OneSignalSDKWorker.js'
                 });
               });
           `,
