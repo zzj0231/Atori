@@ -25,6 +25,45 @@ import './index.css'
 
 export const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  // 监听滚动事件，实现 Headroom 效果
+  useEffect(() => {
+    const scrollTarget = document.querySelector('body') as Element
+    const handleScroll = () => {
+      const currentScrollY = scrollTarget.scrollTop
+      // 滚动距离小于一定阈值时始终显示
+      if (currentScrollY < 50) {
+        setIsVisible(true)
+        setLastScrollY(currentScrollY)
+        return
+      }
+      // 向下滚动时隐藏，向上滚动时显示
+      if (currentScrollY > lastScrollY) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+      setLastScrollY(currentScrollY)
+    }
+    // 使用节流优化性能
+    let ticking = false
+    const scrollListener = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    scrollTarget.addEventListener('scroll', scrollListener, { passive: true })
+    return () => {
+      scrollTarget.removeEventListener('scroll', scrollListener)
+    }
+  }, [lastScrollY])
 
   // 菜单项
   const options = useMemo(() => {
@@ -89,36 +128,40 @@ export const NavHeader = () => {
               <HomeIcon />
             </Link>
           </div>
-          <div className={'flex-1'}></div>
-          <div className={'atori-nav-menu'}>
-            <ResponseDrop
-              align="right"
-              desktopContent={<>{options}</>}
-              mobileContent={<>{mobileOptions}</>}
-            />
-          </div>
+          {/* <div className={'flex-1'}></div> */}
+          <div
+            className={`atori-nav-operation ${isVisible ? 'visible' : 'hidden'} ${lastScrollY < 180 ? '' : 'card'}`}
+          >
+            <div className={'atori-nav-menu'}>
+              <ResponseDrop
+                align="right"
+                desktopContent={<>{options}</>}
+                mobileContent={<>{mobileOptions}</>}
+              />
+            </div>
 
-          <div className={'atori-nav-extra'}>
-            <div className="atroi-nav-icon camera">
-              <Link href={'/photo-wall'}>
-                <CameraIcon />
-              </Link>
-            </div>
-            <a
-              className="atroi-nav-icon"
-              href={'https://github.com/zzj0231'}
-              target="_blank"
-            >
-              <GithubIcon />
-            </a>
-            <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
-              <LightIcon />
-            </div>
-            <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
-              <MoonIcon />
-            </div>
-            <div className="atroi-nav-icon" onClick={() => setIsOpen(true)}>
-              <SettingIcon />
+            <div className={'atori-nav-extra'}>
+              <div className="atroi-nav-icon camera">
+                <Link href={'/photo-wall'}>
+                  <CameraIcon />
+                </Link>
+              </div>
+              <a
+                className="atroi-nav-icon"
+                href={'https://github.com/zzj0231'}
+                target="_blank"
+              >
+                <GithubIcon />
+              </a>
+              <div className="atroi-nav-icon light" onClick={handleDarkTheme}>
+                <LightIcon />
+              </div>
+              <div className="atroi-nav-icon moon" onClick={handleMoonTheme}>
+                <MoonIcon />
+              </div>
+              <div className="atroi-nav-icon" onClick={() => setIsOpen(true)}>
+                <SettingIcon />
+              </div>
             </div>
           </div>
           <SettingDrawer visible={isOpen} handleVisible={setIsOpen} />

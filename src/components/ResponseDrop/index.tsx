@@ -92,10 +92,7 @@ export const ResponseDrop = ({
         {isOpen && (
           <>
             {/* 背景遮罩 */}
-            <div
-              className="fixed inset-0 bg-black/20 dark:bg-black/40 z-40"
-              onClick={() => setIsOpen(false)}
-            />
+            <div className="fixed inset-0 " onClick={() => setIsOpen(false)} />
 
             {/* 下拉菜单 */}
             <div

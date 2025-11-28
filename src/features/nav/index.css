@@ -15,7 +15,6 @@
 }
 
 .atori-nav-favicon {
-  flex: 1;
   font-size: 2.4rem;
   position: fixed;
   top: 2rem;
@@ -30,6 +29,46 @@
   transform-origin: center;
   stroke: #a26769;
   animation-delay: 0s;
+}
+
+.atori-nav-operation {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.4rem;
+  /* height: var(--atori-nav-height); */
+  padding-inline: 2.4rem;
+  padding-block: 0.8rem;
+  border-radius: 10px;
+
+  position: fixed;
+  top: 1.2rem;
+  right: 2.4rem;
+  z-index: 10;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.atori-nav-operation.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.atori-nav-operation.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.atori-nav-operation.card {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background-color: var(--atori-c-bg-second);
 }
 
 .nav-setting-form-list {
