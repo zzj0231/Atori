@@ -30,7 +30,20 @@ export const PersonProfile = () => {
               reviews of favorite animes and books, as well as some random
               musings from life. These are my “Dear Moments”, and of course I
               also look forward to incorporating useful AI tools to make Atori
-              as smart and emotional as in the anime
+              as smart and emotional as in the anime.
+            </p>
+          </div>
+          <div className="side-item">
+            <p>
+              If you are a blog fun, you also can subscribe my blog via
+              <a
+                href="/rss.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2"
+              >
+                RSS.
+              </a>
             </p>
           </div>
         </article>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { NavHeader } from '@/features/nav'
 import dynamic from 'next/dynamic'
+import { BLOG_CONFIG } from '@/const/blog'
 
 const MessageProvider = dynamic(
   () =>
@@ -39,6 +40,13 @@ export const metadata: Metadata = {
   title: 'Tomos Zhao',
   description: 'personal site',
   manifest: '/manifest.json',
+  metadataBase: new URL(BLOG_CONFIG.url),
+  alternates: {
+    canonical: BLOG_CONFIG.url,
+    types: {
+      'application/rss+xml': `${BLOG_CONFIG.url}/rss.xml`,
+    },
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -72,8 +80,6 @@ export default function RootLayout({
               OneSignalDeferred.push(async function(OneSignal) {
                 await OneSignal.init({
                   appId: "${process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID}",
-                  serviceWorkerParam: { scope: '/push/onesignal/' },
-                  serviceWorkerPath: 'OneSignalSDKWorker.js'
                 });
               });
           `,
