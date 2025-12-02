@@ -8,6 +8,7 @@ import {
   useEffect,
   useLayoutEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 // import Image from 'next/image'
@@ -26,44 +27,7 @@ import './index.css'
 export const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-
-  // 监听滚动事件，实现 Headroom 效果
-  useEffect(() => {
-    const scrollTarget = document.querySelector('body') as Element
-    const handleScroll = () => {
-      const currentScrollY = scrollTarget.scrollTop
-      // 滚动距离小于一定阈值时始终显示
-      if (currentScrollY < 50) {
-        setIsVisible(true)
-        setLastScrollY(currentScrollY)
-        return
-      }
-      // 向下滚动时隐藏，向上滚动时显示
-      if (currentScrollY > lastScrollY) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
-      setLastScrollY(currentScrollY)
-    }
-    // 使用节流优化性能
-    let ticking = false
-    const scrollListener = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScroll()
-          ticking = false
-        })
-        ticking = true
-      }
-    }
-
-    scrollTarget.addEventListener('scroll', scrollListener, { passive: true })
-    return () => {
-      scrollTarget.removeEventListener('scroll', scrollListener)
-    }
-  }, [lastScrollY])
+  const scrollYRef = useRef(0)
 
   // 菜单项
   const options = useMemo(() => {
@@ -118,6 +82,43 @@ export const NavHeader = () => {
     }
   }, [])
 
+  // 监听滚动事件，实现 Headroom 效果
+  useEffect(() => {
+    const scrollTarget = document.querySelector('body') as Element
+    const handleScroll = () => {
+      const currentScrollY = scrollTarget.scrollTop
+      // 滚动距离小于一定阈值时始终显示
+      if (currentScrollY < 50) {
+        setIsVisible(true)
+        scrollYRef.current = currentScrollY
+        return
+      }
+      // 向下滚动时隐藏，向上滚动时显示
+      if (currentScrollY > scrollYRef.current) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+      scrollYRef.current = currentScrollY
+    }
+    // 使用节流优化性能
+    let ticking = false
+    const scrollListener = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    scrollTarget.addEventListener('scroll', scrollListener, { passive: true })
+    return () => {
+      scrollTarget.removeEventListener('scroll', scrollListener)
+    }
+  }, [])
+
   return (
     <>
       <div className={'atori-nav-wrapper'}>
@@ -130,7 +131,7 @@ export const NavHeader = () => {
           </div>
           {/* <div className={'flex-1'}></div> */}
           <div
-            className={`atori-nav-operation ${isVisible ? 'visible' : 'hidden'} ${lastScrollY < 180 ? '' : 'card'}`}
+            className={`atori-nav-operation ${isVisible ? 'visible' : 'hidden'} ${scrollYRef.current < 180 ? '' : 'card'}`}
           >
             <div className={'atori-nav-menu'}>
               <ResponseDrop
