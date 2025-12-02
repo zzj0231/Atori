@@ -27,6 +27,7 @@ import './index.css'
 export const NavHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const scrollYRef = useRef(0)
 
   // 菜单项
@@ -90,6 +91,7 @@ export const NavHeader = () => {
       // 滚动距离小于一定阈值时始终显示
       if (currentScrollY < 50) {
         setIsVisible(true)
+        setLastScrollY(currentScrollY)
         scrollYRef.current = currentScrollY
         return
       }
@@ -99,6 +101,7 @@ export const NavHeader = () => {
       } else {
         setIsVisible(true)
       }
+      setLastScrollY(currentScrollY)
       scrollYRef.current = currentScrollY
     }
     // 使用节流优化性能
@@ -131,7 +134,7 @@ export const NavHeader = () => {
           </div>
           {/* <div className={'flex-1'}></div> */}
           <div
-            className={`atori-nav-operation ${isVisible ? 'visible' : 'hidden'} ${scrollYRef.current < 180 ? '' : 'card'}`}
+            className={`atori-nav-operation ${isVisible ? 'visible' : 'hidden'} ${lastScrollY < 180 ? '' : 'card'}`}
           >
             <div className={'atori-nav-menu'}>
               <ResponseDrop
