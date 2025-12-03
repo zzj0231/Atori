@@ -1,3 +1,4 @@
+import { ReviewProps } from '@/types/schema'
 import frierenUrl from '../../public/diary/frieren.webp'
 import humanBondage from '../../public/diary/human-bondage.jpg'
 import { DiaryNotes } from './notes'
@@ -89,15 +90,15 @@ export const RE_CUSTOME_TYPE = [
   { key: 'funny', label: RE_LABEL.funny },
 ]
 
-export const RE_BLUM = [
+export const RE_BLUM: ReviewProps[] = [
   {
     title: '葬送的芙莉莲',
     author: '山田钟人',
     country: 'JP',
-    cover: frierenUrl,
+    cover: frierenUrl.src,
     content: DiaryNotes.frieren,
-    labels: [RE_LABEL.animate, RE_LABEL.soul],
-    key: 'frieren',
+    labels: `${RE_LABEL.animate},${RE_LABEL.soul}`,
+
     stars: 5,
     date: 'Jan 12, 2025',
     id: '002',
@@ -106,10 +107,10 @@ export const RE_BLUM = [
     title: '人性的枷锁',
     author: '威廉·萨默塞特·毛姆',
     country: 'GB',
-    cover: humanBondage,
+    cover: humanBondage.src,
     content: DiaryNotes.homeBondage,
-    labels: [RE_LABEL.notion],
-    key: 'homeBondage',
+    labels: `${RE_LABEL.notion}`,
+
     stars: 4.5,
     date: 'Nov 2, 2024',
     id: '001',

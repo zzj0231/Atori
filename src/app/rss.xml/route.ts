@@ -79,9 +79,7 @@ export async function GET() {
   const posts = getAllPosts()
   const reviews = await getExistReviews()
   const items = (await Promise.all(posts.map(buildItem))).join('\n')
-  const reviewItems = (
-    await Promise.all(reviews?.map(buildReviewItem) || [])
-  ).join('\n')
+  const reviewItems = (reviews?.map(buildReviewItem) || []).join('\n')
   const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
