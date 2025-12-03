@@ -23,7 +23,7 @@ export interface ReviewProps {
   title: string // 作品名称
   country: string
   cover: string
-  coverFileName: string | null
+  coverFileName?: string | null
   private?: boolean
   stars?: number
 }
