@@ -57,7 +57,7 @@ const buildItem = async (post: ReturnType<typeof getAllPosts>[number]) => {
 }
 
 const buildReviewItem = (review: ReviewProps) => {
-  const reviewUrl = `${siteUrl}/reviews`
+  const reviewUrl = `${siteUrl}/reviews#review-${review.id}`
   const pubTime =
     (isFormatTime(review.date)
       ? parseFormattedTimeToTimestamp(review.date)
