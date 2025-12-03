@@ -7,6 +7,7 @@ import { getAllPosts } from '@/lib/posts'
 
 import { ReviewProps } from '@/types/schema'
 import { getExistReviews } from '@/server/reviews'
+import { isFormatTime, parseFormattedTimeToTimestamp } from '@/utils/common'
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/$/, '')
 
@@ -56,14 +57,18 @@ const buildItem = async (post: ReturnType<typeof getAllPosts>[number]) => {
 }
 
 const buildReviewItem = (review: ReviewProps) => {
-  const reviewUrl = `${siteUrl}/reviews`
+  const reviewUrl = `${siteUrl}/reviews#review-${review.id}`
+  const pubTime =
+    (isFormatTime(review.date)
+      ? parseFormattedTimeToTimestamp(review.date)
+      : review.date) || new Date().getTime()
   return `
     <item>
       <title>笔记: ${escapeXml(review.title)}</title>
       <author>${escapeXml(review.author)}</author>
       <link>${reviewUrl}</link>
       <guid isPermaLink="true">${reviewUrl}</guid>
-      <pubDate>${new Date(review.date).toUTCString()}</pubDate>
+      <pubDate>${new Date(pubTime).toUTCString()}</pubDate>
       <description> ${escapeXml(review.labels)}</description>
       <category>${escapeXml(review.country)}</category>
       <media:content url="${review.cover}" type="image/png" />
