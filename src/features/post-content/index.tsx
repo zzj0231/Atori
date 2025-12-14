@@ -10,7 +10,8 @@ import GitHubAlerts from 'markdown-it-github-alerts'
 import LinkAttributes from 'markdown-it-link-attributes'
 import MarkdownItMagicLink from 'markdown-it-magic-link'
 
-import { slugify } from '@/utils/blog'
+import { extractHeadings, slugify } from '@/utils/blog'
+import { PostToc } from '../post-toc'
 
 interface Props {
   content: string
@@ -111,11 +112,15 @@ export async function PostContent({ content }: Props) {
   md.use(GitHubAlerts)
 
   const processedContent = await md.render(content)
+  const headings = extractHeadings(md, content)
 
   return (
-    <div
-      className="prose prose-lg max-w-none prose-headings:scroll-mt-20 prose--blog"
-      dangerouslySetInnerHTML={{ __html: processedContent.toString() }}
-    />
+    <>
+      <div
+        className="prose prose-lg max-w-none prose-headings:scroll-mt-20 prose--blog"
+        dangerouslySetInnerHTML={{ __html: processedContent.toString() }}
+      />
+      <PostToc headings={headings} />
+    </>
   )
 }

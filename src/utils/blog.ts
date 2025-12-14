@@ -1,3 +1,6 @@
+import MarkdownIt from 'markdown-it'
+import { pinyin } from 'pinyin-pro'
+
 // lib/utils.ts
 export function formatDate(
   date: string | Date,
@@ -43,11 +46,61 @@ export function generateExcerpt(content: string, maxLength: number = 160) {
  * slugify("Special@#$%Characters") // "specialcharacters"
  * slugify("-Leading-Trailing-") // "leading-trailing"
  * ```
+ * 待改进:只保留英文有可能重复
  */
 export function slugify(text: string) {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+  const trimmed = text.trim()
+  if (!trimmed) return ''
+
+  const hasChinese = /[\u4e00-\u9fff]/.test(trimmed)
+  const hasLatin = /[A-Za-z]/.test(trimmed)
+
+  // 纯中文：转拼音；中英混排：去掉中文，仅保留英文/数字
+  const source =
+    hasChinese && !hasLatin
+      ? pinyin(trimmed, {
+          toneType: 'none',
+          type: 'array',
+          pattern: 'first',
+        }).join('')
+      : hasChinese && hasLatin
+        ? trimmed.replace(/[\u4e00-\u9fff]/g, '')
+        : trimmed
+
+  const normalized = source.toLowerCase().normalize('NFKD')
+
+  return normalized
+    .replace(/[\u0300-\u036f]/g, '') // 去掉音标
+    .replace(/[^\w\s-\u4e00-\u9fff]/g, '') // 保留中英文、数字、空格/下划线/连字符
+    .replace(/[\s_-]+/g, '-') // 合并空白和下划线
+    .replace(/^-+|-+$/g, '') // 去掉首尾连字符
+}
+
+/**
+ * 提取 Markdown 中的标题及其级别
+ *
+ * 遍历 Markdown 解析后的标记树，提取所有标题及其级别。
+ *
+ * @param md - MarkdownIt 实例
+ * @param content - 文章内容
+ * @returns 标题数组，每个标题包含级别、文本和 slug
+ */
+export function extractHeadings(md: MarkdownIt, content: string) {
+  const tokens = md.parse(content, {})
+  const headings = []
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i]
+    if (t.type === 'heading_open') {
+      const level = Number(t.tag.replace('h', '')) // h2/h3...
+      const inline = tokens[i + 1]
+      const text =
+        inline.children
+          ?.filter(c => c.type === 'text' || c.type === 'code_inline')
+          .map(c => c.content)
+          .join('') || ''
+      const slug = slugify(text)
+      headings.push({ level, text, slug })
+    }
+  }
+  return headings
 }
