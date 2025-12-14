@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 type Heading = {
   level: number
@@ -18,6 +18,7 @@ interface PostTocProps {
  */
 export function PostToc({ headings }: PostTocProps) {
   const [active, setActive] = useState<string>('')
+  const ignoreObserverUntil = useRef<number>(0)
 
   useEffect(() => {
     if (headings.length > 0) {
@@ -31,6 +32,7 @@ export function PostToc({ headings }: PostTocProps) {
     const ids = headings.map(h => h.slug)
     const observer = new IntersectionObserver(
       entries => {
+        if (performance.now() < ignoreObserverUntil.current) return
         // 选择进入视口且顶部最靠前的标题作为激活项
         const visible = entries
           .filter(e => e.isIntersecting)
@@ -59,6 +61,8 @@ export function PostToc({ headings }: PostTocProps) {
   const scrollTo = (slug: string) => {
     const el = document.getElementById(slug)
     if (el) {
+      // 点击后短暂忽略观察者，避免滚动过程被中途条目覆盖
+      ignoreObserverUntil.current = performance.now() + 1500
       el.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -68,11 +72,11 @@ export function PostToc({ headings }: PostTocProps) {
     }
   }
 
-  if (!headings.length) return null
+  if (!headings.length) return <></>
 
   return (
-    <aside className="hidden xl:block fixed top-[15rem] right-[2rem] mr-2 z-10">
-      <div className="flex flex-col gap-2 rounded-xl bg-[var(--atori-c-bg)]/80 px-3 py-3 shadow-lg backdrop-blur">
+    <aside className="hidden xl:block fixed top-[15rem] right-[1.5rem] mr-2 z-10">
+      <div className="flex flex-col gap-2 rounded-xl bg-[var(--atori-c-bg)]/80 px-3 py-3 shadow-md backdrop-blur">
         <div className="flex flex-col gap-1">
           {headings.map(h => {
             const isActive = active === h.slug
@@ -83,9 +87,9 @@ export function PostToc({ headings }: PostTocProps) {
                 className="group flex w-full items-center gap-2 rounded-md px-2 py-1 text-left transition-colors hover:bg-[var(--atori-c-bg-second)]"
               >
                 <span
-                  className={`text-[1.2rem] leading-tight ${
+                  className={`text-[1.3rem] leading-tight ${
                     isActive
-                      ? 'text-[var(--atori-c-text)] opacity-100 font-bold'
+                      ? 'text-[var(--atori-c-text)] opacity-100 '
                       : 'text-[var(--atori-c-text)] opacity-70'
                   }`}
                   style={{ marginLeft: h.level > 2 ? 8 : 0 }}
